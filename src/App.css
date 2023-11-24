@@ -26,3 +26,7 @@
     animation-name: FadeOut;
     animation-duration: 2s;
 }
+
+.BgBlur {
+    filter: blur(2px);
+}
