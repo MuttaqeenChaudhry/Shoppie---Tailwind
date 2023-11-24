@@ -20,7 +20,7 @@ export default function NavBar(props) {
             </div>
           </div>
           <div>
-            <div className="pr-4"><FontAwesomeIcon icon={faBars} onClick={props.handleMenu}/></div>
+            <div className="pr-4"><FontAwesomeIcon icon={faBars} onClick={props.handleMenu} className="cursor-pointer"/></div>
           </div>
         </div>
       </div>

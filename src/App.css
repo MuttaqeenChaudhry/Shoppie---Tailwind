@@ -1,0 +1,28 @@
+@keyframes FadeIn {
+    0%{
+        transform: translateX(30vw);
+    }
+    100%{
+        transform: translateX(0);
+
+    }
+}
+
+@keyframes FadeOut {
+    0%{
+        transform: translateX(0);
+
+    }
+    100%{
+        transform: translateX(30vw);
+    }
+}
+
+.FadeIn {
+    animation-name: FadeIn;
+    animation-duration: 2s;
+}
+.FadeOut {
+    animation-name: FadeOut;
+    animation-duration: 2s;
+}
