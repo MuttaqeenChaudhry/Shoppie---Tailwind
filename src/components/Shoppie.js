@@ -1,15 +1,11 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 
-export default function Shoppie() {
+export default function Shoppie() {   
   return (
     <>
-    <h1>asd</h1>
-    <h1>asd</h1>
-    <h1>asd</h1>
-    <h1>asd</h1>
-    <h1>asd</h1>
-    <h1>asd</h1>
-    <h1>asd</h1>
+    <div>
+      <h1>ast</h1>
+    </div>
     </>
   )
 }
