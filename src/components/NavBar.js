@@ -2,11 +2,9 @@ import React, { useState } from "react";
 import S_Logo from "../assets/Images/s-w.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faArrowAltCircleDown,
   faArrowDown,
   faBars,
   faCartArrowDown,
-  faCartPlus,
   faSearch,
 } from "@fortawesome/free-solid-svg-icons";
 import DeptmntsList from "./DeptmntsList";
@@ -77,28 +75,28 @@ export default function NavBar(props) {
             </div>
 
             <div className="flex w-fit items-center">
-            <a className="ml-3 bg-transparent p-1 pr-2 border-2 border-transparent hover:border-orange-300  text-white cursor-pointer">
+            <a className="ml-3 bg-transparent p-1 pr-2 border-2 border-transparent hover:border-white  text-white cursor-pointer">
                 <span className="flex flex-col flex-nowrap">
                   <span className="pr-2 text-xs"></span>
                   <span className="text-sm font-bold">EN</span>
                 </span>
               </a>
 
-              <a className="ml-3 bg-transparent p-1 pr-2 border-2 border-transparent hover:border-orange-300  text-white cursor-pointer">
+              <a className="ml-3 bg-transparent p-1 pr-2 border-2 border-transparent hover:border-white  text-white cursor-pointer">
                 <span className="flex flex-col flex-nowrap">
                   <span className="pr-2 text-xs">Hello, sign in</span>
                   <span className="text-sm font-bold">Accounts & Lists <span><FontAwesomeIcon icon={faArrowDown}/></span></span>
                 </span>
               </a>
 
-              <a className="ml-3 bg-transparent p-1 pr-2 border-2 border-transparent hover:border-orange-300  text-white cursor-pointer">
+              <a className="ml-3 bg-transparent p-1 pr-2 border-2 border-transparent hover:border-white  text-white cursor-pointer">
                 <span className="flex flex-col flex-nowrap">
                   <span className="pr-2 text-xs">Returns</span>
                   <span className="text-sm font-bold">& Orders</span>
                 </span>
               </a>
 
-              <a className="ml-3 mr-2 bg-transparent p-1 pr-2 border-2 border-transparent hover:border-orange-300  text-white cursor-pointer">
+              <a className="ml-3 mr-2 bg-transparent p-1 pr-2 border-2 border-transparent hover:border-white  text-white cursor-pointer">
                 <span className="flex flex-col flex-nowrap">
                   <span className="pr-2 font-bold text-sm text-orange-300">&nbsp; {items}</span>
                   <span className="text-sm text-white font-bold"><span><FontAwesomeIcon icon={faCartArrowDown} size="xl"/></span> Cart</span>
@@ -108,15 +106,19 @@ export default function NavBar(props) {
             </div>
           </div>
           <div className="h-10 w-full bg-violet-500">
-          <div className="flex justify-between">
-            <div>
-            <a href="">1</a>
-            <a href="">2</a>
-            <a href="">3</a>
-            <a href="">4</a>
+          <div className="flex justify-between h-full">
+            <div className="flex text-white">
+            <a href="" className="flex items-center h-full ml-2 border border-transparent pl-1 pr-2 hover:border-white">
+              <span className=""><FontAwesomeIcon icon={faBars}/> All</span>
+            </a>
+            <a className="flex items-center h-full border border-transparent pl-1 pr-2 hover:border-white "href="">Today's Deals</a>
+            <a className="flex items-center h-full border border-transparent pl-1 pr-2 hover:border-white "href="">Registry</a>
+            <a className="flex items-center h-full border border-transparent pl-1 pr-2 hover:border-white " href="">Customer Service</a>
+            <a className="flex items-center h-full border border-transparent pl-1 pr-2 hover:border-white " href="">Gift Cards</a>
+            <a className="flex items-center h-full border border-transparent pl-1 pr-2 hover:border-white " href="">Sell</a>
             </div>
-            <div>
-              <a href="">Shop Cyber Monday Deals</a>
+            <div className="flex items-center text-white">
+            <a className="flex items-center h-fit mr-2 p-1 border border-transparent pl-1 pr-2 hover:border-white " href="">Shop Cyber Monday Deals</a>
             </div>
           </div>
           </div>
