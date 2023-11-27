@@ -1,90 +1,126 @@
 import React, { useState } from "react";
 import S_Logo from "../assets/Images/s-w.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowDown, faBars, faCartArrowDown, faCartPlus, faSearch } from "@fortawesome/free-solid-svg-icons";
+import {
+  faArrowAltCircleDown,
+  faArrowDown,
+  faBars,
+  faCartArrowDown,
+  faCartPlus,
+  faSearch,
+} from "@fortawesome/free-solid-svg-icons";
 import DeptmntsList from "./DeptmntsList";
 export default function NavBar(props) {
-  const[items, setItems] = useState(0);
+  const [items, setItems] = useState(0);
   const Flags = [
-   { 
-      id : 0,
-      name : 'Botswana',
-      url : 'https://www.worldometers.info/img/flags/bc-flag.gif'
+    {
+      id: 0,
+      name: "EN",
+      url: "https://www.worldometers.info/img/flags/bc-flag.gif",
     },
-    { 
-      id : 1,
-      name : 'Brazil',
-      url : 'https://www.worldometers.info/img/flags/br-flag.gif'
+    {
+      id: 1,
+      name: "Brazil",
+      url: "https://www.worldometers.info/img/flags/br-flag.gif",
     },
-   { 
-      id : 2,
-      name : 'Brunei',
-      url : 'https://www.worldometers.info/img/flags/bx-flag.gif'
-    }
-  ]
-  
+    {
+      id: 2,
+      name: "Brunei",
+      url: "https://www.worldometers.info/img/flags/bx-flag.gif",
+    },
+  ];
+
   return (
     <>
       <header>
-      <div className="h-15  w-full m-auto overflow-hidden bg-violet-700">
-        <div className="flex flex-row w-full h-full items-center">
-          <div className="flex flex-row items-center w-fit">
-            <div className="pr-4 pl-2">
-              <h1 className="font-serif text-3xl text-white">Shoppie</h1>
+        <div className="h-15 w-full overflow-hidden">
+          <div className="flex flex-row justify-between w-full h-full items-center bg-violet-700">
+            <div className="flex flex-row items-center w-fit ml-3">
+              <div className="pr-4">
+                <h1 className="font-serif text-3xl text-white">Shoppie</h1>
+              </div>
+              <div className="h-5 w-2 border-l-violet-950 border-r-0 border-x-2"></div>
+              <div className="flex items-center pl-3">
+                <img className="w-16" src={S_Logo} alt="Logo" />
+              </div>
             </div>
-            <div className="h-5 w-2 border-l-violet-950 border-r-0 border-x-2"></div>
-            <div className="flex items-center pl-3">
-              <img className="w-16" src={S_Logo} alt="Logo" />
-            </div>
-          </div>
-          <div className="w-7/12 h-10 overflow-hidden  ml-5 rounded-lg hover:shadow-lg ">
-              <form action="" className="flex h-full" >
-              <div className="relative h-full overflow-hidden rounded-l-lg">
-                <select className="h-full w-11 outline-none bg-slate-200 text-xs text-gray-600 font-bold" placeholder="as" name="" id="">
-                  <DeptmntsList/>
-                </select>
+            <div className="w-7/12 h-10 overflow-hidden  ml-5 rounded-lg hover:shadow-lg ">
+              <form action="" className="flex h-full">
+                <div className="relative h-full overflow-hidden rounded-l-lg">
+                  <select
+                    className="h-full w-11 outline-none bg-slate-200 text-xs text-gray-600 font-bold"
+                    placeholder="as"
+                    name=""
+                    id=""
+                  >
+                    <DeptmntsList />
+                  </select>
                 </div>
-              <div className="w-full h-full">
-                <input className='w-full h-full outline-none pl-2' type="text" name="" id="" placeholder="Seach Shoppie" />
+                <div className="w-full h-full">
+                  <input
+                    className="w-full h-full outline-none pl-2"
+                    type="text"
+                    name=""
+                    id=""
+                    placeholder="Seach Shoppie"
+                  />
                 </div>
-              <div>
-                <button className="w-11 flex h-full items-center justify-center bg-amber-100 hover:bg-amber-300 " type="submit"><FontAwesomeIcon icon={faSearch}/></button>
+                <div>
+                  <button
+                    className="w-11 flex h-full items-center justify-center bg-amber-100 hover:bg-amber-300 "
+                    type="submit"
+                  >
+                    <FontAwesomeIcon icon={faSearch} />
+                  </button>
                 </div>
               </form>
-          </div>
+            </div>
 
-          <div className="ml-5 w-fit bg-transparent  text-white">
-           <select className='bg-transparent outline-none' name="" id="">
-            {
-              Flags.map((Flag)=>(
-                <option key={Flag.id} value={Flag.name}>{Flag.name}<img src={Flag.url}/></option>
-                ))
-            }
-           </select>
-          </div>
+            <div className="flex w-fit items-center">
+            <a className="ml-3 bg-transparent p-1 pr-2 border-2 border-transparent hover:border-orange-300  text-white cursor-pointer">
+                <span className="flex flex-col flex-nowrap">
+                  <span className="pr-2 text-xs"></span>
+                  <span className="text-sm font-bold">EN</span>
+                </span>
+              </a>
 
-          <div className="ml-5">
-            <div>
-              <div>Hello</div>
-              <div>Accounts and Lists</div>
+              <a className="ml-3 bg-transparent p-1 pr-2 border-2 border-transparent hover:border-orange-300  text-white cursor-pointer">
+                <span className="flex flex-col flex-nowrap">
+                  <span className="pr-2 text-xs">Hello, sign in</span>
+                  <span className="text-sm font-bold">Accounts & Lists <span><FontAwesomeIcon icon={faArrowDown}/></span></span>
+                </span>
+              </a>
+
+              <a className="ml-3 bg-transparent p-1 pr-2 border-2 border-transparent hover:border-orange-300  text-white cursor-pointer">
+                <span className="flex flex-col flex-nowrap">
+                  <span className="pr-2 text-xs">Returns</span>
+                  <span className="text-sm font-bold">& Orders</span>
+                </span>
+              </a>
+
+              <a className="ml-3 mr-2 bg-transparent p-1 pr-2 border-2 border-transparent hover:border-orange-300  text-white cursor-pointer">
+                <span className="flex flex-col flex-nowrap">
+                  <span className="pr-2 font-bold text-sm text-orange-300">&nbsp; {items}</span>
+                  <span className="text-sm text-white font-bold"><span><FontAwesomeIcon icon={faCartArrowDown} size="xl"/></span> Cart</span>
+                </span>
+              </a>
+
             </div>
           </div>
-
-          <div className="ml-5">
-            <div><span>Returns<br/>& Orders
-              </span></div>
-          </div>
-
-          <div className="flex relative items-end h-12 ml-5">
+          <div className="h-10 w-full bg-violet-500">
+          <div className="flex justify-between">
             <div>
-            <FontAwesomeIcon icon={faCartArrowDown} size="xl" color="white"/>
+            <a href="">1</a>
+            <a href="">2</a>
+            <a href="">3</a>
+            <a href="">4</a>
             </div>
-            <div className="text-white font-bold pl-1">Cart</div>
-            <div className="absolute top-0 left-3 text-yellow-300"><i>{items}</i></div>
-
+            <div>
+              <a href="">Shop Cyber Monday Deals</a>
+            </div>
+          </div>
           </div>
         </div>
-      </div>
       </header>
     </>
   );
