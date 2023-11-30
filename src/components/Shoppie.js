@@ -37,13 +37,12 @@ export default function Shoppie() {
   }, []);
   return (
     <>
-      <div id="RootContent">
-        <div className="h-fit">
+      <div id="RootContent" className="h-fit">
           <div
-            style={{ width: "99%" }}
+            style={{ width: "99%"}}
             className="relative m-auto h-fit outline-none"
           >
-            <div id="CrosulContainer" className="overflow-hidden">
+            <div id="CrosulContainer" className="overflow-hidden z-0">
               <img className="CarslImg" src={C_Img_1} alt="" />
               <img className="CarslImg" src={C_Img_2} alt="" />
               <img className="CarslImg" src={C_Img_3} alt="" />
@@ -60,13 +59,12 @@ export default function Shoppie() {
               </button>
             </div>
             <div
-              style={{ boxShadow: "1px 1px 120px 155px #E3E6E6" }}
+              style={{ boxShadow: "1px 1px 120px 155px #E3E6E6", zIndex:'2' }}
               className="absolute w-full"
             />
             <StuffHub />
           </div>
         </div>
-      </div>
     </>
   );
 }

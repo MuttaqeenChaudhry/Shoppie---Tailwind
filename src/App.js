@@ -8,18 +8,26 @@ function App() {
   const[NvMDp, setNvMDp] = useState('none');
   const HNvMenu = () => {
     const RC_KR = document.getElementById('RC_KR');
-    setNvMDp('block')
-    document.body.style.overflow = 'hidden';
-    RC_KR.classList.add('blob')
+    if (NvMDp == 'none') {
+      setNvMDp('block');
+      document.body.style.overflow = 'hidden';
+      RC_KR.classList.add('Shadowed');
+    } else {
+      setNvMDp('none');
+      document.body.style.overflowY = 'scroll';
+      RC_KR.classList.remove('Shadowed');
+    }
+   
   }
 
   return (
     <>
-    <NavMenu NvMnDisp={NvMDp}/>
-    <div id='RC_KR'>    
+    <NavMenu NvMnDisp={NvMDp} HandleNavMenu={HNvMenu}/>
+    <div style={{height:'100vh'}} id='RC_KR'>  
     <NavBar HandleNavMenu={HNvMenu}/>
     <Shoppie/>
     </div>
+   
 
     </>
   );

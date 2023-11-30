@@ -11,3 +11,22 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+.Shadowed {
+  width: 100%;
+  position: relative;
+}
+
+.Shadowed::before {
+  z-index: 3;
+  content: '';
+  position: absolute; 
+  top: 0;
+  left: 0;
+  width: 100%;
+  box-shadow: 0 0 0px 100vh rgba(0, 0, 0, 0.8);
+}
+
+ul {
+  padding: 0;
+}
