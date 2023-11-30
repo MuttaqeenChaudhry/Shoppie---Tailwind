@@ -73,7 +73,7 @@ export default function StuffHub() {
     ,
     {
       id: "7",
-      title: "Deals in PCs",
+      title: "Deals in PCs 2",
       imgUrl:
         "https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Events/2023/EBF23/Fuji_Desktop_Single_image_EBF_1x_v6._SY304_CB573698005_.jpg",
       hrLink:
@@ -82,7 +82,7 @@ export default function StuffHub() {
     },
     {
       id: "8",
-      title: "Beauty steals under $25",
+      title: "Beauty steals under $250",
       imgUrl:
         "https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Events/2023/EBF23/Fuji_Desktop_Single_image_EBF_1x_v1._SY304_CB573698005_.jpg",
       hrLink:
@@ -91,7 +91,7 @@ export default function StuffHub() {
     },
     {
       id: "9",
-      title: "Shop holiday gift guide",
+      title: "Shop holiday gift guide RN",
       imgUrl:
         "https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Events/2023/GiftGuides/Fuji_Holiday_Gift_guide_Desktop_Card_1x_379x304_EN._SY304_CB576347904_.jpg",
       hrLink:
@@ -100,7 +100,7 @@ export default function StuffHub() {
     },
     {
       id: "10",
-      title: "Easy updates for elevated spaces",
+      title: "Easy updates for elevated spaces ok",
       imgUrl:
         "https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Events/2023/EBF23/Fuji_Desktop_Single_image_EBF_1x_v3._SY304_CB573698005_.jpg",
       hrLink:
@@ -163,6 +163,20 @@ export default function StuffHub() {
         style={{ zIndex: "2" }}
         className="absolute w-full h-fit top-40 bg-transparent"
       >
+        <div
+          style={{ width: "97%" }}
+          className="h-fit m-auto grid grid-cols-5 grid-rows-2 gap-y-6 gap-x-5"
+        >
+          {Items.slice(0,8).map((Item) => (
+            <StuffOne
+              key={Item.id}
+              title={Item.title}
+              img={Item.imgUrl}
+              hrLink={Item.hrLink}
+              hrTitle={Item.hrTitle}
+            />
+          ))}
+        </div>
         <div
           style={{ width: "97%" }}
           className="h-fit m-auto grid grid-cols-4 grid-rows-2 gap-y-6 gap-x-5"
