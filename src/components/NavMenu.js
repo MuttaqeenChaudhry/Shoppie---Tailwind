@@ -6,7 +6,7 @@ import {
   faUserCircle,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React from "react";
+import React, { useEffect } from "react";
 
 export default function NavMenu(props) {
   return (
@@ -16,13 +16,14 @@ export default function NavMenu(props) {
         className="absolute top-0 w-full h-fit overflow-hidden bg-transparent"
       >
         <div
-          className="fixed left-96 top-4 cursor-pointer"
+         id="HbrgerClose"
+          className="fixed left-96 top-4 cursor-pointer animate-fadeIn"
           onClick={props.HandleNavMenu}
         >
           <FontAwesomeIcon icon={faClose} size={"2xl"} color="white" />
         </div>
         <div className="flex">
-          <div className=" w-24 h-screen bg-white">
+          <div className=" w-24 h-screen animate-ltr bg-white">
             <div
               style={{ height: "6.5%" }}
               className="h-1/6 w-full bg-violet-950"

@@ -13,12 +13,12 @@ function App() {
       document.body.style.overflow = 'hidden';
       RC_KR.classList.add('Shadowed');
     } else {
-      setNvMDp('none');
-      document.body.style.overflowY = 'scroll';
-      RC_KR.classList.remove('Shadowed');
-    }
-   
+        setNvMDp('none');
+        document.body.style.overflowY = 'scroll';
+        RC_KR.classList.remove('Shadowed');  
+    }   
   }
+ 
 
   return (
     <>

@@ -19,17 +19,36 @@ module.exports = {
         40 : '40%'
       },
       animation : {
-        fadeOu : 'fadeOu 2s ease-in'
+        fadeIn : 'fadeIn 1s ease-in',
+        fadeOut : 'fadeOut 1s ease-in',
+        ltr : 'ltr 0.5s ease-in-out'
       },
       keyframes : {
-        fadeOu : {
+        ltr : {
+          '0%' : {
+            transform : 'translateX(-350px)'
+          },
+          '100%' : {
+            transform : 'translateX(0px)'
+          }
+
+        },
+        fadeIn : {
+          '0%' : {
+            opacity : 0
+          },
+          '100%' : {
+            opacity : 100
+          }
+        },
+        fadeOut : {
           '0%' : {
             opacity : 100
           },
           '100%' : {
             opacity : 0
           }
-        }
+        },
       }
     },
   },
