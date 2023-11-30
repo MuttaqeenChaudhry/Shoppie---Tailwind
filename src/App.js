@@ -5,36 +5,22 @@ import NavMenu from './components/NavMenu';
 import Shoppie from './components/Shoppie';
 
 function App() {
-  const[navMenu, setnavMenu] = useState('none');
-  const handleMenu = () => {
-    const NavMenu = document.getElementById('NavMenu');
-    const some1 = document.getElementById('some1');
-    if(navMenu === 'none')
-    {
-      some1.classList.add('BgBlur')
-      NavMenu.classList.remove('FadeOut')
-      NavMenu.classList.remove('FadeIn')
-      NavMenu.classList.add('FadeIn')
-      setnavMenu('block')
-    }
-    else
-    {
-      some1.classList.remove('BgBlur')
-      NavMenu.classList.remove('FadeOut')
-      NavMenu.classList.add('FadeOut')
-      setTimeout(() => {
-          setnavMenu('none');
-      }, 1800);
-    }
-
+  const[NvMDp, setNvMDp] = useState('none');
+  const HNvMenu = () => {
+    const RC_KR = document.getElementById('RC_KR');
+    setNvMDp('block')
+    document.body.style.overflow = 'hidden';
+    RC_KR.classList.add('blob')
   }
+
   return (
     <>
-    <NavBar handleMenu = {handleMenu}/>
-    <NavMenu navMenu= {navMenu} handleMenu = {handleMenu}/>
-    <div id='some1'>
+    <NavMenu NvMnDisp={NvMDp}/>
+    <div id='RC_KR'>    
+    <NavBar HandleNavMenu={HNvMenu}/>
     <Shoppie/>
     </div>
+
     </>
   );
 }

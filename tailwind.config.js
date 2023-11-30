@@ -8,7 +8,27 @@ module.exports = {
       sm : '340px',
       md : '768px'
     },
-    extend: {},
+    extend: {
+      height : {
+        100 : '26.5rem'
+      },
+      inset : {
+        40 : '40%'
+      },
+      animation : {
+        fadeOu : 'fadeOu 2s ease-in'
+      },
+      keyframes : {
+        fadeOu : {
+          '0%' : {
+            opacity : 100
+          },
+          '100%' : {
+            opacity : 0
+          }
+        }
+      }
+    },
   },
   plugins: [],
 }

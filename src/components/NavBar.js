@@ -108,7 +108,7 @@ export default function NavBar(props) {
           <div className="h-10 w-full bg-violet-500">
           <div className="flex justify-between h-full">
             <div className="flex text-white">
-            <a href="" className="flex items-center h-full ml-2 border border-transparent pl-1 pr-2 hover:border-white">
+            <a href='javascript:void(0)' onClick={props.HandleNavMenu} className="flex items-center h-full ml-2 border border-transparent pl-1 pr-2 hover:border-white">
               <span className=""><FontAwesomeIcon icon={faBars}/> All</span>
             </a>
             <a className="flex items-center h-full border border-transparent pl-1 pr-2 hover:border-white "href="">Today's Deals</a>

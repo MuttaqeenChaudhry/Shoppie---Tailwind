@@ -3,8 +3,8 @@ import React from "react";
 export default function StuffOne(props) {
   return (
     <>
-      <div className=" bg-transparent">
-        <div className="flex flex-col h-96 bg-white w-11/12 m-auto">
+      <div className="bg-transparent border">
+        <div className="flex flex-col h-100 bg-white">
           <div
             style={{ height: "15%" }}
             className="flex items-center w-11/12 m-auto bg-white"
