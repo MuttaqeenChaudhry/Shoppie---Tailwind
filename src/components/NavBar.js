@@ -111,11 +111,11 @@ export default function NavBar(props) {
             <a href='javascript:void(0)' onClick={props.HandleNavMenu} className="flex items-center h-full ml-2 border border-transparent pl-1 pr-2 hover:border-white">
               <span className=""><FontAwesomeIcon icon={faBars}/> All</span>
             </a>
-            <a className="flex items-center h-full border border-transparent pl-1 pr-2 hover:border-white "href="">Today's Deals</a>
-            <a className="flex items-center h-full border border-transparent pl-1 pr-2 hover:border-white "href="">Registry</a>
-            <a className="flex items-center h-full border border-transparent pl-1 pr-2 hover:border-white " href="">Customer Service</a>
-            <a className="flex items-center h-full border border-transparent pl-1 pr-2 hover:border-white " href="">Gift Cards</a>
-            <a className="flex items-center h-full border border-transparent pl-1 pr-2 hover:border-white " href="">Sell</a>
+            <a className="flex items-center h-full border border-transparent pl-1 pr-2 hover:border-white "href=""><span className="hover:translate-y-0.5">Today's Deals</span></a>
+            <a className="flex items-center h-full border border-transparent pl-1 pr-2 hover:border-white "href=""><span className="hover:translate-y-0.5">Registry</span></a>
+            <a className="flex items-center h-full border border-transparent pl-1 pr-2 hover:border-white " href=""><span className="hover:translate-y-0.5">Customer Service</span></a>
+            <a className="flex items-center h-full border border-transparent pl-1 pr-2 hover:border-white " href=""><span className="hover:translate-y-0.5">Gift Cards</span></a>
+            <a className="flex items-center h-full border border-transparent pl-1 pr-2 hover:border-white " href=""><span className="hover:translate-y-0.5">Sell</span></a>
             </div>
             <div className="flex items-center text-white">
             <a className="flex items-center h-fit mr-2 p-1 border border-transparent pl-1 pr-2 hover:border-white " href="">Shop Cyber Monday Deals</a>
