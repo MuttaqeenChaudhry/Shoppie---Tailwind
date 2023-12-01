@@ -21,9 +21,9 @@ export default function NavMenu(props) {
     TheMenu.classList.add('animate-rtl');
     setTimeout(() => {
       TheMenu.classList.remove('left-96');
-    }, 295);
-    
+    }, 295);  
   }
+  
   return (
     <>
       <div
@@ -54,7 +54,7 @@ export default function NavMenu(props) {
                 </div>
               </a>
             </div>
-            <div className="relative flex w-full h-full overflow-hidden">
+            <div className="relative flex w-full h-full">
               <div
                 id='HamBurgMenu'
                 style={{ height: "93.5%" }}
@@ -105,7 +105,7 @@ export default function NavMenu(props) {
                   </li>
                   <ul className="text-sm">
                     <li className="pt-1 pl-6 hover:bg-gray-200">
-                      <a href="" className="flex flex-row justify-between p-2 ">
+                      <a href="javascript:void(0)" onClick={()=> handleMenu(4)} className="flex flex-row justify-between p-2 ">
                         <div className="pl-0">Electronics</div>
                         <div className="pr-3">
                           <FontAwesomeIcon
@@ -116,7 +116,7 @@ export default function NavMenu(props) {
                       </a>
                     </li>
                     <li className="pt-1 pl-6 hover:bg-gray-200">
-                      <a href="" className="flex flex-row justify-between p-2">
+                      <a href="javascript:void(0)" onClick={()=> handleMenu(5)} className="flex flex-row justify-between p-2">
                         <div className="pl-0">Computers</div>
                         <div className="pr-3">
                           <FontAwesomeIcon
@@ -127,7 +127,7 @@ export default function NavMenu(props) {
                       </a>
                     </li>
                     <li className="pt-1 pl-6 hover:bg-gray-200">
-                      <a href="" className="flex flex-row justify-between p-2 ">
+                      <a href="javascript:void(0)" onClick={()=> handleMenu(6)} className="flex flex-row justify-between p-2 ">
                         <div className="pl-0">Smart Home</div>
                         <div className="pr-3">
                           <FontAwesomeIcon
@@ -138,7 +138,7 @@ export default function NavMenu(props) {
                       </a>
                     </li>
                     <li className="pt-1 pb-1 pl-6 hover:bg-gray-200">
-                      <a href="" className="flex flex-row justify-between p-2 ">
+                      <a href="javascript:void(0)" onClick={()=> handleMenu(7)} className="flex flex-row justify-between p-2 ">
                         <div className="pl-0">Arts & Crafts</div>
                         <div className="pr-3">
                           <FontAwesomeIcon
@@ -476,6 +476,432 @@ export default function NavMenu(props) {
                     <li className="pt-1 hover:bg-gray-200">
                       <a href="" className="flex flex-row p-2 ">
                         <div className="pl-6">Your Apps and Subscriptions</div>
+                      </a>
+                    </li>
+                  </ul>
+                </ul>
+              </div>
+              <div
+                id="Menu4"
+                style={{ height: "93.5%", display:'none' }}
+                className="absolute left-96 overflow-y-scroll overflow-x-scroll w-full bg-white"
+              >
+                <ul className="text-sm mt-2">
+                  <li className="pt-2 pb-1 hover:bg-gray-200">
+                    <a href="" className="flex p-2 ">
+                      <div className="pl-6">
+                        <FontAwesomeIcon
+                          icon={faArrowLeft}
+                          className="text-gray-400 hover:text-black"
+                        />
+                      </div>
+                      <div className="pl-2">
+                        <b>Main Menu</b>
+                      </div>
+                    </a>
+                  </li>
+                </ul>
+                <hr/>
+                <ul className="pb-8">
+                  <li className="pl-8 pt-4 text-lg">
+                    <b>Electronics</b>
+                  </li>
+                  <ul className="text-sm">
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="" className="flex flex-row p-2">
+                        <span className="pl-6">Accessories and Supplies</span>
+                      </a>
+                    </li>
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="" className="flex flex-row p-2 ">
+                        <span className="pl-6">Camera & Photo</span>
+                      </a>
+                    </li>
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="" className="flex flex-row p-2 ">
+                        <span className="pl-6">Car & Vehicle Electronics</span>
+                      </a>
+                    </li>
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="" className="flex flex-row p-2 ">
+                        <span className="pl-6">Cell Phones & Accessories</span>
+                      </a>
+                    </li>
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="" className="flex flex-row p-2 ">
+                        <span className="pl-6">Computers & Accessories</span>
+                      </a>
+                    </li>
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="" className="flex flex-row p-2 ">
+                        <span className="pl-6">GPS & Navigation</span>
+                      </a>
+                    </li>
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="" className="flex flex-row p-2 ">
+                        <span className="pl-6">Headphones</span>
+                      </a>
+                    </li>
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="" className="flex flex-row p-2 ">
+                        <span className="pl-6">Home & Audio</span>
+                      </a>
+                    </li>
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="" className="flex flex-row p-2 ">
+                        <span className="pl-6">Office Electronics</span>
+                      </a>
+                    </li>
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="" className="flex flex-row p-2 ">
+                        <span className="pl-6">Portable Audio & Video</span>
+                      </a>
+                    </li>
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="" className="flex flex-row p-2 ">
+                        <span className="pl-6">Security & Surveillance</span>
+                      </a>
+                    </li>
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="" className="flex flex-row p-2 ">
+                        <span className="pl-6">Service Plans</span>
+                      </a>
+                    </li>
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="" className="flex flex-row p-2 ">
+                        <span className="pl-6">Television & Video</span>
+                      </a>
+                    </li>
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="" className="flex flex-row p-2 ">
+                        <span className="pl-6">Video Game Consoles & Accessories</span>
+                      </a>
+                    </li>
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="" className="flex flex-row p-2 ">
+                        <span className="pl-6">Video Projectors</span>
+                      </a>
+                    </li>
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="" className="flex flex-row p-2 ">
+                        <span className="pl-6">Wearable Technology</span>
+                      </a>
+                    </li>
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="" className="flex flex-row p-2 ">
+                        <span className="pl-6">eBook Readers & Accessories</span>
+                      </a>
+                    </li>
+                  </ul>
+                </ul>
+              </div>
+              <div
+                id="Menu5"
+                style={{ height: "93.5%", display:'none' }}
+                className="absolute left-96 overflow-y-scroll overflow-x-scroll w-full bg-white"
+              >
+                <ul className="text-sm mt-2">
+                  <li className="pt-2 pb-1 hover:bg-gray-200">
+                    <a href="" className="flex p-2 ">
+                      <div className="pl-6">
+                        <FontAwesomeIcon
+                          icon={faArrowLeft}
+                          className="text-gray-400 hover:text-black"
+                        />
+                      </div>
+                      <div className="pl-2">
+                        <b>Main Menu</b>
+                      </div>
+                    </a>
+                  </li>
+                </ul>
+                <hr/>
+                <ul className="pb-8">
+                  <li className="pl-8 pt-4 text-lg">
+                    <b>Computers</b>
+                  </li>
+                  <ul className="text-sm">
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="" className="flex flex-row p-2">
+                        <span className="pl-6">Computer Accessories & Peripherals</span>
+                      </a>
+                    </li>
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="" className="flex flex-row p-2 ">
+                        <span className="pl-6">Computer Components</span>
+                      </a>
+                    </li>
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="" className="flex flex-row p-2 ">
+                        <span className="pl-6">Computers & Tablets</span>
+                      </a>
+                    </li>
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="" className="flex flex-row p-2 ">
+                        <span className="pl-6">Data Storage</span>
+                      </a>
+                    </li>
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="" className="flex flex-row p-2 ">
+                        <span className="pl-6">External Components</span>
+                      </a>
+                    </li>
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="" className="flex flex-row p-2 ">
+                        <span className="pl-6">Laptop Accessories</span>
+                      </a>
+                    </li>
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="" className="flex flex-row p-2 ">
+                        <span className="pl-6">Monitors</span>
+                      </a>
+                    </li>
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="" className="flex flex-row p-2 ">
+                        <span className="pl-6">Networking Products</span>
+                      </a>
+                    </li>
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="" className="flex flex-row p-2 ">
+                        <span className="pl-6">Power Stripe & Surge Protectors</span>
+                      </a>
+                    </li>
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="" className="flex flex-row p-2 ">
+                        <span className="pl-6">Printers</span>
+                      </a>
+                    </li>
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="" className="flex flex-row p-2 ">
+                        <span className="pl-6">Scanners</span>
+                      </a>
+                    </li>
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="" className="flex flex-row p-2 ">
+                        <span className="pl-6">Servers</span>
+                      </a>
+                    </li>
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="" className="flex flex-row p-2 ">
+                        <span className="pl-6">Tablet Accessories</span>
+                      </a>
+                    </li>
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="" className="flex flex-row p-2 ">
+                        <span className="pl-6">Tablet Replacement Parts</span>
+                      </a>
+                    </li>
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="" className="flex flex-row p-2 ">
+                        <span className="pl-6">Warranties & Services</span>
+                      </a>
+                    </li>
+                  </ul>
+                </ul>
+              </div>
+              <div
+                id="Menu6"
+                style={{ height: "93.5%", display:'none' }}
+                className="absolute left-96 overflow-y-scroll overflow-x-scroll w-full bg-white"
+              >
+                <ul className="text-sm mt-2">
+                  <li className="pt-2 pb-1 hover:bg-gray-200">
+                    <a href="" className="flex p-2 ">
+                      <div className="pl-6">
+                        <FontAwesomeIcon
+                          icon={faArrowLeft}
+                          className="text-gray-400 hover:text-black"
+                        />
+                      </div>
+                      <div className="pl-2">
+                        <b>Main Menu</b>
+                      </div>
+                    </a>
+                  </li>
+                </ul>
+                <hr/>
+                <ul className="pb-8">
+                  <li className="pl-8 pt-4 text-lg">
+                    <b>Smart Home</b>
+                  </li>
+                  <ul className="text-sm">
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="" className="flex flex-row p-2">
+                        <span className="pl-6">Shoppie Smart Home</span>
+                      </a>
+                    </li>
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="" className="flex flex-row p-2 ">
+                        <span className="pl-6">Works with Shexa Devices</span>
+                      </a>
+                    </li>
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="" className="flex flex-row p-2 ">
+                        <span className="pl-6">Smart Home Lighting</span>
+                      </a>
+                    </li>
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="" className="flex flex-row p-2 ">
+                        <span className="pl-6">Smart Locks and Entry</span>
+                      </a>
+                    </li>
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="" className="flex flex-row p-2 ">
+                        <span className="pl-6">Security Cameras and Systems</span>
+                      </a>
+                    </li>
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="" className="flex flex-row p-2 ">
+                        <span className="pl-6">Plugs and Outlets</span>
+                      </a>
+                    </li>
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="" className="flex flex-row p-2 ">
+                        <span className="pl-6">New Smart Devices</span>
+                      </a>
+                    </li>
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="" className="flex flex-row p-2 ">
+                        <span className="pl-6">Heating and Cooling</span>
+                      </a>
+                    </li>
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="" className="flex flex-row p-2 ">
+                        <span className="pl-6">Detectors and Cooling</span>
+                      </a>
+                    </li>
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="" className="flex flex-row p-2 ">
+                        <span className="pl-6">Home Entertainment</span>
+                      </a>
+                    </li>
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="" className="flex flex-row p-2 ">
+                        <span className="pl-6">Pet</span>
+                      </a>
+                    </li>
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="" className="flex flex-row p-2 ">
+                        <span className="pl-6">Voice Assitants and Hubs</span>
+                      </a>
+                    </li>
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="" className="flex flex-row p-2 ">
+                        <span className="pl-6">Kitchen</span>
+                      </a>
+                    </li>
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="" className="flex flex-row p-2 ">
+                        <span className="pl-6">Vacuums and Mops</span>
+                      </a>
+                    </li>
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="" className="flex flex-row p-2 ">
+                        <span className="pl-6">Lawn and Garden</span>
+                      </a>
+                    </li>
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="" className="flex flex-row p-2 ">
+                        <span className="pl-6">WIFI and Networking</span>
+                      </a>
+                    </li>
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="" className="flex flex-row p-2 ">
+                        <span className="pl-6">Other Solutions</span>
+                      </a>
+                    </li>
+                  </ul>
+                </ul>
+              </div>
+              <div
+                id="Menu7"
+                style={{ height: "93.5%", display:'none' }}
+                className="absolute left-96 overflow-y-scroll overflow-x-scroll w-full bg-white"
+              >
+                <ul className="text-sm mt-2">
+                  <li className="pt-2 pb-1 hover:bg-gray-200">
+                    <a href="" className="flex p-2 ">
+                      <div className="pl-6">
+                        <FontAwesomeIcon
+                          icon={faArrowLeft}
+                          className="text-gray-400 hover:text-black"
+                        />
+                      </div>
+                      <div className="pl-2">
+                        <b>Main Menu</b>
+                      </div>
+                    </a>
+                  </li>
+                </ul>
+                <hr/>
+                <ul className="pb-8">
+                  <li className="pl-8 pt-4 text-lg">
+                    <b>Arts & Crafts</b>
+                  </li>
+                  <ul className="text-sm">
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="" className="flex flex-row p-2">
+                        <span className="pl-6">Painting, Drawing & Art Supplies</span>
+                      </a>
+                    </li>
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="" className="flex flex-row p-2 ">
+                        <span className="pl-6">Beading & Jewelry Making</span>
+                      </a>
+                    </li>
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="" className="flex flex-row p-2 ">
+                        <span className="pl-6">Crafting</span>
+                      </a>
+                    </li>
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="" className="flex flex-row p-2 ">
+                        <span className="pl-6">Fabric</span>
+                      </a>
+                    </li>
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="" className="flex flex-row p-2 ">
+                        <span className="pl-6">Fabric Decorating</span>
+                      </a>
+                    </li>
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="" className="flex flex-row p-2 ">
+                        <span className="pl-6">Knitting and Crochet</span>
+                      </a>
+                    </li>
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="" className="flex flex-row p-2 ">
+                        <span className="pl-6">Needlework</span>
+                      </a>
+                    </li>
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="" className="flex flex-row p-2 ">
+                        <span className="pl-6">Oraganization, Storage & Transport</span>
+                      </a>
+                    </li>
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="" className="flex flex-row p-2 ">
+                        <span className="pl-6">Printmaking</span>
+                      </a>
+                    </li>
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="" className="flex flex-row p-2 ">
+                        <span className="pl-6">Scrapbooking & Stamping</span>
+                      </a>
+                    </li>
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="" className="flex flex-row p-2 ">
+                        <span className="pl-6">Sewing</span>
+                      </a>
+                    </li>
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="" className="flex flex-row p-2 ">
+                        <span className="pl-6">Party Decorations & Supplies</span>
+                      </a>
+                    </li>
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="" className="flex flex-row p-2 ">
+                        <span className="pl-6">Gift Wrapping Supplies</span>
                       </a>
                     </li>
                   </ul>
