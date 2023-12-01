@@ -22,24 +22,42 @@ module.exports = {
       animation : {
         fadeIn : 'fadeIn 1s ease-in',
         fadeOut : 'fadeOut 1s ease-in',
-        ltr : 'ltr 0.3s ease-in-out',
-        rtl : 'rtl 0.3s ease-in-out'
+        ltr1 : 'ltr1 0.3s ease-in-out',
+        ltr2 : "ltr2 0.3s ease-in-out",
+        rtl384 : 'rtl384 0.3s ease-in-out',
+        rtl3842 : 'rtl3842 0.3s ease-in-out'
       },
       keyframes : {
-        ltr : {
+        ltr1 : {
           '0%' : {
-            transform : 'translateX(-350px)'
+            transform : 'translateX(-384px)'
           },
           '100%' : {
             transform : 'translateX(0px)'
           }
         },
-        rtl : {
+        ltr2 : {
+          '0%' : {
+            transform : 'translateX(0px)'
+          },
+          '100%' : {
+            transform : 'translateX(384px)'
+          }
+        },
+        rtl384 : {
           '0%' : {
             transform : 'translateX(0px)'
           },
           '100%' : {
             transform : 'translateX(-384px)'
+          }
+        },
+        rtl3842 : {
+          '0%' : {
+            transform : 'translateX(384px)'
+          },
+          '100%' : {
+            transform : 'translateX(0px)'
           }
         },
         fadeIn : {

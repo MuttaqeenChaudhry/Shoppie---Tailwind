@@ -2,28 +2,66 @@ import {
   faArrowDown,
   faArrowLeft,
   faArrowRight,
+  faArrowUp,
   faClose,
   faGlobe,
   faUserCircle,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 
 export default function NavMenu(props) {
-  const handleMenu = (menuId) => {
-    const MainMenu = document.getElementById('HamBurgMenu');
-    const TheMenu = document.getElementById(`Menu${menuId}`);
-    TheMenu.style.display = 'block';
-    MainMenu.classList.add('animate-rtl');
-    setTimeout(()=>{
-      MainMenu.classList.add('-left-96');
-    },295)
-    TheMenu.classList.add('animate-rtl');
+  const Up = <FontAwesomeIcon
+    icon={faArrowUp}
+    className="text-gray-400 hover:text-black"
+  />;
+  const Down = <FontAwesomeIcon
+    icon={faArrowDown}
+    className="text-gray-400 hover:text-black"
+  />;
+  const[AlLs, setAlLs] = useState('All');
+  const[ArrowState, setArrowState] = useState(Down);
+
+  const MaintoSide = (menuId) => {
+    const MainMenu = document.getElementById("HamBurgMenu");
+    const SideMenu = document.getElementById(`Menu${menuId}`);
+    SideMenu.style.display = "block";
+    MainMenu.classList.remove('animate-ltr2');
+    SideMenu.classList.remove('animate-ltr2');
+    MainMenu.classList.add("animate-rtl384");
+    SideMenu.classList.add("animate-rtl384");
     setTimeout(() => {
-      TheMenu.classList.remove('left-96');
-    }, 295);  
-  }
-  
+      MainMenu.classList.add("-left-96");
+      SideMenu.classList.remove("left-96");
+    }, 300);
+  };
+
+  const Back2Main = (menuId) => {
+    const MainMenu = document.getElementById("HamBurgMenu");
+    const SideMenu = document.getElementById(`Menu${menuId}`);
+    MainMenu.classList.add('animate-ltr2');
+    MainMenu.classList.remove("animate-rtl384");
+    SideMenu.classList.add("animate-ltr2");
+    SideMenu.classList.remove("animate-rtl384");
+    setTimeout(() => {
+      MainMenu.classList.remove("-left-96");
+      SideMenu.style.display = 'none';
+      SideMenu.classList.add("left-96");
+    }, 300);  
+  };
+
+  useEffect(()=>{ 
+    const ExpandableList = document.getElementById('ExpandableList');
+    const ExlToggler = document.getElementById('ExlToggler');
+    const HandleList = () => {
+      ExpandableList.classList.toggle('max-h-0');
+      setAlLs(prev => (prev === 'All' ? 'Less' : 'All')); 
+      setArrowState(prev => (prev === Up ? Down : Up));
+    }
+    ExlToggler.addEventListener('click', HandleList)
+    return () => ExlToggler.removeEventListener('click', HandleList);
+  },[])
+
   return (
     <>
       <div
@@ -38,7 +76,7 @@ export default function NavMenu(props) {
           <FontAwesomeIcon icon={faClose} size={"2xl"} color="white" />
         </div>
         <div className="flex">
-          <div className=" w-24 h-screen animate-ltr bg-white">
+          <div className=" w-24 h-screen animate-ltr1 bg-white">
             <div
               style={{ height: "6.5%" }}
               className="h-1/6 w-full bg-violet-950"
@@ -54,9 +92,9 @@ export default function NavMenu(props) {
                 </div>
               </a>
             </div>
-            <div className="relative flex w-full h-full">
+            <div className="relative flex w-full h-full overflow-hidden">
               <div
-                id='HamBurgMenu'
+                id="HamBurgMenu"
                 style={{ height: "93.5%" }}
                 className="absolute overflow-y-scroll overflow-x-scroll w-full"
               >
@@ -66,7 +104,11 @@ export default function NavMenu(props) {
                   </li>
                   <ul className="text-sm">
                     <li className="pt-1 pl-6 hover:bg-gray-200 hover:text-black">
-                      <a href="javascript:void(0)" onClick={() => handleMenu(1)} className="flex flex-row justify-between p-2 cursor-pointer ">
+                      <a
+                        href="javascript:void(0)"
+                        onClick={() => MaintoSide(1)}
+                        className="flex flex-row justify-between p-2 cursor-pointer "
+                      >
                         <div className="pl-0">Shoppie Music</div>
                         <div className="pr-3 hover:text-black">
                           <FontAwesomeIcon
@@ -77,7 +119,11 @@ export default function NavMenu(props) {
                       </a>
                     </li>
                     <li className="pt-1 pl-6 hover:bg-gray-200">
-                      <a href="javascript:void(0)" onClick={()=> handleMenu(2)} className="flex flex-row justify-between p-2 cursor-pointer">
+                      <a
+                        href="javascript:void(0)"
+                        onClick={() => MaintoSide(2)}
+                        className="flex flex-row justify-between p-2 cursor-pointer"
+                      >
                         <div className="pl-0">Mindle E-readers & Books</div>
                         <div className="pr-3">
                           <FontAwesomeIcon
@@ -88,7 +134,11 @@ export default function NavMenu(props) {
                       </a>
                     </li>
                     <li className="pt-1 pl-6 hover:bg-gray-200">
-                      <a href="javascript:void(0)" onClick={()=> handleMenu(3)} className="flex flex-row justify-between p-2 ">
+                      <a
+                        href="javascript:void(0)"
+                        onClick={() => MaintoSide(3)}
+                        className="flex flex-row justify-between p-2 "
+                      >
                         <div className="pl-0">Shoppie Appstore</div>
                         <div className="pr-3">
                           <FontAwesomeIcon
@@ -105,7 +155,11 @@ export default function NavMenu(props) {
                   </li>
                   <ul className="text-sm">
                     <li className="pt-1 pl-6 hover:bg-gray-200">
-                      <a href="javascript:void(0)" onClick={()=> handleMenu(4)} className="flex flex-row justify-between p-2 ">
+                      <a
+                        href="javascript:void(0)"
+                        onClick={() => MaintoSide(4)}
+                        className="flex flex-row justify-between p-2 "
+                      >
                         <div className="pl-0">Electronics</div>
                         <div className="pr-3">
                           <FontAwesomeIcon
@@ -116,7 +170,11 @@ export default function NavMenu(props) {
                       </a>
                     </li>
                     <li className="pt-1 pl-6 hover:bg-gray-200">
-                      <a href="javascript:void(0)" onClick={()=> handleMenu(5)} className="flex flex-row justify-between p-2">
+                      <a
+                        href="javascript:void(0)"
+                        onClick={() => MaintoSide(5)}
+                        className="flex flex-row justify-between p-2"
+                      >
                         <div className="pl-0">Computers</div>
                         <div className="pr-3">
                           <FontAwesomeIcon
@@ -127,7 +185,11 @@ export default function NavMenu(props) {
                       </a>
                     </li>
                     <li className="pt-1 pl-6 hover:bg-gray-200">
-                      <a href="javascript:void(0)" onClick={()=> handleMenu(6)} className="flex flex-row justify-between p-2 ">
+                      <a
+                        href="javascript:void(0)"
+                        onClick={() => MaintoSide(6)}
+                        className="flex flex-row justify-between p-2 "
+                      >
                         <div className="pl-0">Smart Home</div>
                         <div className="pr-3">
                           <FontAwesomeIcon
@@ -138,7 +200,11 @@ export default function NavMenu(props) {
                       </a>
                     </li>
                     <li className="pt-1 pb-1 pl-6 hover:bg-gray-200">
-                      <a href="javascript:void(0)" onClick={()=> handleMenu(7)} className="flex flex-row justify-between p-2 ">
+                      <a
+                        href="javascript:void(0)"
+                        onClick={() => MaintoSide(7)}
+                        className="flex flex-row justify-between p-2 "
+                      >
                         <div className="pl-0">Arts & Crafts</div>
                         <div className="pr-3">
                           <FontAwesomeIcon
@@ -148,17 +214,237 @@ export default function NavMenu(props) {
                         </div>
                       </a>
                     </li>
-                    <li className="pt-1 pb-1 pl-6 hover:bg-gray-200">
-                      <a href="" className="flex flex-row p-2 ">
-                        <div className="pl-0">See All</div>
+                    <ul id='ExpandableList' className="flex flex-col max-h-0 overflow-hidden" >
+                      <hr />
+                      <li className="pt-1 pb-1 pl-6 hover:bg-gray-200">
+                        <a href="" className="flex justify-between flex-row p-2 ">
+                          <div className="pl-0">Automotive</div>
+                          <div className="pl-2 pr-3">
+                            <FontAwesomeIcon
+                              icon={faArrowRight}
+                              className="text-gray-400 hover:text-black"
+                            />
+                          </div>
+                        </a>
+                      </li>
+                      <li className="pt-1 pb-1 pl-6 hover:bg-gray-200">
+                        <a href="" className="flex justify-between flex-row p-2 ">
+                          <div className="pl-0">Baby</div>
+                          <div className="pl-2 pr-3">
+                            <FontAwesomeIcon
+                              icon={faArrowRight}
+                              className="text-gray-400 hover:text-black"
+                            />
+                          </div>
+                        </a>
+                      </li>
+                      <li className="pt-1 pb-1 pl-6 hover:bg-gray-200">
+                        <a href="" className="flex justify-between flex-row p-2 ">
+                          <div className="pl-0">Automotive</div>
+                          <div className="pl-2 pr-3">
+                            <FontAwesomeIcon
+                              icon={faArrowRight}
+                              className="text-gray-400 hover:text-black"
+                            />
+                          </div>
+                        </a>
+                      </li>
+                      <li className="pt-1 pb-1 pl-6 hover:bg-gray-200">
+                        <a href="" className="flex justify-between flex-row p-2 ">
+                          <div className="pl-0">Beauty and personal care</div>
+                          <div className="pl-2 pr-3">
+                            <FontAwesomeIcon
+                              icon={faArrowRight}
+                              className="text-gray-400 hover:text-black"
+                            />
+                          </div>
+                        </a>
+                      </li>
+                      <li className="pt-1 pb-1 pl-6 hover:bg-gray-200">
+                        <a href="" className="flex justify-between flex-row p-2 ">
+                          <div className="pl-0">Women's Fashion</div>
+                          <div className="pl-2 pr-3">
+                            <FontAwesomeIcon
+                              icon={faArrowRight}
+                              className="text-gray-400 hover:text-black"
+                            />
+                          </div>
+                        </a>
+                      </li>
+                      <li className="pt-1 pb-1 pl-6 hover:bg-gray-200">
+                        <a href="" className="flex justify-between flex-row p-2 ">
+                          <div className="pl-0">Men's Fashion</div>
+                          <div className="pl-2 pr-3">
+                            <FontAwesomeIcon
+                              icon={faArrowRight}
+                              className="text-gray-400 hover:text-black"
+                            />
+                          </div>
+                        </a>
+                      </li>
+                      <li className="pt-1 pb-1 pl-6 hover:bg-gray-200">
+                        <a href="" className="flex justify-between flex-row p-2 ">
+                          <div className="pl-0">Girl's Fashion</div>
+                          <div className="pl-2 pr-3">
+                            <FontAwesomeIcon
+                              icon={faArrowRight}
+                              className="text-gray-400 hover:text-black"
+                            />
+                          </div>
+                        </a>
+                      </li>
+                      <li className="pt-1 pb-1 pl-6 hover:bg-gray-200">
+                        <a href="" className="flex justify-between flex-row p-2 ">
+                          <div className="pl-0">Boy's Fashion</div>
+                          <div className="pl-2 pr-3">
+                            <FontAwesomeIcon
+                              icon={faArrowRight}
+                              className="text-gray-400 hover:text-black"
+                            />
+                          </div>
+                        </a>
+                      </li>
+                      <li className="pt-1 pb-1 pl-6 hover:bg-gray-200">
+                        <a href="" className="flex justify-between flex-row p-2 ">
+                          <div className="pl-0">Health and Houseold</div>
+                          <div className="pl-2 pr-3">
+                            <FontAwesomeIcon
+                              icon={faArrowRight}
+                              className="text-gray-400 hover:text-black"
+                            />
+                          </div>
+                        </a>
+                      </li>
+                      <li className="pt-1 pb-1 pl-6 hover:bg-gray-200">
+                        <a href="" className="flex justify-between flex-row p-2 ">
+                          <div className="pl-0">Home and Kitchen</div>
+                          <div className="pl-2 pr-3">
+                            <FontAwesomeIcon
+                              icon={faArrowRight}
+                              className="text-gray-400 hover:text-black"
+                            />
+                          </div>
+                        </a>
+                      </li>
+                      <li className="pt-1 pb-1 pl-6 hover:bg-gray-200">
+                        <a href="" className="flex justify-between flex-row p-2 ">
+                          <div className="pl-0">Home and Kitchen</div>
+                          <div className="pl-2 pr-3">
+                            <FontAwesomeIcon
+                              icon={faArrowRight}
+                              className="text-gray-400 hover:text-black"
+                            />
+                          </div>
+                        </a>
+                      </li>
+                      <li className="pt-1 pb-1 pl-6 hover:bg-gray-200">
+                        <a href="" className="flex justify-between flex-row p-2 ">
+                          <div className="pl-0">Industrial and Scientific</div>
+                          <div className="pl-2 pr-3">
+                            <FontAwesomeIcon
+                              icon={faArrowRight}
+                              className="text-gray-400 hover:text-black"
+                            />
+                          </div>
+                        </a>
+                      </li>
+                      <li className="pt-1 pb-1 pl-6 hover:bg-gray-200">
+                        <a href="" className="flex justify-between flex-row p-2 ">
+                          <div className="pl-0">Luggage</div>
+                          <div className="pl-2 pr-3">
+                            <FontAwesomeIcon
+                              icon={faArrowRight}
+                              className="text-gray-400 hover:text-black"
+                            />
+                          </div>
+                        </a>
+                      </li>
+                      <li className="pt-1 pb-1 pl-6 hover:bg-gray-200">
+                        <a href="" className="flex justify-between flex-row p-2 ">
+                          <div className="pl-0">Movies & Television</div>
+                          <div className="pl-2 pr-3">
+                            <FontAwesomeIcon
+                              icon={faArrowRight}
+                              className="text-gray-400 hover:text-black"
+                            />
+                          </div>
+                        </a>
+                      </li>
+                      <li className="pt-1 pb-1 pl-6 hover:bg-gray-200">
+                        <a href="" className="flex justify-between flex-row p-2 ">
+                          <div className="pl-0">Pet supplies</div>
+                          <div className="pl-2 pr-3">
+                            <FontAwesomeIcon
+                              icon={faArrowRight}
+                              className="text-gray-400 hover:text-black"
+                            />
+                          </div>
+                        </a>
+                      </li>
+                      <li className="pt-1 pb-1 pl-6 hover:bg-gray-200">
+                        <a href="" className="flex justify-between flex-row p-2 ">
+                          <div className="pl-0">Software</div>
+                          <div className="pl-2 pr-3">
+                            <FontAwesomeIcon
+                              icon={faArrowRight}
+                              className="text-gray-400 hover:text-black"
+                            />
+                          </div>
+                        </a>
+                      </li>
+                      <li className="pt-1 pb-1 pl-6 hover:bg-gray-200">
+                        <a href="" className="flex justify-between flex-row p-2 ">
+                          <div className="pl-0">Sports and Outdoors</div>
+                          <div className="pl-2 pr-3">
+                            <FontAwesomeIcon
+                              icon={faArrowRight}
+                              className="text-gray-400 hover:text-black"
+                            />
+                          </div>
+                        </a>
+                      </li>
+                      <li className="pt-1 pb-1 pl-6 hover:bg-gray-200">
+                        <a href="" className="flex justify-between flex-row p-2 ">
+                          <div className="pl-0">Tools & Home Improvement</div>
+                          <div className="pl-2 pr-3">
+                            <FontAwesomeIcon
+                              icon={faArrowRight}
+                              className="text-gray-400 hover:text-black"
+                            />
+                          </div>
+                        </a>
+                      </li>
+                      <li className="pt-1 pb-1 pl-6 hover:bg-gray-200">
+                        <a href="" className="flex justify-between flex-row p-2 ">
+                          <div className="pl-0">Toys and Games</div>
+                          <div className="pl-2 pr-3">
+                            <FontAwesomeIcon
+                              icon={faArrowRight}
+                              className="text-gray-400 hover:text-black"
+                            />
+                          </div>
+                        </a>
+                      </li>
+                      <li className="pt-1 pb-1 pl-6 hover:bg-gray-200">
+                        <a href="" className="flex justify-between flex-row p-2 ">
+                          <div className="pl-0">Video Games</div>
+                          <div className="pl-2 pr-3">
+                            <FontAwesomeIcon
+                              icon={faArrowRight}
+                              className="text-gray-400 hover:text-black"
+                            />
+                          </div>
+                        </a>
+                      </li>
+                    </ul>
+                    <li className="pt-1 pb-1 pl-6 hover:bg-gray-200" id="ExlToggler">
+                      <a href="javascript:void(0)" className="flex flex-row p-2 ">
+                        <div className="pl-0">See {AlLs}</div>
                         <div className="pl-2">
-                          <FontAwesomeIcon
-                            icon={faArrowDown}
-                            className="text-gray-400 hover:text-black"
-                          />
+                          {ArrowState}
                         </div>
                       </a>
-                    </li>
+                    </li>                  
                   </ul>
                   <hr />
                   <li className="pl-8 pt-4 text-lg">
@@ -249,12 +535,12 @@ export default function NavMenu(props) {
               </div>
               <div
                 id="Menu1"
-                style={{ display:'none', height: "93.5%" }}
+                style={{ display: "none", height: "93.5%", zIndex:'70'}}
                 className="absolute left-96 overflow-y-scroll overflow-x-scroll w-full bg-white"
               >
                 <ul className="text-sm mt-2">
                   <li className="pt-2 pb-1 hover:bg-gray-200">
-                    <a href="" className="flex p-2 ">
+                    <a href="javascript:void(0)" onClick={()=> Back2Main(1)} className="flex p-2">
                       <div className="pl-6">
                         <FontAwesomeIcon
                           icon={faArrowLeft}
@@ -303,12 +589,12 @@ export default function NavMenu(props) {
               </div>
               <div
                 id="Menu2"
-                style={{ display:'none', height: "93.5%" }}
+                style={{ display: "none", height: "93.5%" }}
                 className="absolute left-96 overflow-y-scroll overflow-x-scroll w-full bg-white"
               >
                 <ul className="text-sm mt-2">
                   <li className="pt-2 pb-1 hover:bg-gray-200">
-                    <a href="" className="flex p-2 ">
+                    <a href="javascript:void(0)" className="flex p-2 " onClick={()=> Back2Main(2)}>
                       <div className="pl-6">
                         <FontAwesomeIcon
                           icon={faArrowLeft}
@@ -411,7 +697,9 @@ export default function NavMenu(props) {
                     </li>
                     <li className="pt-1 hover:bg-gray-200">
                       <a href="" className="flex flex-row p-2 ">
-                        <div className="pl-6">Manage Your Content and Devices</div>
+                        <div className="pl-6">
+                          Manage Your Content and Devices
+                        </div>
                       </a>
                     </li>
                     <li className="pt-1 hover:bg-gray-200">
@@ -419,17 +707,17 @@ export default function NavMenu(props) {
                         <div className="pl-6">Trade-In</div>
                       </a>
                     </li>
-                     </ul>
+                  </ul>
                 </ul>
               </div>
               <div
                 id="Menu3"
-                style={{ height: "93.5%", display:'none' }}
+                style={{ height: "93.5%", display: "none" }}
                 className="absolute left-96 overflow-y-scroll overflow-x-scroll w-full bg-white"
               >
                 <ul className="text-sm mt-2">
                   <li className="pt-2 pb-1 hover:bg-gray-200">
-                    <a href="" className="flex p-2 ">
+                    <a href="javascript:void(0)" className="flex p-2 " onClick={()=> Back2Main(3)}>
                       <div className="pl-6">
                         <FontAwesomeIcon
                           icon={faArrowLeft}
@@ -483,12 +771,12 @@ export default function NavMenu(props) {
               </div>
               <div
                 id="Menu4"
-                style={{ height: "93.5%", display:'none' }}
+                style={{ height: "93.5%", display: "none" }}
                 className="absolute left-96 overflow-y-scroll overflow-x-scroll w-full bg-white"
               >
                 <ul className="text-sm mt-2">
                   <li className="pt-2 pb-1 hover:bg-gray-200">
-                    <a href="" className="flex p-2 ">
+                    <a href="javascript:void(0)" className="flex p-2 " onClick={()=> Back2Main(4)}>
                       <div className="pl-6">
                         <FontAwesomeIcon
                           icon={faArrowLeft}
@@ -501,7 +789,7 @@ export default function NavMenu(props) {
                     </a>
                   </li>
                 </ul>
-                <hr/>
+                <hr />
                 <ul className="pb-8">
                   <li className="pl-8 pt-4 text-lg">
                     <b>Electronics</b>
@@ -574,7 +862,9 @@ export default function NavMenu(props) {
                     </li>
                     <li className="pt-1 hover:bg-gray-200">
                       <a href="" className="flex flex-row p-2 ">
-                        <span className="pl-6">Video Game Consoles & Accessories</span>
+                        <span className="pl-6">
+                          Video Game Consoles & Accessories
+                        </span>
                       </a>
                     </li>
                     <li className="pt-1 hover:bg-gray-200">
@@ -589,7 +879,9 @@ export default function NavMenu(props) {
                     </li>
                     <li className="pt-1 hover:bg-gray-200">
                       <a href="" className="flex flex-row p-2 ">
-                        <span className="pl-6">eBook Readers & Accessories</span>
+                        <span className="pl-6">
+                          eBook Readers & Accessories
+                        </span>
                       </a>
                     </li>
                   </ul>
@@ -597,12 +889,12 @@ export default function NavMenu(props) {
               </div>
               <div
                 id="Menu5"
-                style={{ height: "93.5%", display:'none' }}
+                style={{ height: "93.5%", display: "none" }}
                 className="absolute left-96 overflow-y-scroll overflow-x-scroll w-full bg-white"
               >
                 <ul className="text-sm mt-2">
                   <li className="pt-2 pb-1 hover:bg-gray-200">
-                    <a href="" className="flex p-2 ">
+                    <a href="javascript:void(0)" className="flex p-2 " onClick={()=> Back2Main(5)}>
                       <div className="pl-6">
                         <FontAwesomeIcon
                           icon={faArrowLeft}
@@ -615,7 +907,7 @@ export default function NavMenu(props) {
                     </a>
                   </li>
                 </ul>
-                <hr/>
+                <hr />
                 <ul className="pb-8">
                   <li className="pl-8 pt-4 text-lg">
                     <b>Computers</b>
@@ -623,7 +915,9 @@ export default function NavMenu(props) {
                   <ul className="text-sm">
                     <li className="pt-1 hover:bg-gray-200">
                       <a href="" className="flex flex-row p-2">
-                        <span className="pl-6">Computer Accessories & Peripherals</span>
+                        <span className="pl-6">
+                          Computer Accessories & Peripherals
+                        </span>
                       </a>
                     </li>
                     <li className="pt-1 hover:bg-gray-200">
@@ -663,7 +957,9 @@ export default function NavMenu(props) {
                     </li>
                     <li className="pt-1 hover:bg-gray-200">
                       <a href="" className="flex flex-row p-2 ">
-                        <span className="pl-6">Power Stripe & Surge Protectors</span>
+                        <span className="pl-6">
+                          Power Stripe & Surge Protectors
+                        </span>
                       </a>
                     </li>
                     <li className="pt-1 hover:bg-gray-200">
@@ -701,12 +997,12 @@ export default function NavMenu(props) {
               </div>
               <div
                 id="Menu6"
-                style={{ height: "93.5%", display:'none' }}
+                style={{ height: "93.5%", display: "none" }}
                 className="absolute left-96 overflow-y-scroll overflow-x-scroll w-full bg-white"
               >
                 <ul className="text-sm mt-2">
                   <li className="pt-2 pb-1 hover:bg-gray-200">
-                    <a href="" className="flex p-2 ">
+                    <a href="javascript:void(6)" className="flex p-2 " onClick={()=> Back2Main(6)}>
                       <div className="pl-6">
                         <FontAwesomeIcon
                           icon={faArrowLeft}
@@ -719,7 +1015,7 @@ export default function NavMenu(props) {
                     </a>
                   </li>
                 </ul>
-                <hr/>
+                <hr />
                 <ul className="pb-8">
                   <li className="pl-8 pt-4 text-lg">
                     <b>Smart Home</b>
@@ -747,7 +1043,9 @@ export default function NavMenu(props) {
                     </li>
                     <li className="pt-1 hover:bg-gray-200">
                       <a href="" className="flex flex-row p-2 ">
-                        <span className="pl-6">Security Cameras and Systems</span>
+                        <span className="pl-6">
+                          Security Cameras and Systems
+                        </span>
                       </a>
                     </li>
                     <li className="pt-1 hover:bg-gray-200">
@@ -815,12 +1113,12 @@ export default function NavMenu(props) {
               </div>
               <div
                 id="Menu7"
-                style={{ height: "93.5%", display:'none' }}
+                style={{ height: "93.5%", display: "none" }}
                 className="absolute left-96 overflow-y-scroll overflow-x-scroll w-full bg-white"
               >
                 <ul className="text-sm mt-2">
                   <li className="pt-2 pb-1 hover:bg-gray-200">
-                    <a href="" className="flex p-2 ">
+                    <a href="javascript:void(0)" className="flex p-2 " onClick={()=> Back2Main(7)}>
                       <div className="pl-6">
                         <FontAwesomeIcon
                           icon={faArrowLeft}
@@ -833,7 +1131,7 @@ export default function NavMenu(props) {
                     </a>
                   </li>
                 </ul>
-                <hr/>
+                <hr />
                 <ul className="pb-8">
                   <li className="pl-8 pt-4 text-lg">
                     <b>Arts & Crafts</b>
@@ -841,7 +1139,9 @@ export default function NavMenu(props) {
                   <ul className="text-sm">
                     <li className="pt-1 hover:bg-gray-200">
                       <a href="" className="flex flex-row p-2">
-                        <span className="pl-6">Painting, Drawing & Art Supplies</span>
+                        <span className="pl-6">
+                          Painting, Drawing & Art Supplies
+                        </span>
                       </a>
                     </li>
                     <li className="pt-1 hover:bg-gray-200">
@@ -876,7 +1176,9 @@ export default function NavMenu(props) {
                     </li>
                     <li className="pt-1 hover:bg-gray-200">
                       <a href="" className="flex flex-row p-2 ">
-                        <span className="pl-6">Oraganization, Storage & Transport</span>
+                        <span className="pl-6">
+                          Oraganization, Storage & Transport
+                        </span>
                       </a>
                     </li>
                     <li className="pt-1 hover:bg-gray-200">
@@ -896,7 +1198,9 @@ export default function NavMenu(props) {
                     </li>
                     <li className="pt-1 hover:bg-gray-200">
                       <a href="" className="flex flex-row p-2 ">
-                        <span className="pl-6">Party Decorations & Supplies</span>
+                        <span className="pl-6">
+                          Party Decorations & Supplies
+                        </span>
                       </a>
                     </li>
                     <li className="pt-1 hover:bg-gray-200">
