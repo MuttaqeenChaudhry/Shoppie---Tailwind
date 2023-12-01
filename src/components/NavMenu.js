@@ -1,6 +1,8 @@
 import {
   faArrowDown,
+  faArrowLeft,
   faArrowRight,
+  faArrowsLeftRight,
   faClose,
   faGlobe,
   faUserCircle,
@@ -9,6 +11,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useEffect } from "react";
 
 export default function NavMenu(props) {
+  useEffect(()=>{
+    console.log("NavMenu")
+  },[])
   return (
     <>
       <div
@@ -49,13 +54,13 @@ export default function NavMenu(props) {
                     <b>Digital Content and Devices</b>
                   </li>
                   <ul className="text-sm">
-                    <li className="pt-1 pl-6 hover:bg-gray-200">
+                    <li className="pt-1 pl-6 hover:bg-gray-200 hover:text-black">
                       <a href="" className="flex flex-row justify-between p-2 ">
                         <div className="pl-0">Shoppie Music</div>
-                        <div className="pr-3">
+                        <div className="pr-3 hover:text-black">
                           <FontAwesomeIcon
                             icon={faArrowRight}
-                            className="text-gray-400 hover:text-black"
+                            className="text-gray-400"
                           />
                         </div>
                       </a>
@@ -235,39 +240,53 @@ export default function NavMenu(props) {
                 style={{ height: "93.5%" }}
                 className="absolute left-96 overflow-y-scroll overflow-x-scroll w-full bg-white"
               >
+                <ul className="text-sm mt-2">
+                  <li className="pt-2 pb-1 hover:bg-gray-200">
+                    <a href="" className="flex p-2 ">
+                      <div className="pl-6">
+                        <FontAwesomeIcon
+                          icon={faArrowLeft}
+                          className="text-gray-400 hover:text-black"
+                        />
+                      </div>
+                      <div className="pl-2">
+                        <b>Main Menu</b>
+                      </div>
+                    </a>
+                  </li>
+                </ul>
+                <hr />
                 <ul>
                   <li className="pl-8 pt-4 text-lg">
                     <b>Stream Music</b>
                   </li>
                   <ul className="text-sm">
-                    <li className="pt-1 pl-6 hover:bg-gray-200">
-                      <a href="" className="flex flex-row justify-between p-2 ">
-                        <div className="pl-0">Shoppie Music Unlimited</div>
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="" className="flex flex-row p-2 ">
+                        <div className="pl-6">Shoppie Music Unlimited</div>
                       </a>
                     </li>
-                    <li className="pt-1 pl-6 hover:bg-gray-200">
-                      <a href="" className="flex flex-row justify-between p-2 ">
-                        <div className="pl-0">Free Streaming Music</div>
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="" className="flex flex-row p-2 ">
+                        <div className="pl-6">Free Streaming Music</div>
                       </a>
                     </li>
-                    <li className="pt-1 pl-6 hover:bg-gray-200">
-                      <a href="" className="flex flex-row justify-between p-2 ">
-                        <div className="pl-0">Podcasts</div>
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="" className="flex flex-row p-2 ">
+                        <div className="pl-6">Podcasts</div>
                       </a>
                     </li>
-                    <li className="pt-1 pl-6 hover:bg-gray-200">
-                      <a href="" className="flex flex-row justify-between p-2 ">
-                        <div className="pl-0">Open Web Player</div>
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="" className="flex flex-row p-2 ">
+                        <div className="pl-6">Open Web Player</div>
                       </a>
                     </li>
-                    <li className="pt-1 pl-6 hover:bg-gray-200">
-                      <a href="" className="flex flex-row justify-between p-2 ">
-                        <div className="pl-0">Download the app</div>
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="" className="flex flex-row p-2 ">
+                        <div className="pl-6">Download the app</div>
                       </a>
                     </li>
-                    
                   </ul>
-                  <hr />
                 </ul>
               </div>
             </div>
