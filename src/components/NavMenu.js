@@ -2,7 +2,6 @@ import {
   faArrowDown,
   faArrowLeft,
   faArrowRight,
-  faArrowsLeftRight,
   faClose,
   faGlobe,
   faUserCircle,
@@ -11,9 +10,20 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useEffect } from "react";
 
 export default function NavMenu(props) {
-  useEffect(()=>{
-    console.log("NavMenu")
-  },[])
+  const handleMenu = (menuId) => {
+    const MainMenu = document.getElementById('HamBurgMenu');
+    const TheMenu = document.getElementById(`Menu${menuId}`);
+    TheMenu.style.display = 'block';
+    MainMenu.classList.add('animate-rtl');
+    setTimeout(()=>{
+      MainMenu.classList.add('-left-96');
+    },295)
+    TheMenu.classList.add('animate-rtl');
+    setTimeout(() => {
+      TheMenu.classList.remove('left-96');
+    }, 295);
+    
+  }
   return (
     <>
       <div
@@ -27,7 +37,7 @@ export default function NavMenu(props) {
         >
           <FontAwesomeIcon icon={faClose} size={"2xl"} color="white" />
         </div>
-        <div className="flex border border-red-700">
+        <div className="flex">
           <div className=" w-24 h-screen animate-ltr bg-white">
             <div
               style={{ height: "6.5%" }}
@@ -44,8 +54,9 @@ export default function NavMenu(props) {
                 </div>
               </a>
             </div>
-            <div className="relative border border-yellow-400 flex w-full h-full">
+            <div className="relative flex w-full h-full overflow-hidden">
               <div
+                id='HamBurgMenu'
                 style={{ height: "93.5%" }}
                 className="absolute overflow-y-scroll overflow-x-scroll w-full"
               >
@@ -55,7 +66,7 @@ export default function NavMenu(props) {
                   </li>
                   <ul className="text-sm">
                     <li className="pt-1 pl-6 hover:bg-gray-200 hover:text-black">
-                      <a href="" className="flex flex-row justify-between p-2 ">
+                      <a href="javascript:void(0)" onClick={() => handleMenu(1)} className="flex flex-row justify-between p-2 cursor-pointer ">
                         <div className="pl-0">Shoppie Music</div>
                         <div className="pr-3 hover:text-black">
                           <FontAwesomeIcon
@@ -66,7 +77,7 @@ export default function NavMenu(props) {
                       </a>
                     </li>
                     <li className="pt-1 pl-6 hover:bg-gray-200">
-                      <a href="" className="flex flex-row justify-between p-2">
+                      <a href="javascript:void(0)" onClick={()=> handleMenu(2)} className="flex flex-row justify-between p-2 cursor-pointer">
                         <div className="pl-0">Mindle E-readers & Books</div>
                         <div className="pr-3">
                           <FontAwesomeIcon
@@ -77,7 +88,7 @@ export default function NavMenu(props) {
                       </a>
                     </li>
                     <li className="pt-1 pl-6 hover:bg-gray-200">
-                      <a href="" className="flex flex-row justify-between p-2 ">
+                      <a href="javascript:void(0)" onClick={()=> handleMenu(3)} className="flex flex-row justify-between p-2 ">
                         <div className="pl-0">Shoppie Appstore</div>
                         <div className="pr-3">
                           <FontAwesomeIcon
@@ -237,7 +248,8 @@ export default function NavMenu(props) {
                 </ul>
               </div>
               <div
-                style={{ height: "93.5%" }}
+                id="Menu1"
+                style={{ display:'none', height: "93.5%" }}
                 className="absolute left-96 overflow-y-scroll overflow-x-scroll w-full bg-white"
               >
                 <ul className="text-sm mt-2">
@@ -284,6 +296,186 @@ export default function NavMenu(props) {
                     <li className="pt-1 hover:bg-gray-200">
                       <a href="" className="flex flex-row p-2 ">
                         <div className="pl-6">Download the app</div>
+                      </a>
+                    </li>
+                  </ul>
+                </ul>
+              </div>
+              <div
+                id="Menu2"
+                style={{ display:'none', height: "93.5%" }}
+                className="absolute left-96 overflow-y-scroll overflow-x-scroll w-full bg-white"
+              >
+                <ul className="text-sm mt-2">
+                  <li className="pt-2 pb-1 hover:bg-gray-200">
+                    <a href="" className="flex p-2 ">
+                      <div className="pl-6">
+                        <FontAwesomeIcon
+                          icon={faArrowLeft}
+                          className="text-gray-400 hover:text-black"
+                        />
+                      </div>
+                      <div className="pl-2">
+                        <b>Main Menu</b>
+                      </div>
+                    </a>
+                  </li>
+                </ul>
+                <hr />
+                <ul>
+                  <li className="pl-8 pt-4 text-lg">
+                    <b>Mindle E-Readers</b>
+                  </li>
+                  <ul className="text-sm pb-1">
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="" className="flex flex-row p-2 ">
+                        <div className="pl-6">Mindle Kids</div>
+                      </a>
+                    </li>
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="" className="flex flex-row p-2 ">
+                        <div className="pl-6">Mindle</div>
+                      </a>
+                    </li>
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="" className="flex flex-row p-2 ">
+                        <div className="pl-6">Mindle Paperwhite Kids</div>
+                      </a>
+                    </li>
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="" className="flex flex-row p-2 ">
+                        <div className="pl-6">Mindle Paperwhite</div>
+                      </a>
+                    </li>
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="" className="flex flex-row p-2 ">
+                        <div className="pl-6">Mindle Oasis</div>
+                      </a>
+                    </li>
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="" className="flex flex-row p-2 ">
+                        <div className="pl-6">Mindle Scribe</div>
+                      </a>
+                    </li>
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="" className="flex flex-row p-2 ">
+                        <div className="pl-6">Accessories</div>
+                      </a>
+                    </li>
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="" className="flex flex-row p-2 ">
+                        <div className="pl-6">See all Mindle E-Readers</div>
+                      </a>
+                    </li>
+                  </ul>
+                  <hr />
+                  <li className="pl-8 pt-4 text-lg">
+                    <b>Mindle Store</b>
+                  </li>
+                  <ul className="text-sm pb-1">
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="" className="flex flex-row p-2 ">
+                        <div className="pl-6">Mindle Books</div>
+                      </a>
+                    </li>
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="" className="flex flex-row p-2 ">
+                        <div className="pl-6">Mindle Unlimited</div>
+                      </a>
+                    </li>
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="" className="flex flex-row p-2 ">
+                        <div className="pl-6">Prime Reading</div>
+                      </a>
+                    </li>
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="" className="flex flex-row p-2 ">
+                        <div className="pl-6">Mindle Vella</div>
+                      </a>
+                    </li>
+                  </ul>
+                  <hr />
+                  <li className="pl-8 pt-4 text-lg">
+                    <b>Apps & Resources</b>
+                  </li>
+                  <ul className="text-sm pb-7">
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="" className="flex flex-row p-2 ">
+                        <div className="pl-6">Free Mindle Reading Apps</div>
+                      </a>
+                    </li>
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="" className="flex flex-row p-2 ">
+                        <div className="pl-6">Mindle for Web</div>
+                      </a>
+                    </li>
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="" className="flex flex-row p-2 ">
+                        <div className="pl-6">Manage Your Content and Devices</div>
+                      </a>
+                    </li>
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="" className="flex flex-row p-2 ">
+                        <div className="pl-6">Trade-In</div>
+                      </a>
+                    </li>
+                     </ul>
+                </ul>
+              </div>
+              <div
+                id="Menu3"
+                style={{ height: "93.5%", display:'none' }}
+                className="absolute left-96 overflow-y-scroll overflow-x-scroll w-full bg-white"
+              >
+                <ul className="text-sm mt-2">
+                  <li className="pt-2 pb-1 hover:bg-gray-200">
+                    <a href="" className="flex p-2 ">
+                      <div className="pl-6">
+                        <FontAwesomeIcon
+                          icon={faArrowLeft}
+                          className="text-gray-400 hover:text-black"
+                        />
+                      </div>
+                      <div className="pl-2">
+                        <b>Main Menu</b>
+                      </div>
+                    </a>
+                  </li>
+                </ul>
+                <hr />
+                <ul>
+                  <li className="pl-8 pt-4 text-lg">
+                    <b>Shoppie Appstore</b>
+                  </li>
+                  <ul className="text-sm">
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="" className="flex flex-row p-2 ">
+                        <div className="pl-6">All Apps and Games</div>
+                      </a>
+                    </li>
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="" className="flex flex-row p-2 ">
+                        <div className="pl-6">Games</div>
+                      </a>
+                    </li>
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="" className="flex flex-row p-2 ">
+                        <div className="pl-6">Shoppie Coins</div>
+                      </a>
+                    </li>
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="" className="flex flex-row p-2 ">
+                        <div className="pl-6">Download Shoppie Appstore</div>
+                      </a>
+                    </li>
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="" className="flex flex-row p-2 ">
+                        <div className="pl-6">Shoppie Apps</div>
+                      </a>
+                    </li>
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="" className="flex flex-row p-2 ">
+                        <div className="pl-6">Your Apps and Subscriptions</div>
                       </a>
                     </li>
                   </ul>

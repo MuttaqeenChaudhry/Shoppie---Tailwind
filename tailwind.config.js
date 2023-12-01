@@ -22,7 +22,8 @@ module.exports = {
       animation : {
         fadeIn : 'fadeIn 1s ease-in',
         fadeOut : 'fadeOut 1s ease-in',
-        ltr : 'ltr 0.5s ease-in-out'
+        ltr : 'ltr 0.3s ease-in-out',
+        rtl : 'rtl 0.3s ease-in-out'
       },
       keyframes : {
         ltr : {
@@ -32,7 +33,14 @@ module.exports = {
           '100%' : {
             transform : 'translateX(0px)'
           }
-
+        },
+        rtl : {
+          '0%' : {
+            transform : 'translateX(0px)'
+          },
+          '100%' : {
+            transform : 'translateX(-384px)'
+          }
         },
         fadeIn : {
           '0%' : {
