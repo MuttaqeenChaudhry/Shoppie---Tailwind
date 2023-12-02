@@ -23,7 +23,7 @@ export default function NavMenu(props) {
   const[ArrowState, setArrowState] = useState(Down);
 
   const MaintoSide = (menuId) => {
-    const MainMenu = document.getElementById("HamBurgMenu");
+    const MainMenu = document.getElementById("MainMenu");
     const SideMenu = document.getElementById(`Menu${menuId}`);
     SideMenu.style.display = "block";
     MainMenu.classList.remove('animate-ltr2');
@@ -37,7 +37,7 @@ export default function NavMenu(props) {
   };
 
   const Back2Main = (menuId) => {
-    const MainMenu = document.getElementById("HamBurgMenu");
+    const MainMenu = document.getElementById("MainMenu");
     const SideMenu = document.getElementById(`Menu${menuId}`);
     MainMenu.classList.add('animate-ltr2');
     MainMenu.classList.remove("animate-rtl384");
@@ -92,9 +92,9 @@ export default function NavMenu(props) {
                 </div>
               </a>
             </div>
-            <div className="relative flex w-full h-full overflow-hidden">
+            <div className="relative flex w-full h-full">
               <div
-                id="HamBurgMenu"
+                id="MainMenu"
                 style={{ height: "93.5%" }}
                 className="absolute overflow-y-scroll overflow-x-scroll w-full"
               >
@@ -217,7 +217,7 @@ export default function NavMenu(props) {
                     <ul id='ExpandableList' className="flex flex-col max-h-0 overflow-hidden" >
                       <hr />
                       <li className="pt-1 pb-1 pl-6 hover:bg-gray-200">
-                        <a href="" className="flex justify-between flex-row p-2 ">
+                        <a href="javascript:void(0)" onClick={()=> MaintoSide(8)} className="flex justify-between flex-row p-2 ">
                           <div className="pl-0">Automotive</div>
                           <div className="pl-2 pr-3">
                             <FontAwesomeIcon
@@ -228,7 +228,7 @@ export default function NavMenu(props) {
                         </a>
                       </li>
                       <li className="pt-1 pb-1 pl-6 hover:bg-gray-200">
-                        <a href="" className="flex justify-between flex-row p-2 ">
+                        <a href="javascript:void(0)" onClick={()=> MaintoSide(9)} className="flex justify-between flex-row p-2 ">
                           <div className="pl-0">Baby</div>
                           <div className="pl-2 pr-3">
                             <FontAwesomeIcon
@@ -239,18 +239,7 @@ export default function NavMenu(props) {
                         </a>
                       </li>
                       <li className="pt-1 pb-1 pl-6 hover:bg-gray-200">
-                        <a href="" className="flex justify-between flex-row p-2 ">
-                          <div className="pl-0">Automotive</div>
-                          <div className="pl-2 pr-3">
-                            <FontAwesomeIcon
-                              icon={faArrowRight}
-                              className="text-gray-400 hover:text-black"
-                            />
-                          </div>
-                        </a>
-                      </li>
-                      <li className="pt-1 pb-1 pl-6 hover:bg-gray-200">
-                        <a href="" className="flex justify-between flex-row p-2 ">
+                        <a href="javascript:void(0)" onClick={()=> MaintoSide(10)} className="flex justify-between flex-row p-2 ">
                           <div className="pl-0">Beauty and personal care</div>
                           <div className="pl-2 pr-3">
                             <FontAwesomeIcon
@@ -307,17 +296,6 @@ export default function NavMenu(props) {
                       <li className="pt-1 pb-1 pl-6 hover:bg-gray-200">
                         <a href="" className="flex justify-between flex-row p-2 ">
                           <div className="pl-0">Health and Houseold</div>
-                          <div className="pl-2 pr-3">
-                            <FontAwesomeIcon
-                              icon={faArrowRight}
-                              className="text-gray-400 hover:text-black"
-                            />
-                          </div>
-                        </a>
-                      </li>
-                      <li className="pt-1 pb-1 pl-6 hover:bg-gray-200">
-                        <a href="" className="flex justify-between flex-row p-2 ">
-                          <div className="pl-0">Home and Kitchen</div>
                           <div className="pl-2 pr-3">
                             <FontAwesomeIcon
                               icon={faArrowRight}
@@ -1206,6 +1184,302 @@ export default function NavMenu(props) {
                     <li className="pt-1 hover:bg-gray-200">
                       <a href="" className="flex flex-row p-2 ">
                         <span className="pl-6">Gift Wrapping Supplies</span>
+                      </a>
+                    </li>
+                  </ul>
+                </ul>
+              </div>
+              <div
+                id="Menu8"
+                style={{ height: "93.5%", display: "none" }}
+                className="absolute left-96 overflow-y-scroll overflow-x-scroll w-full bg-white"
+              >
+                <ul className="text-sm mt-2">
+                  <li className="pt-2 pb-1 hover:bg-gray-200">
+                    <a href="javascript:void(0)" className="flex p-2 " onClick={()=> Back2Main(8)}>
+                      <div className="pl-6">
+                        <FontAwesomeIcon
+                          icon={faArrowLeft}
+                          className="text-gray-400 hover:text-black"
+                        />
+                      </div>
+                      <div className="pl-2">
+                        <b>Main Menu</b>
+                      </div>
+                    </a>
+                  </li>
+                </ul>
+                <hr />
+                <ul className="pb-8">
+                  <li className="pl-8 pt-4 text-lg">
+                    <b>Autmotive</b>
+                  </li>
+                  <ul className="text-sm">
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="" className="flex flex-row p-2">
+                        <span className="pl-6">
+                          Car Care
+                        </span>
+                      </a>
+                    </li>
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="" className="flex flex-row p-2 ">
+                        <span className="pl-6">Car Electronics & Accessories</span>
+                      </a>
+                    </li>
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="" className="flex flex-row p-2 ">
+                        <span className="pl-6">Exterior Accessories</span>
+                      </a>
+                    </li>
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="" className="flex flex-row p-2 ">
+                        <span className="pl-6">Interior Accessories</span>
+                      </a>
+                    </li>
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="" className="flex flex-row p-2 ">
+                        <span className="pl-6">Lights & Lightning Accessories</span>
+                      </a>
+                    </li>
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="" className="flex flex-row p-2 ">
+                        <span className="pl-6">Motorcycle & Powersports</span>
+                      </a>
+                    </li>
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="" className="flex flex-row p-2 ">
+                        <span className="pl-6">Oils & Fluids</span>
+                      </a>
+                    </li>
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="" className="flex flex-row p-2 ">
+                        <span className="pl-6">
+                          Paint & Paint Supplies
+                        </span>
+                      </a>
+                    </li>
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="" className="flex flex-row p-2 ">
+                        <span className="pl-6">Performance Parts & Accessories</span>
+                      </a>
+                    </li>
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="" className="flex flex-row p-2 ">
+                        <span className="pl-6">Replacement Parts</span>
+                      </a>
+                    </li>
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="" className="flex flex-row p-2 ">
+                        <span className="pl-6">RV Parts & Accessories</span>
+                      </a>
+                    </li>
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="" className="flex flex-row p-2 ">
+                        <span className="pl-6">
+                          Tires & Wheels
+                        </span>
+                      </a>
+                    </li>
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="" className="flex flex-row p-2 ">
+                        <span className="pl-6">Tools & Equipment</span>
+                      </a>
+                    </li>
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="" className="flex flex-row p-2 ">
+                        <span className="pl-6">Autmotive Enthusiast Merchandise</span>
+                      </a>
+                    </li>
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="" className="flex flex-row p-2 ">
+                        <span className="pl-6">Heavy Duty & Commercial Vehicle Equipment</span>
+                      </a>
+                    </li>
+                  </ul>
+                </ul>
+              </div>
+              <div
+                id="Menu9"
+                style={{ height: "93.5%", display: "none" }}
+                className="absolute left-96 overflow-y-scroll overflow-x-scroll w-full bg-white"
+              >
+                <ul className="text-sm mt-2">
+                  <li className="pt-2 pb-1 hover:bg-gray-200">
+                    <a href="javascript:void(0)" className="flex p-2 " onClick={()=> Back2Main(9)}>
+                      <div className="pl-6">
+                        <FontAwesomeIcon
+                          icon={faArrowLeft}
+                          className="text-gray-400 hover:text-black"
+                        />
+                      </div>
+                      <div className="pl-2">
+                        <b>Main Menu</b>
+                      </div>
+                    </a>
+                  </li>
+                </ul>
+                <hr />
+                <ul className="pb-8">
+                  <li className="pl-8 pt-4 text-lg">
+                    <b>Baby</b>
+                  </li>
+                  <ul className="text-sm">
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="" className="flex flex-row p-2 ">
+                        <span className="pl-6">Activity & Entertainment</span>
+                      </a>
+                    </li>
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="" className="flex flex-row p-2 ">
+                        <span className="pl-6">Apparel & Accesssories</span>
+                      </a>
+                    </li>
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="" className="flex flex-row p-2 ">
+                        <span className="pl-6">Baby & Toddler Toys</span>
+                      </a>
+                    </li>
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="" className="flex flex-row p-2 ">
+                        <span className="pl-6">Baby Care</span>
+                      </a>
+                    </li>
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="" className="flex flex-row p-2 ">
+                        <span className="pl-6">Baby Stationery</span>
+                      </a>
+                    </li>
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="" className="flex flex-row p-2 ">
+                        <span className="pl-6">Car Seats & Accessories</span>
+                      </a>
+                    </li>
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="" className="flex flex-row p-2 ">
+                        <span className="pl-6">
+                          Diapering
+                        </span>
+                      </a>
+                    </li>
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="" className="flex flex-row p-2 ">
+                        <span className="pl-6">Feeding</span>
+                      </a>
+                    </li>
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="" className="flex flex-row p-2 ">
+                        <span className="pl-6">Gifts</span>
+                      </a>
+                    </li>
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="" className="flex flex-row p-2 ">
+                        <span className="pl-6">Nursery</span>
+                      </a>
+                    </li>
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="" className="flex flex-row p-2 ">
+                        <span className="pl-6">
+                          Potty Training
+                        </span>
+                      </a>
+                    </li>
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="" className="flex flex-row p-2 ">
+                        <span className="pl-6">Pregnancy & Maternity</span>
+                      </a>
+                    </li>
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="" className="flex flex-row p-2 ">
+                        <span className="pl-6">Safety</span>
+                      </a>
+                    </li>
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="" className="flex flex-row p-2 ">
+                        <span className="pl-6">Strollers & Accessories</span>
+                      </a>
+                    </li>
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="" className="flex flex-row p-2 ">
+                        <span className="pl-6">Travel Gear</span>
+                      </a>
+                    </li>
+                  </ul>
+                </ul>
+              </div>
+              <div
+                id="Menu10"
+                style={{ height: "93.5%", display: "none" }}
+                className="absolute left-96 overflow-y-scroll overflow-x-scroll w-full bg-white"
+              >
+                <ul className="text-sm mt-2">
+                  <li className="pt-2 pb-1 hover:bg-gray-200">
+                    <a href="javascript:void(0)" className="flex p-2 " onClick={()=> Back2Main(10)}>
+                      <div className="pl-6">
+                        <FontAwesomeIcon
+                          icon={faArrowLeft}
+                          className="text-gray-400 hover:text-black"
+                        />
+                      </div>
+                      <div className="pl-2">
+                        <b>Main Menu</b>
+                      </div>
+                    </a>
+                  </li>
+                </ul>
+                <hr />
+                <ul className="pb-8">
+                  <li className="pl-8 pt-4 text-lg">
+                    <b>Beauty And Personal Care</b>
+                  </li>
+                  <ul className="text-sm">
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="" className="flex flex-row p-2">
+                        <span className="pl-6">
+                          Makeup
+                        </span>
+                      </a>
+                    </li>
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="" className="flex flex-row p-2 ">
+                        <span className="pl-6">Skin Care</span>
+                      </a>
+                    </li>
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="" className="flex flex-row p-2 ">
+                        <span className="pl-6">Hair Care</span>
+                      </a>
+                    </li>
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="" className="flex flex-row p-2 ">
+                        <span className="pl-6">Fragnance</span>
+                      </a>
+                    </li>
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="" className="flex flex-row p-2 ">
+                        <span className="pl-6">Foot, Hair & Nail Care</span>
+                      </a>
+                    </li>
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="" className="flex flex-row p-2 ">
+                        <span className="pl-6">Tools & Accessories</span>
+                      </a>
+                    </li>
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="" className="flex flex-row p-2 ">
+                        <span className="pl-6">Shave & Hair Removal</span>
+                      </a>
+                    </li>
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="" className="flex flex-row p-2 ">
+                        <span className="pl-6">
+                          Personal Care
+                        </span>
+                      </a>
+                    </li>
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="" className="flex flex-row p-2 ">
+                        <span className="pl-6">Oral Care</span>
                       </a>
                     </li>
                   </ul>
