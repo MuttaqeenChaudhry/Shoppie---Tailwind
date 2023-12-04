@@ -1,3 +1,4 @@
+import React, { forwardRef, useEffect, useState } from "react";
 import {
   faArrowDown,
   faArrowLeft,
@@ -8,9 +9,9 @@ import {
   faUserCircle,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React, { useEffect, useState } from "react";
 
-export default function NavMenu(props) {
+
+const NavMenu = forwardRef((props, ref) => {
   const Up = <FontAwesomeIcon
     icon={faArrowUp}
     className="text-gray-400 hover:text-black"
@@ -26,10 +27,10 @@ export default function NavMenu(props) {
     const MainMenu = document.getElementById("MainMenu");
     const SideMenu = document.getElementById(`Menu${menuId}`);
     SideMenu.style.display = "block";
-    MainMenu.classList.remove('animate-ltr2');
-    SideMenu.classList.remove('animate-ltr2');
     MainMenu.classList.add("animate-rtl384");
+    MainMenu.addEventListener('animationend', ()=> MainMenu.classList.remove('animate-rtl384'));
     SideMenu.classList.add("animate-rtl384");
+    SideMenu.addEventListener('animationend', ()=> SideMenu.classList.remove('animate-rtl384'));
     setTimeout(() => {
       MainMenu.classList.add("-left-96");
       SideMenu.classList.remove("left-96");
@@ -40,9 +41,9 @@ export default function NavMenu(props) {
     const MainMenu = document.getElementById("MainMenu");
     const SideMenu = document.getElementById(`Menu${menuId}`);
     MainMenu.classList.add('animate-ltr2');
-    MainMenu.classList.remove("animate-rtl384");
+    MainMenu.addEventListener('animationend', () => MainMenu.classList.remove('animate-ltr2'));
     SideMenu.classList.add("animate-ltr2");
-    SideMenu.classList.remove("animate-rtl384");
+    SideMenu.addEventListener('animationend', ()=> SideMenu.classList.remove('animate-ltr2'));
     setTimeout(() => {
       MainMenu.classList.remove("-left-96");
       SideMenu.style.display = 'none';
@@ -53,11 +54,17 @@ export default function NavMenu(props) {
   useEffect(()=>{ 
     const ExpandableList = document.getElementById('ExpandableList');
     const ExlToggler = document.getElementById('ExlToggler');
+    const HamBurgContainer = document.getElementById('HamBurgContainer');
+    const HbrgerClose = document.getElementById('HbrgerClose');
     const HandleList = () => {
       ExpandableList.classList.toggle('max-h-0');
       setAlLs(prev => (prev === 'All' ? 'Less' : 'All')); 
       setArrowState(prev => (prev === Up ? Down : Up));
-    }
+    };
+    HbrgerClose.addEventListener('click', ()=>{
+      HamBurgContainer.classList.remove('animate-ltr1');
+      HamBurgContainer.classList.add('animate-rtl384');
+    })
     ExlToggler.addEventListener('click', HandleList)
     return () => ExlToggler.removeEventListener('click', HandleList);
   },[])
@@ -65,6 +72,7 @@ export default function NavMenu(props) {
   return (
     <>
       <div
+      ref={ref}
         style={{ display: props.NvMnDisp, zIndex: "4" }}
         className="absolute top-0 w-full h-fit overflow-hidden bg-transparent"
       >
@@ -76,7 +84,7 @@ export default function NavMenu(props) {
           <FontAwesomeIcon icon={faClose} size={"2xl"} color="white" />
         </div>
         <div className="flex">
-          <div className=" w-24 h-screen animate-ltr1 bg-white">
+          <div id='HamBurgContainer' className=" w-24 h-screen animate-ltr1 bg-white ">
             <div
               style={{ height: "6.5%" }}
               className="h-1/6 w-full bg-violet-950"
@@ -1491,4 +1499,6 @@ export default function NavMenu(props) {
       </div>
     </>
   );
-}
+})
+
+export default NavMenu;
