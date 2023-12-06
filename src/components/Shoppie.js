@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
-import C_Img_1 from "../assets/Images/1.jpg";
+import C_Img_1 from "../assets/Images/5.jpg";
 import C_Img_2 from "../assets/Images/2.jpg";
 import C_Img_3 from "../assets/Images/3.jpg";
 import C_Img_4 from "../assets/Images/4.jpg";
-import C_Img_5 from "../assets/Images/5.jpg";
+import C_Img_5 from "../assets/Images/1.jpg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft, faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import StuffHub from "./StuffHub";

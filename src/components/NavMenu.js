@@ -2511,6 +2511,110 @@ const NavMenu = forwardRef((props, ref) => {
                   </ul>
                 </ul>
               </div>
+              <div
+                id="Menu23"
+                style={{ height: "93.5%", display: "none" }}
+                className="absolute left-96 overflow-y-scroll overflow-x-scroll w-full bg-white"
+              >
+                <ul className="text-sm mt-2">
+                  <li className="pt-2 pb-1 hover:bg-gray-200">
+                    <a href="#" className="flex p-2 " onClick={()=> Back2Main(23)}>
+                      <div className="pl-6">
+                        <FontAwesomeIcon
+                          icon={faArrowLeft}
+                          className="text-gray-400 hover:text-black"
+                        />
+                      </div>
+                      <div className="pl-2">
+                        <b>Main Menu</b>
+                      </div>
+                    </a>
+                  </li>
+                </ul>
+                <hr />
+                <ul className="pb-8">
+                  <li className="pl-8 pt-4 text-lg">
+                    <b>Tools & Home Improvement</b>
+                  </li>
+                  <ul className="text-sm">
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="#" className="flex flex-row p-2">
+                        <span className="pl-6">Tools & Home Improvement</span>
+                      </a>
+                    </li>
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="#" className="flex flex-row p-2 ">
+                        <span className="pl-6">Appliances</span>
+                      </a>
+                    </li>
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="#" className="flex flex-row p-2 ">
+                        <span className="pl-6">Building Supplies</span>
+                      </a>
+                    </li>
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="#" className="flex flex-row p-2 ">
+                        <span className="pl-6">Electrical</span>
+                      </a>
+                    </li>
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="#" className="flex flex-row p-2 ">
+                        <span className="pl-6">Hardware</span>
+                      </a>
+                    </li>
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="#" className="flex flex-row p-2 ">
+                        <span className="pl-6">Kitchen & Bath Fixtures</span>
+                      </a>
+                    </li>
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="#" className="flex flex-row p-2 ">
+                        <span className="pl-6">Light Bulbs</span>
+                      </a>
+                    </li>
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="#" className="flex flex-row p-2 ">
+                        <span className="pl-6">Lighting & Ceiling Fans</span>
+                      </a>
+                    </li>
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="#" className="flex flex-row p-2 ">
+                        <span className="pl-6">Measuring & Layout Tools</span>
+                      </a>
+                    </li>
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="#" className="flex flex-row p-2 ">
+                        <span className="pl-6">Painting Supplies & Wall Treatments</span>
+                      </a>
+                    </li>
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="#" className="flex flex-row p-2 ">
+                        <span className="pl-6">Power & Hand Tools</span>
+                      </a>
+                    </li>
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="#" className="flex flex-row p-2 ">
+                        <span className="pl-6">Rough Plumbing</span>
+                      </a>
+                    </li>
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="#" className="flex flex-row p-2 ">
+                        <span className="pl-6">Safety & Security</span>
+                      </a>
+                    </li>
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="#" className="flex flex-row p-2 ">
+                        <span className="pl-6">Storage & Home Organization</span>
+                      </a>
+                    </li>
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="#" className="flex flex-row p-2 ">
+                        <span className="pl-6">Welding & Soldering</span>
+                      </a>
+                    </li>
+                  </ul>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
