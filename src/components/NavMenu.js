@@ -14,14 +14,24 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 const NavMenu = forwardRef((props, ref) => {
   const Up = <FontAwesomeIcon
     icon={faArrowUp}
-    className="text-gray-400 hover:text-black"
+    className="text-inherit"
   />;
   const Down = <FontAwesomeIcon
     icon={faArrowDown}
-    className="text-gray-400 hover:text-black"
+    className="text-inherit"
   />;
+  const Up2 = <FontAwesomeIcon
+  icon={faArrowUp}
+  className="text-inherit"
+/>;
+const Down2 = <FontAwesomeIcon
+  icon={faArrowDown}
+  className="text-inherit"
+/>;
   const[AlLs, setAlLs] = useState('All');
+  const[AlLs2, setAlLs2] = useState('All');
   const[ArrowState, setArrowState] = useState(Down);
+  const[ArrowState2, setArrowState2] = useState(Down2);
 
   const MaintoSide = (menuId) => {
     const MainMenu = document.getElementById("MainMenu");
@@ -53,20 +63,31 @@ const NavMenu = forwardRef((props, ref) => {
 
   useEffect(()=>{ 
     const ExpandableList = document.getElementById('ExpandableList');
+    const ExpandableList2 = document.getElementById('ExpandableList2');
     const ExlToggler = document.getElementById('ExlToggler');
+    const ExlToggler2 = document.getElementById('ExlToggler2');
     const HamBurgContainer = document.getElementById('HamBurgContainer');
     const HbrgerClose = document.getElementById('HbrgerClose');
     const HandleList = () => {
-      ExpandableList.classList.toggle('max-h-0');
+      ExpandableList.classList.toggle('max_H_T');
       setAlLs(prev => (prev === 'All' ? 'Less' : 'All')); 
-      setArrowState(prev => (prev === Up ? Down : Up));
+      setArrowState(prev => (prev === Down ? Up : Down));
+    };
+    const HandleList2 = () => {
+      ExpandableList2.classList.toggle('max_H_T2');
+      setAlLs2(prev => (prev === 'All' ? 'Less' : 'All')); 
+      setArrowState2(prev => (prev === Down2 ? Up2 : Down2));
     };
     HbrgerClose.addEventListener('click', ()=>{
       HamBurgContainer.classList.remove('animate-ltr1');
       HamBurgContainer.classList.add('animate-rtl384');
     })
-    ExlToggler.addEventListener('click', HandleList)
-    return () => ExlToggler.removeEventListener('click', HandleList);
+    ExlToggler.addEventListener('click', HandleList);
+    ExlToggler2.addEventListener('click', HandleList2);
+    return () => {
+      ExlToggler.removeEventListener('click', HandleList);
+      ExlToggler2.removeEventListener('click', HandleList2);
+    };
   },[])
 
   return (
@@ -111,49 +132,50 @@ const NavMenu = forwardRef((props, ref) => {
                     <b>Digital Content and Devices</b>
                   </li>
                   <ul className="text-sm">
-                    <li className="pt-1 pl-6 hover:bg-gray-200 hover:text-black">
-                      <a
-                        href="#"
-                        onClick={() => MaintoSide(1)}
-                        className="flex flex-row justify-between p-2 cursor-pointer "
-                      >
-                        <div className="pl-0">Shoppie Music</div>
-                        <div className="pr-3 hover:text-black">
-                          <FontAwesomeIcon
-                            icon={faArrowRight}
-                            className="text-gray-400"
-                          />
-                        </div>
-                      </a>
-                    </li>
-                    <li className="pt-1 pl-6 hover:bg-gray-200">
+                  <li className="pt-1 pl-6 text-gray-400 hover:text-black hover:bg-gray-200 ">
                       <a
                         href="#"
                         onClick={() => MaintoSide(2)}
                         className="flex flex-row justify-between p-2 cursor-pointer"
                       >
-                        <div className="pl-0">Mindle E-readers & Books</div>
-                        <div className="pr-3">
+                        <span className="pl-0 text-black">Shoppie Music</span>
+                        <span className="pr-3">
                           <FontAwesomeIcon
                             icon={faArrowRight}
-                            className="text-gray-400 hover:text-black"
+                            className="text-inherit"
+                            
                           />
-                        </div>
+                        </span>
                       </a>
                     </li>
-                    <li className="pt-1 pl-6 hover:bg-gray-200">
+                    <li className="pt-1 pl-6 text-gray-400 hover:text-black hover:bg-gray-200">
+                      <a
+                        href="#"
+                        onClick={() => MaintoSide(2)}
+                        className="flex flex-row justify-between p-2 cursor-pointer"
+                      >
+                        <span className="pl-0 text-black">Mindle E-readers & Books</span>
+                        <span className="pr-3">
+                          <FontAwesomeIcon
+                            icon={faArrowRight}
+                            className="text-inherit"
+                          />
+                        </span>
+                      </a>
+                    </li>
+                    <li className="pt-1 pl-6 text-gray-400 hover:text-black hover:bg-gray-200">
                       <a
                         href="#"
                         onClick={() => MaintoSide(3)}
                         className="flex flex-row justify-between p-2 "
                       >
-                        <div className="pl-0">Shoppie Appstore</div>
-                        <div className="pr-3">
+                        <span className="pl-0 text-black">Shoppie Appstore</span>
+                        <span className="pr-3">
                           <FontAwesomeIcon
                             icon={faArrowRight}
-                            className="text-gray-400 hover:text-black"
+                            className="text-inherit"
                           />
-                        </div>
+                        </span>
                       </a>
                     </li>
                   </ul>
@@ -162,273 +184,273 @@ const NavMenu = forwardRef((props, ref) => {
                     <b>Shop By Department</b>
                   </li>
                   <ul className="text-sm">
-                    <li className="pt-1 pl-6 hover:bg-gray-200">
+                    <li className="pt-1 pl-6 text-gray-400 hover:text-black hover:bg-gray-200">
                       <a
                         href="#"
                         onClick={() => MaintoSide(4)}
                         className="flex flex-row justify-between p-2 "
                       >
-                        <div className="pl-0">Electronics</div>
+                        <div className="pl-0 text-black">Electronics</div>
                         <div className="pr-3">
                           <FontAwesomeIcon
                             icon={faArrowRight}
-                            className="text-gray-400 hover:text-black"
+                            className="text-inherit"
                           />
                         </div>
                       </a>
                     </li>
-                    <li className="pt-1 pl-6 hover:bg-gray-200">
+                    <li className="pt-1 pl-6 text-gray-400 hover:text-black hover:bg-gray-200">
                       <a
                         href="#"
                         onClick={() => MaintoSide(5)}
                         className="flex flex-row justify-between p-2"
                       >
-                        <div className="pl-0">Computers</div>
+                        <div className="pl-0 text-black">Computers</div>
                         <div className="pr-3">
                           <FontAwesomeIcon
                             icon={faArrowRight}
-                            className="text-gray-400 hover:text-black"
+                            className="text-inherit"
                           />
                         </div>
                       </a>
                     </li>
-                    <li className="pt-1 pl-6 hover:bg-gray-200">
+                    <li className="pt-1 pl-6 text-gray-400 hover:text-black hover:bg-gray-200">
                       <a
                         href="#"
                         onClick={() => MaintoSide(6)}
                         className="flex flex-row justify-between p-2 "
                       >
-                        <div className="pl-0">Smart Home</div>
+                        <div className="pl-0 text-black">Smart Home</div>
                         <div className="pr-3">
                           <FontAwesomeIcon
                             icon={faArrowRight}
-                            className="text-gray-400 hover:text-black"
+                            className="text-inherit"
                           />
                         </div>
                       </a>
                     </li>
-                    <li className="pt-1 pb-1 pl-6 hover:bg-gray-200">
+                    <li className="pt-1 pb-1 pl-6 text-gray-400 hover:text-black hover:bg-gray-200">
                       <a
                         href="#"
                         onClick={() => MaintoSide(7)}
                         className="flex flex-row justify-between p-2 "
                       >
-                        <div className="pl-0">Arts & Crafts</div>
+                        <div className="pl-0 text-black">Arts & Crafts</div>
                         <div className="pr-3">
                           <FontAwesomeIcon
                             icon={faArrowRight}
-                            className="text-gray-400 hover:text-black"
+                            className="text-inherit"
                           />
                         </div>
                       </a>
                     </li>
-                    <ul id='ExpandableList' className="flex flex-col max-h-0 overflow-hidden" >
+                    <ul id='ExpandableList' className="flex flex-col max_H_0 overflow-hidden" >
                       <hr />
-                      <li className="pt-1 pb-1 pl-6 hover:bg-gray-200">
+                      <li className="pt-1 pb-1 pl-6 text-gray-400 hover:text-black hover:bg-gray-200">
                         <a href="#" onClick={()=> MaintoSide(8)} className="flex justify-between flex-row p-2 ">
-                          <div className="pl-0">Automotive</div>
-                          <div className="pl-2 pr-3">
+                          <span className="pl-0 text-black">Automotive</span>
+                          <span className="pl-2 pr-3">
                             <FontAwesomeIcon
                               icon={faArrowRight}
-                              className="text-gray-400 hover:text-black"
+                              className="text-inherit"
                             />
-                          </div>
+                          </span>
                         </a>
                       </li>
-                      <li className="pt-1 pb-1 pl-6 hover:bg-gray-200">
+                      <li className="pt-1 pb-1 pl-6 text-gray-400 hover:text-black hover:bg-gray-200">
                         <a href="#" onClick={()=> MaintoSide(9)} className="flex justify-between flex-row p-2 ">
-                          <div className="pl-0">Baby</div>
-                          <div className="pl-2 pr-3">
+                          <span className="pl-0 text-black">Baby</span>
+                          <span className="pl-2 pr-3">
                             <FontAwesomeIcon
                               icon={faArrowRight}
-                              className="text-gray-400 hover:text-black"
+                              className="text-inherit"
                             />
-                          </div>
+                          </span>
                         </a>
                       </li>
-                      <li className="pt-1 pb-1 pl-6 hover:bg-gray-200">
+                      <li className="pt-1 pb-1 pl-6 text-gray-400 hover:text-black hover:bg-gray-200">
                         <a href="#" onClick={()=> MaintoSide(10)} className="flex justify-between flex-row p-2 ">
-                          <div className="pl-0">Beauty and personal care</div>
-                          <div className="pl-2 pr-3">
+                          <span className="pl-0 text-black">Beauty and personal care</span>
+                          <span className="pl-2 pr-3">
                             <FontAwesomeIcon
                               icon={faArrowRight}
-                              className="text-gray-400 hover:text-black"
+                              className="text-inherit"
                             />
-                          </div>
+                          </span>
                         </a>
                       </li>
-                      <li className="pt-1 pb-1 pl-6 hover:bg-gray-200">
+                      <li className="pt-1 pb-1 pl-6 text-gray-400 hover:text-black hover:bg-gray-200">
                         <a href="#" onClick={()=> MaintoSide(11)} className="flex justify-between flex-row p-2 ">
-                          <div className="pl-0">Women's Fashion</div>
-                          <div className="pl-2 pr-3">
+                          <span className="pl-0 text-black">Women's Fashion</span>
+                          <span className="pl-2 pr-3">
                             <FontAwesomeIcon
                               icon={faArrowRight}
-                              className="text-gray-400 hover:text-black"
+                              className="text-inherit"
                             />
-                          </div>
+                          </span>
                         </a>
                       </li>
-                      <li className="pt-1 pb-1 pl-6 hover:bg-gray-200">
+                      <li className="pt-1 pb-1 pl-6 text-gray-400 hover:text-black hover:bg-gray-200">
                         <a href="#" onClick={()=> MaintoSide(12)} className="flex justify-between flex-row p-2 ">
-                          <div className="pl-0">Men's Fashion</div>
-                          <div className="pl-2 pr-3">
+                          <span className="pl-0 text-black">Men's Fashion</span>
+                          <span className="pl-2 pr-3">
                             <FontAwesomeIcon
                               icon={faArrowRight}
-                              className="text-gray-400 hover:text-black"
+                              className="text-inherit"
                             />
-                          </div>
+                          </span>
                         </a>
                       </li>
-                      <li className="pt-1 pb-1 pl-6 hover:bg-gray-200">
+                      <li className="pt-1 pb-1 pl-6 text-gray-400 hover:text-black hover:bg-gray-200">
                         <a href="#" onClick={()=> MaintoSide(13)} className="flex justify-between flex-row p-2 ">
-                          <div className="pl-0">Girl's Fashion</div>
-                          <div className="pl-2 pr-3">
+                          <span className="pl-0 text-black">Girl's Fashion</span>
+                          <span className="pl-2 pr-3">
                             <FontAwesomeIcon
                               icon={faArrowRight}
-                              className="text-gray-400 hover:text-black"
+                              className="text-inherit"
                             />
-                          </div>
+                          </span>
                         </a>
                       </li>
-                      <li className="pt-1 pb-1 pl-6 hover:bg-gray-200">
+                      <li className="pt-1 pb-1 pl-6 text-gray-400 hover:text-black hover:bg-gray-200">
                         <a href="#" onClick={()=> MaintoSide(14)} className="flex justify-between flex-row p-2 ">
-                          <div className="pl-0">Boy's Fashion</div>
-                          <div className="pl-2 pr-3">
+                          <span className="pl-0 text-black">Boy's Fashion</span>
+                          <span className="pl-2 pr-3">
                             <FontAwesomeIcon
                               icon={faArrowRight}
-                              className="text-gray-400 hover:text-black"
+                              className="text-inherit"
                             />
-                          </div>
+                          </span>
                         </a>
                       </li>
-                      <li className="pt-1 pb-1 pl-6 hover:bg-gray-200">
+                      <li className="pt-1 pb-1 pl-6 text-gray-400 hover:text-black hover:bg-gray-200">
                         <a href="#" onClick={()=> MaintoSide(15)} className="flex justify-between flex-row p-2 ">
-                          <div className="pl-0">Health and Household</div>
-                          <div className="pl-2 pr-3">
+                          <span className="pl-0 text-black">Health and Household</span>
+                          <span className="pl-2 pr-3">
                             <FontAwesomeIcon
                               icon={faArrowRight}
-                              className="text-gray-400 hover:text-black"
+                              className="text-inherit"
                             />
-                          </div>
+                          </span>
                         </a>
                       </li>
-                      <li className="pt-1 pb-1 pl-6 hover:bg-gray-200">
+                      <li className="pt-1 pb-1 pl-6 text-gray-400 hover:text-black hover:bg-gray-200">
                         <a href="#" onClick={()=> MaintoSide(16)} className="flex justify-between flex-row p-2 ">
-                          <div className="pl-0">Home and Kitchen</div>
-                          <div className="pl-2 pr-3">
+                          <span className="pl-0 text-black">Home and Kitchen</span>
+                          <span className="pl-2 pr-3">
                             <FontAwesomeIcon
                               icon={faArrowRight}
-                              className="text-gray-400 hover:text-black"
+                              className="text-inherit"
                             />
-                          </div>
+                          </span>
                         </a>
                       </li>
-                      <li className="pt-1 pb-1 pl-6 hover:bg-gray-200">
+                      <li className="pt-1 pb-1 pl-6 text-gray-400 hover:text-black hover:bg-gray-200">
                         <a href="#" onClick={()=> MaintoSide(17)} className="flex justify-between flex-row p-2 ">
-                          <div className="pl-0">Industrial and Scientific</div>
-                          <div className="pl-2 pr-3">
+                          <span className="pl-0 text-black">Industrial and Scientific</span>
+                          <span className="pl-2 pr-3">
                             <FontAwesomeIcon
                               icon={faArrowRight}
-                              className="text-gray-400 hover:text-black"
+                              className="text-inherit"
                             />
-                          </div>
+                          </span>
                         </a>
                       </li>
-                      <li className="pt-1 pb-1 pl-6 hover:bg-gray-200">
+                      <li className="pt-1 pb-1 pl-6 text-gray-400 hover:text-black hover:bg-gray-200">
                         <a href="#" onClick={()=> MaintoSide(18)} className="flex justify-between flex-row p-2 ">
-                          <div className="pl-0">Luggage</div>
-                          <div className="pl-2 pr-3">
+                          <span className="pl-0 text-black">Luggage</span>
+                          <span className="pl-2 pr-3">
                             <FontAwesomeIcon
                               icon={faArrowRight}
-                              className="text-gray-400 hover:text-black"
+                              className="text-inherit"
                             />
-                          </div>
+                          </span>
                         </a>
                       </li>
-                      <li className="pt-1 pb-1 pl-6 hover:bg-gray-200">
+                      <li className="pt-1 pb-1 pl-6 text-gray-400 hover:text-black hover:bg-gray-200">
                         <a href="#" onClick={()=> MaintoSide(19)} className="flex justify-between flex-row p-2 ">
-                          <div className="pl-0">Movies & Television</div>
-                          <div className="pl-2 pr-3">
+                          <span className="pl-0 text-black">Movies & Television</span>
+                          <span className="pl-2 pr-3">
                             <FontAwesomeIcon
                               icon={faArrowRight}
-                              className="text-gray-400 hover:text-black"
+                              className="text-inherit"
                             />
-                          </div>
+                          </span>
                         </a>
                       </li>
-                      <li className="pt-1 pb-1 pl-6 hover:bg-gray-200">
+                      <li className="pt-1 pb-1 pl-6 text-gray-400 hover:text-black hover:bg-gray-200">
                         <a href="#" onClick={()=> MaintoSide(20)} className="flex justify-between flex-row p-2 ">
-                          <div className="pl-0">Pet supplies</div>
-                          <div className="pl-2 pr-3">
+                          <span className="pl-0 text-black">Pet supplies</span>
+                          <span className="pl-2 pr-3">
                             <FontAwesomeIcon
                               icon={faArrowRight}
-                              className="text-gray-400 hover:text-black"
+                              className="text-inherit"
                             />
-                          </div>
+                          </span>
                         </a>
                       </li>
-                      <li className="pt-1 pb-1 pl-6 hover:bg-gray-200">
+                      <li className="pt-1 pb-1 pl-6 text-gray-400 hover:text-black hover:bg-gray-200">
                         <a href="#" onClick={()=> MaintoSide(21)} className="flex justify-between flex-row p-2 ">
-                          <div className="pl-0">Software</div>
-                          <div className="pl-2 pr-3">
+                          <span className="pl-0 text-black">Software</span>
+                          <span className="pl-2 pr-3">
                             <FontAwesomeIcon
                               icon={faArrowRight}
-                              className="text-gray-400 hover:text-black"
+                              className="text-inherit"
                             />
-                          </div>
+                          </span>
                         </a>
                       </li>
-                      <li className="pt-1 pb-1 pl-6 hover:bg-gray-200">
+                      <li className="pt-1 pb-1 pl-6 text-gray-400 hover:text-black hover:bg-gray-200">
                         <a href="#" onClick={()=> MaintoSide(22)} className="flex justify-between flex-row p-2 ">
-                          <div className="pl-0">Sports and Outdoors</div>
-                          <div className="pl-2 pr-3">
+                          <span className="pl-0 text-black">Sports and Outdoors</span>
+                          <span className="pl-2 pr-3">
                             <FontAwesomeIcon
                               icon={faArrowRight}
-                              className="text-gray-400 hover:text-black"
+                              className="text-inherit"
                             />
-                          </div>
+                          </span>
                         </a>
                       </li>
-                      <li className="pt-1 pb-1 pl-6 hover:bg-gray-200">
+                      <li className="pt-1 pb-1 pl-6 text-gray-400 hover:text-black hover:bg-gray-200">
                         <a href="#" onClick={()=> MaintoSide(23)} className="flex justify-between flex-row p-2 ">
-                          <div className="pl-0">Tools & Home Improvement</div>
-                          <div className="pl-2 pr-3">
+                          <span className="pl-0 text-black">Tools & Home Improvement</span>
+                          <span className="pl-2 pr-3">
                             <FontAwesomeIcon
                               icon={faArrowRight}
-                              className="text-gray-400 hover:text-black"
+                              className="text-inherit"
                             />
-                          </div>
+                          </span>
                         </a>
                       </li>
-                      <li className="pt-1 pb-1 pl-6 hover:bg-gray-200">
+                      <li className="pt-1 pb-1 pl-6 text-gray-400 hover:text-black hover:bg-gray-200">
                         <a href="#" onClick={()=> MaintoSide(24)} className="flex justify-between flex-row p-2 ">
-                          <div className="pl-0">Toys and Games</div>
-                          <div className="pl-2 pr-3">
+                          <span className="pl-0 text-black">Toys and Games</span>
+                          <span className="pl-2 pr-3">
                             <FontAwesomeIcon
                               icon={faArrowRight}
-                              className="text-gray-400 hover:text-black"
+                              className="text-inherit"
                             />
-                          </div>
+                          </span>
                         </a>
                       </li>
-                      <li className="pt-1 pb-1 pl-6 hover:bg-gray-200">
+                      <li className="pt-1 pb-1 pl-6 text-gray-400 hover:text-black hover:bg-gray-200">
                         <a href="#" onClick={()=> MaintoSide(25)} className="flex justify-between flex-row p-2 ">
-                          <div className="pl-0">Video Games</div>
-                          <div className="pl-2 pr-3">
+                          <span className="pl-0 text-black">Video Games</span>
+                          <span className="pl-2 pr-3">
                             <FontAwesomeIcon
                               icon={faArrowRight}
-                              className="text-gray-400 hover:text-black"
+                              className="text-inherit"
                             />
-                          </div>
+                          </span>
                         </a>
                       </li>
                     </ul>
-                    <li className="pt-1 pb-1 pl-6 hover:bg-gray-200" id="ExlToggler">
+                    <li id="ExlToggler" className="pt-1 pb-1 pl-6 text-gray-400 hover:text-black hover:bg-gray-200">
                       <a href="#" className="flex flex-row p-2 ">
-                        <div className="pl-0">See {AlLs}</div>
-                        <div className="pl-2">
+                        <span className="pl-0 text-black">See {AlLs}</span>
+                        <span className="pl-2">
                           {ArrowState}
-                        </div>
+                        </span>
                       </a>
                     </li>                  
                   </ul>
@@ -437,54 +459,59 @@ const NavMenu = forwardRef((props, ref) => {
                     <b>Programs & Features</b>
                   </li>
                   <ul className="text-sm">
-                    <li className="pt-1 pl-6 hover:bg-gray-200">
-                      <a href="#" className="flex flex-row justify-between p-2 ">
-                        <div className="pl-0">Gift Cards</div>
-                        <div className="pr-3">
+                    <li className="pt-1 pl-6 text-gray-400 hover:text-black hover:bg-gray-200">
+                      <a href="#" onClick={()=> MaintoSide(26)} className="flex flex-row justify-between p-2 ">
+                        <span className="pl-0 text-black">Gift Cards</span>
+                        <span className="pr-3">
                           <FontAwesomeIcon
                             icon={faArrowRight}
-                            className="text-gray-400 hover:text-black"
+                            className="text-inherit"
                           />
-                        </div>
-                      </a>
-                    </li>
-                    <li className="pt-1 pl-6 hover:bg-gray-200">
-                      <a href="#" className="flex flex-row justify-between p-2">
-                        <div className="pl-0">Shop By Interest</div>
-                        <div className="pr-3"></div>
+                        </span>
                       </a>
                     </li>
                     <li className="pt-1 pl-6 hover:bg-gray-200">
-                      <a href="#" className="flex flex-row justify-between p-2 ">
-                        <div className="pl-0">Shoppie Live</div>
-                        <div className="pr-3">
-                          <FontAwesomeIcon
-                            icon={faArrowRight}
-                            className="text-gray-400 hover:text-black"
-                          />
-                        </div>
+                      <a href="#" className="flex flex-row p-2">
+                        <span className="pl-0">Shop By Interest</span>
                       </a>
                     </li>
-                    <li className="pt-1 pb-1 pl-6 hover:bg-gray-200">
-                      <a href="#" className="flex flex-row justify-between p-2 ">
-                        <div className="pl-0">International Shoppie</div>
-                        <div className="pr-3">
+                    <li className="pt-1 pl-6 text-gray-400 hover:text-black hover:bg-gray-200">
+                      <a href="#" onClick={()=> MaintoSide(27)} className="flex flex-row justify-between p-2 ">
+                        <span className="pl-0 text-black">Shoppie Live</span>
+                        <span className="pr-3">
                           <FontAwesomeIcon
                             icon={faArrowRight}
-                            className="text-gray-400 hover:text-black"
+                            className="text-inherit"
                           />
-                        </div>
+                        </span>
                       </a>
                     </li>
-                    <li className="pt-1 pb-1 pl-6 hover:bg-gray-200">
+                    <li className="pt-1 pb-1 pl-6 text-gray-400 hover:text-black hover:bg-gray-200">
+                      <a href="#" onClick={()=> MaintoSide(28)} className="flex flex-row justify-between p-2 ">
+                        <span className="pl-0 text-black">International Shopping</span>
+                        <span className="pr-3">
+                          <FontAwesomeIcon
+                            icon={faArrowRight}
+                            className="text-inherit"
+                          />
+                        </span>
+                      </a>
+                    </li>
+                    <ul id='ExpandableList2' className="flex flex-col max_H_0 overflow-hidden" >
+                      <hr />
+                      <li className="pt-1 pb-1 pl-6 hover:bg-gray-200">
+                        <a href="#" className="flex flex-row p-2 ">
+                          <div className="pl-0">Shoppie Second Chance</div>
+                         
+                        </a>
+                      </li>
+                    </ul>
+                    <li id="ExlToggler2" className="pt-1 pb-1 pl-6 text-gray-400 hover:text-black hover:bg-gray-200">
                       <a href="#" className="flex flex-row p-2 ">
-                        <div className="pl-0">See All</div>
-                        <div className="pl-2">
-                          <FontAwesomeIcon
-                            icon={faArrowDown}
-                            className="text-gray-400 hover:text-black"
-                          />
-                        </div>
+                        <span className="pl-0 text-black">See {AlLs2}</span>
+                        <span className="pl-2">
+                          {ArrowState2}
+                        </span>
                       </a>
                     </li>
                   </ul>
@@ -2610,6 +2637,417 @@ const NavMenu = forwardRef((props, ref) => {
                     <li className="pt-1 hover:bg-gray-200">
                       <a href="#" className="flex flex-row p-2 ">
                         <span className="pl-6">Welding & Soldering</span>
+                      </a>
+                    </li>
+                  </ul>
+                </ul>
+              </div>
+              <div
+                id="Menu24"
+                style={{ height: "93.5%", display: "none" }}
+                className="absolute left-96 overflow-y-scroll overflow-x-scroll w-full bg-white"
+              >
+                <ul className="text-sm mt-2">
+                  <li className="pt-2 pb-1 hover:bg-gray-200">
+                    <a href="#" className="flex p-2 " onClick={()=> Back2Main(24)}>
+                      <div className="pl-6">
+                        <FontAwesomeIcon
+                          icon={faArrowLeft}
+                          className="text-gray-400 hover:text-black"
+                        />
+                      </div>
+                      <div className="pl-2">
+                        <b>Main Menu</b>
+                      </div>
+                    </a>
+                  </li>
+                </ul>
+                <hr />
+                <ul className="pb-8">
+                  <li className="pl-8 pt-4 text-lg">
+                    <b>Toys And Games</b>
+                  </li>
+                  <ul className="text-sm">
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="#" className="flex flex-row p-2">
+                        <span className="pl-6">Action Figures & Statues</span>
+                      </a>
+                    </li>
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="#" className="flex flex-row p-2 ">
+                        <span className="pl-6">Arts & Crafts</span>
+                      </a>
+                    </li>
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="#" className="flex flex-row p-2 ">
+                        <span className="pl-6">Baby & Toddler Toys</span>
+                      </a>
+                    </li>
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="#" className="flex flex-row p-2 ">
+                        <span className="pl-6">Building Toys</span>
+                      </a>
+                    </li>
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="#" className="flex flex-row p-2 ">
+                        <span className="pl-6">Dolls & Accessories</span>
+                      </a>
+                    </li>
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="#" className="flex flex-row p-2 ">
+                        <span className="pl-6">Dress Up & Pretend Play</span>
+                      </a>
+                    </li>
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="#" className="flex flex-row p-2 ">
+                        <span className="pl-6">Kids' Electronics</span>
+                      </a>
+                    </li>
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="#" className="flex flex-row p-2 ">
+                        <span className="pl-6">Games</span>
+                      </a>
+                    </li>
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="#" className="flex flex-row p-2 ">
+                        <span className="pl-6">Grown-Up Toys</span>
+                      </a>
+                    </li>
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="#" className="flex flex-row p-2 ">
+                        <span className="pl-6">Hobbies</span>
+                      </a>
+                    </li>
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="#" className="flex flex-row p-2 ">
+                        <span className="pl-6">Kids' Furniture, Décor & Storage</span>
+                      </a>
+                    </li>
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="#" className="flex flex-row p-2 ">
+                        <span className="pl-6">Learning & Education</span>
+                      </a>
+                    </li>
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="#" className="flex flex-row p-2 ">
+                        <span className="pl-6">Novelty & Gag Toys</span>
+                      </a>
+                    </li>
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="#" className="flex flex-row p-2 ">
+                        <span className="pl-6">Party Supplies</span>
+                      </a>
+                    </li>
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="#" className="flex flex-row p-2 ">
+                        <span className="pl-6">Puppets</span>
+                      </a>
+                    </li>
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="#" className="flex flex-row p-2 ">
+                        <span className="pl-6">Puzzles</span>
+                      </a>
+                    </li>
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="#" className="flex flex-row p-2 ">
+                        <span className="pl-6">Sports & Outdoor Play</span>
+                      </a>
+                    </li>
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="#" className="flex flex-row p-2 ">
+                        <span className="pl-6">Stuffed Animals & Plush Toys</span>
+                      </a>
+                    </li>
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="#" className="flex flex-row p-2 ">
+                        <span className="pl-6">Toy Remote Control & Play Vehicles</span>
+                      </a>
+                    </li>
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="#" className="flex flex-row p-2 ">
+                        <span className="pl-6">Tricycles, Scooters & Wagons</span>
+                      </a>
+                    </li>
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="#" className="flex flex-row p-2 ">
+                        <span className="pl-6">Video Games</span>
+                      </a>
+                    </li>
+                  </ul>
+                </ul>
+              </div>
+              <div
+                id="Menu25"
+                style={{ height: "93.5%", display: "none" }}
+                className="absolute left-96 overflow-y-scroll overflow-x-scroll w-full bg-white"
+              >
+                <ul className="text-sm mt-2">
+                  <li className="pt-2 pb-1 hover:bg-gray-200">
+                    <a href="#" className="flex p-2 " onClick={()=> Back2Main(25)}>
+                      <div className="pl-6">
+                        <FontAwesomeIcon
+                          icon={faArrowLeft}
+                          className="text-gray-400 hover:text-black"
+                        />
+                      </div>
+                      <div className="pl-2">
+                        <b>Main Menu</b>
+                      </div>
+                    </a>
+                  </li>
+                </ul>
+                <hr />
+                <ul className="pb-8">
+                  <li className="pl-8 pt-4 text-lg">
+                    <b>Video Games</b>
+                  </li>
+                  <ul className="text-sm">
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="#" className="flex flex-row p-2">
+                        <span className="pl-6">Video Games</span>
+                      </a>
+                    </li>
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="#" className="flex flex-row p-2 ">
+                        <span className="pl-6">PlayStation 4</span>
+                      </a>
+                    </li>
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="#" className="flex flex-row p-2 ">
+                        <span className="pl-6">PlayStation 3</span>
+                      </a>
+                    </li>
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="#" className="flex flex-row p-2 ">
+                        <span className="pl-6">Xbox Once</span>
+                      </a>
+                    </li>
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="#" className="flex flex-row p-2 ">
+                        <span className="pl-6">Xbox 360</span>
+                      </a>
+                    </li>
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="#" className="flex flex-row p-2 ">
+                        <span className="pl-6">Nintendo Switch</span>
+                      </a>
+                    </li>
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="#" className="flex flex-row p-2 ">
+                        <span className="pl-6">Wii U</span>
+                      </a>
+                    </li>
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="#" className="flex flex-row p-2 ">
+                        <span className="pl-6">Wii</span>
+                      </a>
+                    </li>
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="#" className="flex flex-row p-2 ">
+                        <span className="pl-6">PC</span>
+                      </a>
+                    </li>
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="#" className="flex flex-row p-2 ">
+                        <span className="pl-6">Mac</span>
+                      </a>
+                    </li>
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="#" className="flex flex-row p-2 ">
+                        <span className="pl-6">Nintendo 3DS & 2DS</span>
+                      </a>
+                    </li>
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="#" className="flex flex-row p-2 ">
+                        <span className="pl-6">Nintendo DS</span>
+                      </a>
+                    </li>
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="#" className="flex flex-row p-2 ">
+                        <span className="pl-6">PlayStation Vita</span>
+                      </a>
+                    </li>
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="#" className="flex flex-row p-2 ">
+                        <span className="pl-6">Sony PSP</span>
+                      </a>
+                    </li>
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="#" className="flex flex-row p-2 ">
+                        <span className="pl-6">Retro Gaming & Microconsoles</span>
+                      </a>
+                    </li>
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="#" className="flex flex-row p-2 ">
+                        <span className="pl-6">Accessories</span>
+                      </a>
+                    </li>
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="#" className="flex flex-row p-2 ">
+                        <span className="pl-6">Digital Games</span>
+                      </a>
+                    </li>
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="#" className="flex flex-row p-2 ">
+                        <span className="pl-6">Kids & Family</span>
+                      </a>
+                    </li>
+                  </ul>
+                </ul>
+              </div>
+              <div
+                id="Menu26"
+                style={{ display: "none", height: "93.5%" }}
+                className="absolute left-96 overflow-y-scroll overflow-x-scroll w-full bg-white"
+              >
+                <ul className="text-sm mt-2">
+                  <li className="pt-2 pb-1 hover:bg-gray-200">
+                    <a href="#" className="flex p-2 " onClick={()=> Back2Main(26)}>
+                      <div className="pl-6">
+                        <FontAwesomeIcon
+                          icon={faArrowLeft}
+                          className="text-gray-400 hover:text-black"
+                        />
+                      </div>
+                      <div className="pl-2">
+                        <b>Main Menu</b>
+                      </div>
+                    </a>
+                  </li>
+                </ul>
+                <hr />
+                <ul>
+                  <li className="pl-8 pt-4 text-lg">
+                    <b>Give A Gift Card</b>
+                  </li>
+                  <ul className="text-sm pb-1">
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="#" className="flex flex-row p-2 ">
+                        <span className="pl-6">All gift cards</span>
+                      </a>
+                    </li>
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="#" className="flex flex-row p-2 ">
+                        <span className="pl-6">eGift cards</span>
+                      </a>
+                    </li>
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="#" className="flex flex-row p-2 ">
+                        <span className="pl-6">Gift cards by mail</span>
+                      </a>
+                    </li>
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="#" className="flex flex-row p-2 ">
+                        <span className="pl-6">Specialty gift cards</span>
+                      </a>
+                    </li>
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="#" className="flex flex-row p-2 ">
+                        <span className="pl-6">Shoppie Cash</span>
+                      </a>
+                    </li>
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="#" className="flex flex-row p-2 ">
+                        <span className="pl-6">For Business</span>
+                      </a>
+                    </li>
+                  </ul>                
+                  <hr />
+                  <li className="pl-8 pt-4 text-lg">
+                    <b>Manage Your Gift Card</b>
+                  </li>
+                  <ul className="text-sm pb-7">
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="#" className="flex flex-row p-2 ">
+                        <span className="pl-6">Redeem a gift card</span>
+                      </a>
+                    </li>
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="#" className="flex flex-row p-2 ">
+                        <span className="pl-6">View Your Balance</span>
+                      </a>
+                    </li>
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="#" className="flex flex-row p-2 ">
+                        <span className="pl-6">Reload Your Balance</span>
+                      </a>
+                    </li>
+                  </ul>
+                </ul>
+              </div>
+              <div
+                id="Menu27"
+                style={{ height: "93.5%", display: "none" }}
+                className="absolute left-96 overflow-y-scroll overflow-x-scroll w-full bg-white"
+              >
+                <ul className="text-sm mt-2">
+                  <li className="pt-2 pb-1 hover:bg-gray-200">
+                    <a href="#" className="flex p-2 " onClick={()=> Back2Main(27)}>
+                      <div className="pl-6">
+                        <FontAwesomeIcon
+                          icon={faArrowLeft}
+                          className="text-gray-400 hover:text-black"
+                        />
+                      </div>
+                      <div className="pl-2">
+                        <b>Main Menu</b>
+                      </div>
+                    </a>
+                  </li>
+                </ul>
+                <hr />
+                <ul className="pb-8">
+                  <li className="pl-8 pt-4 text-lg">
+                    <b>Shoppie Live</b>
+                  </li>
+                  <ul className="text-sm">
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="#" className="flex flex-row p-2">
+                        <span className="pl-6">Live</span>
+                      </a>
+                    </li>
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="#" className="flex flex-row p-2 ">
+                        <span className="pl-6">Recently Live</span>
+                      </a>
+                    </li>
+                  </ul>
+                </ul>
+              </div>
+              <div
+                id="Menu28"
+                style={{ height: "93.5%", display: "none" }}
+                className="absolute left-96 overflow-y-scroll overflow-x-scroll w-full bg-white"
+              >
+                <ul className="text-sm mt-2">
+                  <li className="pt-2 pb-1 hover:bg-gray-200">
+                    <a href="#" className="flex p-2 " onClick={()=> Back2Main(28)}>
+                      <div className="pl-6">
+                        <FontAwesomeIcon
+                          icon={faArrowLeft}
+                          className="text-gray-400 hover:text-black"
+                        />
+                      </div>
+                      <div className="pl-2">
+                        <b>Main Menu</b>
+                      </div>
+                    </a>
+                  </li>
+                </ul>
+                <hr />
+                <ul className="pb-8">
+                  <li className="pl-8 pt-4 text-lg">
+                    <b>International Shopping</b>
+                  </li>
+                  <ul className="text-sm">
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="#" className="flex flex-row p-2">
+                        <span className="pl-6">Where we ship</span>
+                      </a>
+                    </li>
+                    <li className="pt-1 hover:bg-gray-200">
+                      <a href="#" className="flex flex-row p-2 ">
+                        <span className="pl-6">Visit Shoppie Global</span>
                       </a>
                     </li>
                   </ul>

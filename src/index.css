@@ -31,5 +31,19 @@ ul {
   padding: 0;
 }
 
+.max_H_0{
+  max-height: 0px;
+  transition: max-height 0.5s ease-in-out;
+}
+
+.max_H_T {
+  max-height: 800px;
+}
+
+.max_H_T2 {
+  max-height: 100px;
+}
+
+
 
 
