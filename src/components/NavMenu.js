@@ -28,8 +28,8 @@ const Down2 = <FontAwesomeIcon
   icon={faArrowDown}
   className="text-inherit"
 />;
-  const[AlLs, setAlLs] = useState('All');
-  const[AlLs2, setAlLs2] = useState('All');
+  const[TsOne, setTsOne] = useState('All');
+  const[TsTwo, setTsTwo] = useState('All');
   const[ArrowState, setArrowState] = useState(Down);
   const[ArrowState2, setArrowState2] = useState(Down2);
 
@@ -70,12 +70,12 @@ const Down2 = <FontAwesomeIcon
     const HbrgerClose = document.getElementById('HbrgerClose');
     const HandleList = () => {
       ExpandableList.classList.toggle('max_H_T');
-      setAlLs(prev => (prev === 'All' ? 'Less' : 'All')); 
+      setTsOne(prev => (prev === 'All' ? 'Less' : 'All')); 
       setArrowState(prev => (prev === Down ? Up : Down));
     };
     const HandleList2 = () => {
       ExpandableList2.classList.toggle('max_H_T2');
-      setAlLs2(prev => (prev === 'All' ? 'Less' : 'All')); 
+      setTsTwo(prev => (prev === 'All' ? 'Less' : 'All')); 
       setArrowState2(prev => (prev === Down2 ? Up2 : Down2));
     };
     HbrgerClose.addEventListener('click', ()=>{
@@ -135,7 +135,7 @@ const Down2 = <FontAwesomeIcon
                   <li className="pt-1 pl-6 text-gray-400 hover:text-black hover:bg-gray-200 ">
                       <a
                         href="#"
-                        onClick={() => MaintoSide(2)}
+                        onClick={() => MaintoSide(1)}
                         className="flex flex-row justify-between p-2 cursor-pointer"
                       >
                         <span className="pl-0 text-black">Shoppie Music</span>
@@ -447,7 +447,7 @@ const Down2 = <FontAwesomeIcon
                     </ul>
                     <li id="ExlToggler" className="pt-1 pb-1 pl-6 text-gray-400 hover:text-black hover:bg-gray-200">
                       <a href="#" className="flex flex-row p-2 ">
-                        <span className="pl-0 text-black">See {AlLs}</span>
+                        <span className="pl-0 text-black">See {TsOne}</span>
                         <span className="pl-2">
                           {ArrowState}
                         </span>
@@ -508,7 +508,7 @@ const Down2 = <FontAwesomeIcon
                     </ul>
                     <li id="ExlToggler2" className="pt-1 pb-1 pl-6 text-gray-400 hover:text-black hover:bg-gray-200">
                       <a href="#" className="flex flex-row p-2 ">
-                        <span className="pl-0 text-black">See {AlLs2}</span>
+                        <span className="pl-0 text-black">See {TsTwo}</span>
                         <span className="pl-2">
                           {ArrowState2}
                         </span>
@@ -552,16 +552,16 @@ const Down2 = <FontAwesomeIcon
                 className="absolute left-96 overflow-y-scroll overflow-x-scroll w-full bg-white"
               >
                 <ul className="text-sm mt-2">
-                  <li className="pt-2 pb-1 hover:bg-gray-200">
+                  <li className="pt-2 pb-1 hover:bg-gray-200 text-gray-400 hover:text-black">
                     <a href="#" onClick={()=> Back2Main(1)} className="flex p-2">
                       <div className="pl-6">
                         <FontAwesomeIcon
                           icon={faArrowLeft}
-                          className="text-gray-400 hover:text-black"
+                          className="text-inherit"
                         />
                       </div>
                       <div className="pl-2">
-                        <b>Main Menu</b>
+                        <b className="text-black">Main Menu</b>
                       </div>
                     </a>
                   </li>
@@ -606,16 +606,16 @@ const Down2 = <FontAwesomeIcon
                 className="absolute left-96 overflow-y-scroll overflow-x-scroll w-full bg-white"
               >
                 <ul className="text-sm mt-2">
-                  <li className="pt-2 pb-1 hover:bg-gray-200">
-                    <a href="#" className="flex p-2 " onClick={()=> Back2Main(2)}>
+                <li className="pt-2 pb-1 hover:bg-gray-200 text-gray-400 hover:text-black">
+                    <a href="#" onClick={()=> Back2Main(2)} className="flex p-2">
                       <div className="pl-6">
                         <FontAwesomeIcon
                           icon={faArrowLeft}
-                          className="text-gray-400 hover:text-black"
+                          className="text-inherit"
                         />
                       </div>
                       <div className="pl-2">
-                        <b>Main Menu</b>
+                        <b className="text-black">Main Menu</b>
                       </div>
                     </a>
                   </li>
@@ -729,16 +729,16 @@ const Down2 = <FontAwesomeIcon
                 className="absolute left-96 overflow-y-scroll overflow-x-scroll w-full bg-white"
               >
                 <ul className="text-sm mt-2">
-                  <li className="pt-2 pb-1 hover:bg-gray-200">
-                    <a href="#" className="flex p-2 " onClick={()=> Back2Main(3)}>
+                <li className="pt-2 pb-1 hover:bg-gray-200 text-gray-400 hover:text-black">
+                    <a href="#" onClick={()=> Back2Main(3)} className="flex p-2">
                       <div className="pl-6">
                         <FontAwesomeIcon
                           icon={faArrowLeft}
-                          className="text-gray-400 hover:text-black"
+                          className="text-inherit"
                         />
                       </div>
                       <div className="pl-2">
-                        <b>Main Menu</b>
+                        <b className="text-black">Main Menu</b>
                       </div>
                     </a>
                   </li>
@@ -788,16 +788,16 @@ const Down2 = <FontAwesomeIcon
                 className="absolute left-96 overflow-y-scroll overflow-x-scroll w-full bg-white"
               >
                 <ul className="text-sm mt-2">
-                  <li className="pt-2 pb-1 hover:bg-gray-200">
-                    <a href="#" className="flex p-2 " onClick={()=> Back2Main(4)}>
+                <li className="pt-2 pb-1 hover:bg-gray-200 text-gray-400 hover:text-black">
+                    <a href="#" onClick={()=> Back2Main(4)} className="flex p-2">
                       <div className="pl-6">
                         <FontAwesomeIcon
                           icon={faArrowLeft}
-                          className="text-gray-400 hover:text-black"
+                          className="text-inherit"
                         />
                       </div>
                       <div className="pl-2">
-                        <b>Main Menu</b>
+                        <b className="text-black">Main Menu</b>
                       </div>
                     </a>
                   </li>
@@ -906,16 +906,16 @@ const Down2 = <FontAwesomeIcon
                 className="absolute left-96 overflow-y-scroll overflow-x-scroll w-full bg-white"
               >
                 <ul className="text-sm mt-2">
-                  <li className="pt-2 pb-1 hover:bg-gray-200">
-                    <a href="#" className="flex p-2 " onClick={()=> Back2Main(5)}>
+                <li className="pt-2 pb-1 hover:bg-gray-200 text-gray-400 hover:text-black">
+                    <a href="#" onClick={()=> Back2Main(5)} className="flex p-2">
                       <div className="pl-6">
                         <FontAwesomeIcon
                           icon={faArrowLeft}
-                          className="text-gray-400 hover:text-black"
+                          className="text-inherit"
                         />
                       </div>
                       <div className="pl-2">
-                        <b>Main Menu</b>
+                        <b className="text-black">Main Menu</b>
                       </div>
                     </a>
                   </li>
@@ -1014,16 +1014,16 @@ const Down2 = <FontAwesomeIcon
                 className="absolute left-96 overflow-y-scroll overflow-x-scroll w-full bg-white"
               >
                 <ul className="text-sm mt-2">
-                  <li className="pt-2 pb-1 hover:bg-gray-200">
-                    <a href="javascript:void(6)" className="flex p-2 " onClick={()=> Back2Main(6)}>
+                <li className="pt-2 pb-1 hover:bg-gray-200 text-gray-400 hover:text-black">
+                    <a href="#" onClick={()=> Back2Main(6)} className="flex p-2">
                       <div className="pl-6">
                         <FontAwesomeIcon
                           icon={faArrowLeft}
-                          className="text-gray-400 hover:text-black"
+                          className="text-inherit"
                         />
                       </div>
                       <div className="pl-2">
-                        <b>Main Menu</b>
+                        <b className="text-black">Main Menu</b>
                       </div>
                     </a>
                   </li>
@@ -1130,16 +1130,16 @@ const Down2 = <FontAwesomeIcon
                 className="absolute left-96 overflow-y-scroll overflow-x-scroll w-full bg-white"
               >
                 <ul className="text-sm mt-2">
-                  <li className="pt-2 pb-1 hover:bg-gray-200">
-                    <a href="#" className="flex p-2 " onClick={()=> Back2Main(7)}>
+                <li className="pt-2 pb-1 hover:bg-gray-200 text-gray-400 hover:text-black">
+                    <a href="#" onClick={()=> Back2Main(7)} className="flex p-2">
                       <div className="pl-6">
                         <FontAwesomeIcon
                           icon={faArrowLeft}
-                          className="text-gray-400 hover:text-black"
+                          className="text-inherit"
                         />
                       </div>
                       <div className="pl-2">
-                        <b>Main Menu</b>
+                        <b className="text-black">Main Menu</b>
                       </div>
                     </a>
                   </li>
@@ -1224,22 +1224,22 @@ const Down2 = <FontAwesomeIcon
                   </ul>
                 </ul>
               </div>
-              <div
+              <div 
                 id="Menu8"
                 style={{ height: "93.5%", display: "none" }}
                 className="absolute left-96 overflow-y-scroll overflow-x-scroll w-full bg-white"
               >
                 <ul className="text-sm mt-2">
-                  <li className="pt-2 pb-1 hover:bg-gray-200">
-                    <a href="#" className="flex p-2 " onClick={()=> Back2Main(8)}>
+                <li className="pt-2 pb-1 hover:bg-gray-200 text-gray-400 hover:text-black">
+                    <a href="#" onClick={()=> Back2Main(8)} className="flex p-2">
                       <div className="pl-6">
                         <FontAwesomeIcon
                           icon={faArrowLeft}
-                          className="text-gray-400 hover:text-black"
+                          className="text-inherit"
                         />
                       </div>
                       <div className="pl-2">
-                        <b>Main Menu</b>
+                        <b className="text-black">Main Menu</b>
                       </div>
                     </a>
                   </li>
@@ -1340,16 +1340,16 @@ const Down2 = <FontAwesomeIcon
                 className="absolute left-96 overflow-y-scroll overflow-x-scroll w-full bg-white"
               >
                 <ul className="text-sm mt-2">
-                  <li className="pt-2 pb-1 hover:bg-gray-200">
-                    <a href="#" className="flex p-2 " onClick={()=> Back2Main(9)}>
+                <li className="pt-2 pb-1 hover:bg-gray-200 text-gray-400 hover:text-black">
+                    <a href="#" onClick={()=> Back2Main(9)} className="flex p-2">
                       <div className="pl-6">
                         <FontAwesomeIcon
                           icon={faArrowLeft}
-                          className="text-gray-400 hover:text-black"
+                          className="text-inherit"
                         />
                       </div>
                       <div className="pl-2">
-                        <b>Main Menu</b>
+                        <b className="text-black">Main Menu</b>
                       </div>
                     </a>
                   </li>
@@ -1448,16 +1448,16 @@ const Down2 = <FontAwesomeIcon
                 className="absolute left-96 overflow-y-scroll overflow-x-scroll w-full bg-white"
               >
                 <ul className="text-sm mt-2">
-                  <li className="pt-2 pb-1 hover:bg-gray-200">
-                    <a href="#" className="flex p-2 " onClick={()=> Back2Main(10)}>
+                <li className="pt-2 pb-1 hover:bg-gray-200 text-gray-400 hover:text-black">
+                    <a href="#" onClick={()=> Back2Main(10)} className="flex p-2">
                       <div className="pl-6">
                         <FontAwesomeIcon
                           icon={faArrowLeft}
-                          className="text-gray-400 hover:text-black"
+                          className="text-inherit"
                         />
                       </div>
                       <div className="pl-2">
-                        <b>Main Menu</b>
+                        <b className="text-black">Main Menu</b>
                       </div>
                     </a>
                   </li>
@@ -1526,16 +1526,16 @@ const Down2 = <FontAwesomeIcon
                 className="absolute left-96 overflow-y-scroll overflow-x-scroll w-full bg-white"
               >
                 <ul className="text-sm mt-2">
-                  <li className="pt-2 pb-1 hover:bg-gray-200">
-                    <a href="#" className="flex p-2 " onClick={()=> Back2Main(11)}>
+                <li className="pt-2 pb-1 hover:bg-gray-200 text-gray-400 hover:text-black">
+                    <a href="#" onClick={()=> Back2Main(11)} className="flex p-2">
                       <div className="pl-6">
                         <FontAwesomeIcon
                           icon={faArrowLeft}
-                          className="text-gray-400 hover:text-black"
+                          className="text-inherit"
                         />
                       </div>
                       <div className="pl-2">
-                        <b>Main Menu</b>
+                        <b className="text-black">Main Menu</b>
                       </div>
                     </a>
                   </li>
@@ -1600,16 +1600,16 @@ const Down2 = <FontAwesomeIcon
                 className="absolute left-96 overflow-y-scroll overflow-x-scroll w-full bg-white"
               >
                 <ul className="text-sm mt-2">
-                  <li className="pt-2 pb-1 hover:bg-gray-200">
-                    <a href="#" className="flex p-2 " onClick={()=> Back2Main(12)}>
+                <li className="pt-2 pb-1 hover:bg-gray-200 text-gray-400 hover:text-black">
+                    <a href="#" onClick={()=> Back2Main(12)} className="flex p-2">
                       <div className="pl-6">
                         <FontAwesomeIcon
                           icon={faArrowLeft}
-                          className="text-gray-400 hover:text-black"
+                          className="text-inherit"
                         />
                       </div>
                       <div className="pl-2">
-                        <b>Main Menu</b>
+                        <b className="text-black">Main Menu</b>
                       </div>
                     </a>
                   </li>
@@ -1664,16 +1664,16 @@ const Down2 = <FontAwesomeIcon
                 className="absolute left-96 overflow-y-scroll overflow-x-scroll w-full bg-white"
               >
                 <ul className="text-sm mt-2">
-                  <li className="pt-2 pb-1 hover:bg-gray-200">
-                    <a href="#" className="flex p-2 " onClick={()=> Back2Main(13)}>
+                <li className="pt-2 pb-1 hover:bg-gray-200 text-gray-400 hover:text-black">
+                    <a href="#" onClick={()=> Back2Main(13)} className="flex p-2">
                       <div className="pl-6">
                         <FontAwesomeIcon
                           icon={faArrowLeft}
-                          className="text-gray-400 hover:text-black"
+                          className="text-inherit"
                         />
                       </div>
                       <div className="pl-2">
-                        <b>Main Menu</b>
+                        <b className="text-black">Main Menu</b>
                       </div>
                     </a>
                   </li>
@@ -1738,16 +1738,16 @@ const Down2 = <FontAwesomeIcon
                 className="absolute left-96 overflow-y-scroll overflow-x-scroll w-full bg-white"
               >
                 <ul className="text-sm mt-2">
-                  <li className="pt-2 pb-1 hover:bg-gray-200">
-                    <a href="#" className="flex p-2 " onClick={()=> Back2Main(14)}>
+                <li className="pt-2 pb-1 hover:bg-gray-200 text-gray-400 hover:text-black">
+                    <a href="#" onClick={()=> Back2Main(14)} className="flex p-2">
                       <div className="pl-6">
                         <FontAwesomeIcon
                           icon={faArrowLeft}
-                          className="text-gray-400 hover:text-black"
+                          className="text-inherit"
                         />
                       </div>
                       <div className="pl-2">
-                        <b>Main Menu</b>
+                        <b className="text-black">Main Menu</b>
                       </div>
                     </a>
                   </li>
@@ -1812,16 +1812,16 @@ const Down2 = <FontAwesomeIcon
                 className="absolute left-96 overflow-y-scroll overflow-x-scroll w-full bg-white"
               >
                 <ul className="text-sm mt-2">
-                  <li className="pt-2 pb-1 hover:bg-gray-200">
-                    <a href="#" className="flex p-2 " onClick={()=> Back2Main(15)}>
+                <li className="pt-2 pb-1 hover:bg-gray-200 text-gray-400 hover:text-black">
+                    <a href="#" onClick={()=> Back2Main(15)} className="flex p-2">
                       <div className="pl-6">
                         <FontAwesomeIcon
                           icon={faArrowLeft}
-                          className="text-gray-400 hover:text-black"
+                          className="text-inherit"
                         />
                       </div>
                       <div className="pl-2">
-                        <b>Main Menu</b>
+                        <b className="text-black">Main Menu</b>
                       </div>
                     </a>
                   </li>
@@ -1901,16 +1901,16 @@ const Down2 = <FontAwesomeIcon
                 className="absolute left-96 overflow-y-scroll overflow-x-scroll w-full bg-white"
               >
                 <ul className="text-sm mt-2">
-                  <li className="pt-2 pb-1 hover:bg-gray-200">
-                    <a href="#" className="flex p-2 " onClick={()=> Back2Main(16)}>
+                <li className="pt-2 pb-1 hover:bg-gray-200 text-gray-400 hover:text-black">
+                    <a href="#" onClick={()=> Back2Main(16)} className="flex p-2">
                       <div className="pl-6">
                         <FontAwesomeIcon
                           icon={faArrowLeft}
-                          className="text-gray-400 hover:text-black"
+                          className="text-inherit"
                         />
                       </div>
                       <div className="pl-2">
-                        <b>Main Menu</b>
+                        <b className="text-black">Main Menu</b>
                       </div>
                     </a>
                   </li>
@@ -2005,16 +2005,16 @@ const Down2 = <FontAwesomeIcon
                 className="absolute left-96 overflow-y-scroll overflow-x-scroll w-full bg-white"
               >
                 <ul className="text-sm mt-2">
-                  <li className="pt-2 pb-1 hover:bg-gray-200">
-                    <a href="#" className="flex p-2 " onClick={()=> Back2Main(17)}>
+                <li className="pt-2 pb-1 hover:bg-gray-200 text-gray-400 hover:text-black">
+                    <a href="#" onClick={()=> Back2Main(17)} className="flex p-2">
                       <div className="pl-6">
                         <FontAwesomeIcon
                           icon={faArrowLeft}
-                          className="text-gray-400 hover:text-black"
+                          className="text-inherit"
                         />
                       </div>
                       <div className="pl-2">
-                        <b>Main Menu</b>
+                        <b className="text-black">Main Menu</b>
                       </div>
                     </a>
                   </li>
@@ -2154,16 +2154,16 @@ const Down2 = <FontAwesomeIcon
                 className="absolute left-96 overflow-y-scroll overflow-x-scroll w-full bg-white"
               >
                 <ul className="text-sm mt-2">
-                  <li className="pt-2 pb-1 hover:bg-gray-200">
-                    <a href="#" className="flex p-2 " onClick={()=> Back2Main(18)}>
+                <li className="pt-2 pb-1 hover:bg-gray-200 text-gray-400 hover:text-black">
+                    <a href="#" onClick={()=> Back2Main(18)} className="flex p-2">
                       <div className="pl-6">
                         <FontAwesomeIcon
                           icon={faArrowLeft}
-                          className="text-gray-400 hover:text-black"
+                          className="text-inherit"
                         />
                       </div>
                       <div className="pl-2">
-                        <b>Main Menu</b>
+                        <b className="text-black">Main Menu</b>
                       </div>
                     </a>
                   </li>
@@ -2243,16 +2243,16 @@ const Down2 = <FontAwesomeIcon
                 className="absolute left-96 overflow-y-scroll overflow-x-scroll w-full bg-white"
               >
                 <ul className="text-sm mt-2">
-                  <li className="pt-2 pb-1 hover:bg-gray-200">
-                    <a href="#" className="flex p-2 " onClick={()=> Back2Main(19)}>
+                <li className="pt-2 pb-1 hover:bg-gray-200 text-gray-400 hover:text-black">
+                    <a href="#" onClick={()=> Back2Main(19)} className="flex p-2">
                       <div className="pl-6">
                         <FontAwesomeIcon
                           icon={faArrowLeft}
-                          className="text-gray-400 hover:text-black"
+                          className="text-inherit"
                         />
                       </div>
                       <div className="pl-2">
-                        <b>Main Menu</b>
+                        <b className="text-black">Main Menu</b>
                       </div>
                     </a>
                   </li>
@@ -2322,16 +2322,16 @@ const Down2 = <FontAwesomeIcon
                 className="absolute left-96 overflow-y-scroll overflow-x-scroll w-full bg-white"
               >
                 <ul className="text-sm mt-2">
-                  <li className="pt-2 pb-1 hover:bg-gray-200">
-                    <a href="#" className="flex p-2 " onClick={()=> Back2Main(20)}>
+                <li className="pt-2 pb-1 hover:bg-gray-200 text-gray-400 hover:text-black">
+                    <a href="#" onClick={()=> Back2Main(20)} className="flex p-2">
                       <div className="pl-6">
                         <FontAwesomeIcon
                           icon={faArrowLeft}
-                          className="text-gray-400 hover:text-black"
+                          className="text-inherit"
                         />
                       </div>
                       <div className="pl-2">
-                        <b>Main Menu</b>
+                        <b className="text-black">Main Menu</b>
                       </div>
                     </a>
                   </li>
@@ -2386,16 +2386,16 @@ const Down2 = <FontAwesomeIcon
                 className="absolute left-96 overflow-y-scroll overflow-x-scroll w-full bg-white"
               >
                 <ul className="text-sm mt-2">
-                  <li className="pt-2 pb-1 hover:bg-gray-200">
-                    <a href="#" className="flex p-2 " onClick={()=> Back2Main(21)}>
+                <li className="pt-2 pb-1 hover:bg-gray-200 text-gray-400 hover:text-black">
+                    <a href="#" onClick={()=> Back2Main(21)} className="flex p-2">
                       <div className="pl-6">
                         <FontAwesomeIcon
                           icon={faArrowLeft}
-                          className="text-gray-400 hover:text-black"
+                          className="text-inherit"
                         />
                       </div>
                       <div className="pl-2">
-                        <b>Main Menu</b>
+                        <b className="text-black">Main Menu</b>
                       </div>
                     </a>
                   </li>
@@ -2500,16 +2500,16 @@ const Down2 = <FontAwesomeIcon
                 className="absolute left-96 overflow-y-scroll overflow-x-scroll w-full bg-white"
               >
                 <ul className="text-sm mt-2">
-                  <li className="pt-2 pb-1 hover:bg-gray-200">
-                    <a href="#" className="flex p-2 " onClick={()=> Back2Main(22)}>
+                <li className="pt-2 pb-1 hover:bg-gray-200 text-gray-400 hover:text-black">
+                    <a href="#" onClick={()=> Back2Main(22)} className="flex p-2">
                       <div className="pl-6">
                         <FontAwesomeIcon
                           icon={faArrowLeft}
-                          className="text-gray-400 hover:text-black"
+                          className="text-inherit"
                         />
                       </div>
                       <div className="pl-2">
-                        <b>Main Menu</b>
+                        <b className="text-black">Main Menu</b>
                       </div>
                     </a>
                   </li>
@@ -2544,16 +2544,16 @@ const Down2 = <FontAwesomeIcon
                 className="absolute left-96 overflow-y-scroll overflow-x-scroll w-full bg-white"
               >
                 <ul className="text-sm mt-2">
-                  <li className="pt-2 pb-1 hover:bg-gray-200">
-                    <a href="#" className="flex p-2 " onClick={()=> Back2Main(23)}>
+                <li className="pt-2 pb-1 hover:bg-gray-200 text-gray-400 hover:text-black">
+                    <a href="#" onClick={()=> Back2Main(23)} className="flex p-2">
                       <div className="pl-6">
                         <FontAwesomeIcon
                           icon={faArrowLeft}
-                          className="text-gray-400 hover:text-black"
+                          className="text-inherit"
                         />
                       </div>
                       <div className="pl-2">
-                        <b>Main Menu</b>
+                        <b className="text-black">Main Menu</b>
                       </div>
                     </a>
                   </li>
@@ -2648,16 +2648,16 @@ const Down2 = <FontAwesomeIcon
                 className="absolute left-96 overflow-y-scroll overflow-x-scroll w-full bg-white"
               >
                 <ul className="text-sm mt-2">
-                  <li className="pt-2 pb-1 hover:bg-gray-200">
-                    <a href="#" className="flex p-2 " onClick={()=> Back2Main(24)}>
+                <li className="pt-2 pb-1 hover:bg-gray-200 text-gray-400 hover:text-black">
+                    <a href="#" onClick={()=> Back2Main(24)} className="flex p-2">
                       <div className="pl-6">
                         <FontAwesomeIcon
                           icon={faArrowLeft}
-                          className="text-gray-400 hover:text-black"
+                          className="text-inherit"
                         />
                       </div>
                       <div className="pl-2">
-                        <b>Main Menu</b>
+                        <b className="text-black">Main Menu</b>
                       </div>
                     </a>
                   </li>
@@ -2782,16 +2782,16 @@ const Down2 = <FontAwesomeIcon
                 className="absolute left-96 overflow-y-scroll overflow-x-scroll w-full bg-white"
               >
                 <ul className="text-sm mt-2">
-                  <li className="pt-2 pb-1 hover:bg-gray-200">
-                    <a href="#" className="flex p-2 " onClick={()=> Back2Main(25)}>
+                <li className="pt-2 pb-1 hover:bg-gray-200 text-gray-400 hover:text-black">
+                    <a href="#" onClick={()=> Back2Main(25)} className="flex p-2">
                       <div className="pl-6">
                         <FontAwesomeIcon
                           icon={faArrowLeft}
-                          className="text-gray-400 hover:text-black"
+                          className="text-inherit"
                         />
                       </div>
                       <div className="pl-2">
-                        <b>Main Menu</b>
+                        <b className="text-black">Main Menu</b>
                       </div>
                     </a>
                   </li>
@@ -2901,16 +2901,16 @@ const Down2 = <FontAwesomeIcon
                 className="absolute left-96 overflow-y-scroll overflow-x-scroll w-full bg-white"
               >
                 <ul className="text-sm mt-2">
-                  <li className="pt-2 pb-1 hover:bg-gray-200">
-                    <a href="#" className="flex p-2 " onClick={()=> Back2Main(26)}>
+                <li className="pt-2 pb-1 hover:bg-gray-200 text-gray-400 hover:text-black">
+                    <a href="#" onClick={()=> Back2Main(26)} className="flex p-2">
                       <div className="pl-6">
                         <FontAwesomeIcon
                           icon={faArrowLeft}
-                          className="text-gray-400 hover:text-black"
+                          className="text-inherit"
                         />
                       </div>
                       <div className="pl-2">
-                        <b>Main Menu</b>
+                        <b className="text-black">Main Menu</b>
                       </div>
                     </a>
                   </li>
@@ -2981,16 +2981,16 @@ const Down2 = <FontAwesomeIcon
                 className="absolute left-96 overflow-y-scroll overflow-x-scroll w-full bg-white"
               >
                 <ul className="text-sm mt-2">
-                  <li className="pt-2 pb-1 hover:bg-gray-200">
-                    <a href="#" className="flex p-2 " onClick={()=> Back2Main(27)}>
+                <li className="pt-2 pb-1 hover:bg-gray-200 text-gray-400 hover:text-black">
+                    <a href="#" onClick={()=> Back2Main(27)} className="flex p-2">
                       <div className="pl-6">
                         <FontAwesomeIcon
                           icon={faArrowLeft}
-                          className="text-gray-400 hover:text-black"
+                          className="text-inherit"
                         />
                       </div>
                       <div className="pl-2">
-                        <b>Main Menu</b>
+                        <b className="text-black">Main Menu</b>
                       </div>
                     </a>
                   </li>
@@ -3020,16 +3020,16 @@ const Down2 = <FontAwesomeIcon
                 className="absolute left-96 overflow-y-scroll overflow-x-scroll w-full bg-white"
               >
                 <ul className="text-sm mt-2">
-                  <li className="pt-2 pb-1 hover:bg-gray-200">
-                    <a href="#" className="flex p-2 " onClick={()=> Back2Main(28)}>
+                <li className="pt-2 pb-1 hover:bg-gray-200 text-gray-400 hover:text-black">
+                    <a href="#" onClick={()=> Back2Main(28)} className="flex p-2">
                       <div className="pl-6">
                         <FontAwesomeIcon
                           icon={faArrowLeft}
-                          className="text-gray-400 hover:text-black"
+                          className="text-inherit"
                         />
                       </div>
                       <div className="pl-2">
-                        <b>Main Menu</b>
+                        <b className="text-black">Main Menu</b>
                       </div>
                     </a>
                   </li>
