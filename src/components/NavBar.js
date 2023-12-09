@@ -8,6 +8,7 @@ import {
   faSearch,
 } from "@fortawesome/free-solid-svg-icons";
 import DeptmntsList from "./DeptmntsList";
+import NavFlyOuts from "./NavFlyOuts";
 export default function NavBar(props) {
   const [items, setItems] = useState(0);
   const Flags = [
@@ -105,6 +106,7 @@ export default function NavBar(props) {
 
             </div>
           </div>
+          <NavFlyOuts/>
           <div className="h-10 w-full bg-violet-500">
           <div className="flex justify-between h-full">
             <div className="flex text-white">
