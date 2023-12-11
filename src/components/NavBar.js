@@ -32,7 +32,7 @@ export default function NavBar(props) {
   return (
     <>
       <header>
-        <div className="h-15 w-full overflow-hidden">
+        <div className="h-15 w-full ">
           <div className="flex flex-row justify-between w-full h-full items-center bg-violet-700">
             <div className="flex flex-row items-center w-fit ml-3">
               <div className="pr-4">
@@ -45,7 +45,7 @@ export default function NavBar(props) {
             </div>
             <div className="w-7/12 h-10 overflow-hidden  ml-5 rounded-lg hover:shadow-lg ">
               <form action="" className="flex h-full">
-                <div className="relative h-full overflow-hidden rounded-l-lg">
+                <div className="h-full overflow-hidden rounded-l-lg">
                   <select
                     className="h-full w-11 outline-none bg-slate-200 text-xs text-gray-600 font-bold"
                     placeholder="as"
