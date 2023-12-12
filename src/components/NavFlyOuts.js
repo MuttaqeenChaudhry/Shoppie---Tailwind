@@ -23,9 +23,9 @@ export default function NavFlyOuts() {
     
   return (
     <>
-    <div className='relative w-0 h-0'>
-        <div className='absolute left-0 w-full h-fit flex' id='FlyOutAcnhor'>
-            <div style={{display:'none'}} className='relative h-fit w-fit z-50 -top-1 left-[1150px] border border-gray-300'>
+    <div className='relative w-full h-0'>
+        <div className='absolute left-0 h-0' id='FlyOutAcnhor'>
+            <div style={{display:'block'}} className='absolute h-fit w-fit z-10 -top-1 left-[1150px] border border-gray-300'>
                 <div className='absolute h-3 -top-3 left-3 rounded-tl-full rounded-tr-full w-5 bg-white border border-b-0 border-gray-300'/>
                 <div className='w-[240px] p-2 h-fit bg-white'>
                   <div className='w-[97%] m-auto'>
@@ -38,7 +38,7 @@ export default function NavFlyOuts() {
                       <span>English</span> - <span>EN</span>
                     </span>
                   </a>
-                  <div className='border-b-2'/>
+                  <div className='border-b-2 mt-2 mb-2'/>
                   <a href="#" className='block text-xs pt-2 pb-2 hover:text-orange-700 hover:underline'>
                     <i><FontAwesomeIcon icon={faCircle}/></i>
                     <span>
@@ -81,7 +81,7 @@ export default function NavFlyOuts() {
                       <span> 中文 (简体)</span> - <span>ZH</span>
                     </span>
                   </a>
-                  <div className='border-b-2'/>
+                  <div className='border-b-2 mt-2 mb-2'/>
                   <span className='text-sm block'>
                     <span>Change currency <a className='text-xs text-emerald-700 hover:text-orange-700 hover:underline' href="#">Learn More</a></span>
                   </span>
@@ -89,14 +89,17 @@ export default function NavFlyOuts() {
                     <span>$ - USD - US Dollar </span>
                     <a className='text-xs text-emerald-700 hover:text-orange-700 hover:underline' href="#">Change</a>
                   </span>
-                  </div>        
+                  <div className='border-b-2 mt-2 mb-2'/>
+                  <span className='text-sm block'>[Flag] You are shopping on Amazon.com</span>                 
+                  <a href="" className='text-xs text-blue-600 hover:underline'><div className='text-center pt-1 pb-1'><b>Change country/region</b></div></a>
+                  </div>
                 </div>      
             </div>
-            <div id='SignInFlyout' style={{display:'none'}} className='relative h-fit w-fit z-50 -top-1 left-[1190px] border border-gray-300'>
+            <div id='SignInFlyout' style={{display:'none'}} className='absolute h-fit w-fit z-10 -top-1 left-[1188px] border border-gray-300'>
                 <div className='absolute h-3 w-5 -top-3 right-3 rounded-tl-full rounded-tr-full bg-white border border-b-0 border-gray-300'/>
                 <div className='w-[160px] p-2 h-fit bg-white'>
                   <div className='w-[97%] m-auto'>
-                    <a className='block  p-2 w-[98%] text-center bg-violet-800 rounded-md text-xs text-white' href="">Sign in</a>
+                    <a className='block  p-2 w-[98%] text-center bg-violet-800 rounded-md text-xs text-white hover:underline' href="#">Sign in</a>
                   <span className='text-xs'>
                     <span>New customer? <a className='text-xs text-emerald-700 hover:text-orange-700 hover:underline' href="#">Start here.</a></span>
                   </span>
