@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import S_Logo from "../assets/Images/s-w.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -9,7 +9,9 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import DeptmntsList from "./DeptmntsList";
 import NavFlyOuts from "./NavFlyOuts";
+
 export default function NavBar(props) {
+  const NFOref = useRef(null);
   const [items, setItems] = useState(0);
   const Flags = [
     {
@@ -28,6 +30,15 @@ export default function NavBar(props) {
       url: "https://www.worldometers.info/img/flags/bx-flag.gif",
     },
   ];
+
+  const handleFlyOuts = (num) => {
+    const NavFlyOut = NFOref.current.querySelector(`#NavFlyOut${num}`);
+    NavFlyOut.style.display = 'block';
+  }
+  const removeFlyOuts = (num) => {
+    const NavFlyOut = NFOref.current.querySelector(`#NavFlyOut${num}`);
+    NavFlyOut.style.display = 'none';
+  }
 
   return (
     <>
@@ -76,14 +87,14 @@ export default function NavBar(props) {
             </div>
 
             <div className="flex w-fit items-center">
-            <a className="ml-3 bg-transparent p-1 pr-2 border-2 border-transparent hover:border-white  text-white cursor-pointer">
+            <a className="ml-3 bg-transparent p-1 pr-2 border-2 border-transparent hover:border-white  text-white cursor-pointer" onMouseOver={()=>handleFlyOuts(1)} onMouseOut={()=>removeFlyOuts(1)}>
                 <span className="flex flex-col flex-nowrap">
                   <span className="pr-2 text-xs"></span>
                   <span className="text-sm font-bold">EN</span>
                 </span>
               </a>
 
-              <a className="ml-3 bg-transparent p-1 pr-2 border-2 border-transparent hover:border-white  text-white cursor-pointer">
+              <a className="ml-3 bg-transparent p-1 pr-2 border-2 border-transparent hover:border-white  text-white cursor-pointer" onMouseOver={()=>handleFlyOuts(2)} onMouseOut={()=>removeFlyOuts(2)}>
                 <span className="flex flex-col flex-nowrap">
                   <span className="pr-2 text-xs">Hello, sign in</span>
                   <span className="text-sm font-bold">Accounts & Lists <span><FontAwesomeIcon icon={faArrowDown}/></span></span>
@@ -106,7 +117,7 @@ export default function NavBar(props) {
 
             </div>
           </div>
-          <NavFlyOuts/>
+          <NavFlyOuts ref={NFOref}/>
           <div className="h-10 w-full bg-violet-500">
           <div className="flex justify-between h-full">
             <div className="flex text-white">

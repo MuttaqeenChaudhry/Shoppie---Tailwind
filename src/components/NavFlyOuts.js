@@ -1,10 +1,10 @@
-import { faCircle, faCircleArrowDown, faCircleCheck, faCircleStop } from '@fortawesome/free-solid-svg-icons'
+import React, { forwardRef, useEffect } from 'react';
+import { faCircle } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import React, { useEffect } from 'react'
 
-export default function NavFlyOuts() {
+const NavFlyOuts = forwardRef((props, ref) => {
   useEffect(()=>{
-    const SignInFlyout = document.getElementById('SignInFlyout');
+    const SignInFlyout = document.getElementById('NavFlyOut3');
     SignInFlyout.style.display = 'block';
     SignInFlyout.classList.add('animate-fadeIn');
     SignInFlyout.addEventListener('animationend', ()=>{
@@ -23,9 +23,9 @@ export default function NavFlyOuts() {
     
   return (
     <>
-    <div className='relative w-full h-0'>
+    <div className='relative w-full h-0' ref={ref}>
         <div className='absolute left-0 h-0' id='FlyOutAcnhor'>
-            <div style={{display:'block'}} className='absolute h-fit w-fit z-10 -top-1 left-[1150px] border border-gray-300'>
+            <div id='NavFlyOut1' style={{display:'none'}} className='absolute h-fit w-fit z-10 -top-1 left-[1150px] border border-gray-300'>
                 <div className='absolute h-3 -top-3 left-3 rounded-tl-full rounded-tr-full w-5 bg-white border border-b-0 border-gray-300'/>
                 <div className='w-[240px] p-2 h-fit bg-white'>
                   <div className='w-[97%] m-auto'>
@@ -95,7 +95,47 @@ export default function NavFlyOuts() {
                   </div>
                 </div>      
             </div>
-            <div id='SignInFlyout' style={{display:'none'}} className='absolute h-fit w-fit z-10 -top-1 left-[1188px] border border-gray-300'>
+            <div id='NavFlyOut2' style={{display:'none'}} className='absolute h-fit w-fit z-10 -top-1 left-[975px] border border-gray-300'>
+            <div className='absolute h-3 w-5 -top-3 right-[118px] rounded-tl-full rounded-tr-full bg-white border border-b-0 border-gray-300'/>
+                <div className='w-[480px] p-2 h-fit bg-white'>
+                  <div className='w-[97%] m-auto'>
+                    <a className='block  p-2 w-[48%] m-auto text-center bg-violet-800 rounded-md text-xs text-white hover:underline' href="#">Sign in</a>
+                    <div className='text-xs text-center pt-1 pb-1'>
+                    <span>New customer? <a className='text-xs text-emerald-700 hover:text-orange-700 hover:underline' href="#">Start here.</a></span>
+                    </div>
+                    <div className='border-b-2' />
+                    <div className='flex pt-3  pb-1 justify-between'>
+                      <div>
+                        <b>Your Lists</b>
+                        <ul className='text-xs'>
+                          <li className='pt-2'><a href='#' className='hover:text-orange-600 hover:underline'>Create a List</a></li>
+                          <li className='pt-2'><a href='#' className='hover:text-orange-600 hover:underline'>Find a List or Registry</a></li>
+                        </ul>
+                      </div>
+                      <div className='border-l-2'/>
+                      <div>
+                        <b>Your Account</b>
+                        <ul className='text-xs'>
+                          <li className='pt-2'><a href='#' className='hover:text-orange-600 hover:underline'>Account</a></li>
+                          <li className='pt-2'><a href='#' className='hover:text-orange-600 hover:underline'>Orders</a></li>
+                          <li className='pt-2'><a href='#' className='hover:text-orange-600 hover:underline'>Recommendations</a></li>
+                          <li className='pt-2'><a href='#' className='hover:text-orange-600 hover:underline'>Browsing History</a></li>
+                          <li className='pt-2'><a href='#' className='hover:text-orange-600 hover:underline'>Watchlist</a></li>
+                          <li className='pt-2'><a href='#' className='hover:text-orange-600 hover:underline'>Video Purchases & Rentals</a></li>
+                          <li className='pt-2'><a href='#' className='hover:text-orange-600 hover:underline'>Mindle Unlimited</a></li>
+                          <li className='pt-2'><a href='#' className='hover:text-orange-600 hover:underline'>Content & Devices</a></li>
+                          <li className='pt-2'><a href='#' className='hover:text-orange-600 hover:underline'>Subscribe & Save Items</a></li>
+                          <li className='pt-2'><a href='#' className='hover:text-orange-600 hover:underline'>Memberships & Subscriptions</a></li>
+                          <li className='pt-2'><a href='#' className='hover:text-orange-600 hover:underline'>Music Library</a></li>
+
+                        </ul>
+                      </div>
+
+                    </div>
+                  </div>        
+                </div> 
+            </div>         
+            <div id='NavFlyOut3' style={{display:'none'}} className='absolute h-fit w-fit z-10 -top-1 left-[1188px] border border-gray-300'>
                 <div className='absolute h-3 w-5 -top-3 right-3 rounded-tl-full rounded-tr-full bg-white border border-b-0 border-gray-300'/>
                 <div className='w-[160px] p-2 h-fit bg-white'>
                   <div className='w-[97%] m-auto'>
@@ -106,10 +146,10 @@ export default function NavFlyOuts() {
                   </div>        
                 </div>      
             </div>
-            
-            
         </div>
     </div>
     </>
   )
-}
+})
+
+export default NavFlyOuts;

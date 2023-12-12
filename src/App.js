@@ -1,9 +1,8 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useRef, useState } from 'react';
 import './App.css';
 import NavBar from './components/NavBar';
 import NavMenu from './components/NavMenu';
 import Shoppie from './components/Shoppie';
-import NavFlyOuts from './components/NavFlyOuts';
 
 function App() {
   const[NvMDp, setNvMDp] = useState('none');
