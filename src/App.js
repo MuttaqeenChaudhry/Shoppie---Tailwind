@@ -26,14 +26,23 @@ function App() {
     }   
   }
 
+  const BodyShadow = (Stat) => {
+    const BodyShadow = document.getElementById('BodyShadow');
+    Stat == 1 ? BodyShadow.classList.add('ShoppieShadow') : BodyShadow.classList.remove('ShoppieShadow');
+  }
+
  
 
   return (
     <>
+    <div style={{zIndex:'150'}}>
     <NavMenu ref={HamContnrRef} NvMnDisp={NvMDp} HandleNavMenu={HNvMenu}/>
-    <div style={{height:'100vh'}} id='RC_KR'>  
-    <NavBar HandleNavMenu={HNvMenu}/>
+    </div>
+    <div id='RC_KR'>  
+    <NavBar HandleNavMenu={HNvMenu} BodyShadow={BodyShadow}/>
+    <div id='BodyShadow'>
     <Shoppie/>
+    </div>
     </div>
    
 

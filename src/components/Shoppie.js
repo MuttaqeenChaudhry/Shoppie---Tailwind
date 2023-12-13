@@ -38,33 +38,33 @@ export default function Shoppie() {
   return (
     <>
       <div id="RootContent" className="h-fit">
-          <div
-            style={{ width: "99%"}}
-            className="relative m-auto h-fit outline-none"
-          >
-            <div id="CrosulContainer" className="overflow-hidden z-0">
-              <img className="CarslImg" src={C_Img_1} alt="" />
-              <img className="CarslImg" src={C_Img_2} alt="" />
-              <img className="CarslImg" src={C_Img_3} alt="" />
-              <img className="CarslImg" src={C_Img_4} alt="" />
-              <img className="CarslImg" src={C_Img_5} alt="" />
-            </div>
-
-            <div className="absolute top-1/4 flex w-full justify-between">
-              <button className="ml-2" id="PrevButton">
-                <FontAwesomeIcon icon={faArrowLeft} size="2xl" color="white" />
-              </button>
-              <button className="mr-2" id="NxtButton">
-                <FontAwesomeIcon icon={faArrowRight} size="2xl" color="white" />
-              </button>
-            </div>
-            <div
-              style={{ boxShadow: "1px 1px 120px 155px #E3E6E6", zIndex:'2' }}
-              className="absolute w-full"
-            />
-            <StuffHub />
+        <div
+          style={{ width: "99%" }}
+          className="relative m-auto h-fit outline-none "
+        >
+          <div id="CrosulContainer" className="overflow-hidden z-0">
+            <img className="CarslImg" src={C_Img_1} alt="" />
+            <img className="CarslImg" src={C_Img_2} alt="" />
+            <img className="CarslImg" src={C_Img_3} alt="" />
+            <img className="CarslImg" src={C_Img_4} alt="" />
+            <img className="CarslImg" src={C_Img_5} alt="" />
           </div>
+
+          <div className="absolute top-1/4 flex w-full justify-between">
+            <button className="ml-2" id="PrevButton">
+              <FontAwesomeIcon icon={faArrowLeft} size="2xl" color="white" />
+            </button>
+            <button className="mr-2" id="NxtButton">
+              <FontAwesomeIcon icon={faArrowRight} size="2xl" color="white" />
+            </button>
+          </div>
+          <div
+            style={{ boxShadow: "1px 1px 120px 155px #E3E6E6", zIndex: "2" }}
+            className="absolute w-full"
+          />
+          <StuffHub />
         </div>
+      </div>
     </>
   );
 }

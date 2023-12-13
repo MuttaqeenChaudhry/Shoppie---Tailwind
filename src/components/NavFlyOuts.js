@@ -22,14 +22,19 @@ const NavFlyOuts = forwardRef((props, ref) => {
   },[])
 
   const PreserveFlyOut = (num) => {
+   setTimeout(() => {
+    props.BodyShadow(1);
     const NavFlyout = document.getElementById(`NavFlyOut${num}`);
-    NavFlyout.style.display = 'block';
-    
+    NavFlyout.style.display = 'block'; 
+   }, 220);  
   }
 
   const DiminishFlyOut = (num) => {
+    setTimeout(() => {
+      props.BodyShadow(0);
     const NavFlyout = document.getElementById(`NavFlyOut${num}`);
     NavFlyout.style.display = 'none';
+    }, 220);
   }
     
   return (

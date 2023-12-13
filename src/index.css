@@ -24,7 +24,22 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  box-shadow: 0 0 0px 200vh rgba(0, 0, 0, 0.8);
+  box-shadow: 0 0 150px 200vh rgba(0, 0, 0, 0.8);
+}
+
+.ShoppieShadow {
+  width: 100%;
+  position: relative;
+}
+
+.ShoppieShadow::before {
+  z-index: 3;
+  content: '';
+  position: absolute; 
+  top: 0;
+  left: 0;
+  width: 100%;
+  box-shadow: 0 450px 150px 350px rgba(0, 0, 0, 0.8);
 }
 
 ul {
