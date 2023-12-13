@@ -20,12 +20,23 @@ const NavFlyOuts = forwardRef((props, ref) => {
    
 
   },[])
+
+  const PreserveFlyOut = (num) => {
+    const NavFlyout = document.getElementById(`NavFlyOut${num}`);
+    NavFlyout.style.display = 'block';
+    
+  }
+
+  const DiminishFlyOut = (num) => {
+    const NavFlyout = document.getElementById(`NavFlyOut${num}`);
+    NavFlyout.style.display = 'none';
+  }
     
   return (
     <>
     <div className='relative w-full h-0' ref={ref}>
         <div className='absolute left-0 h-0' id='FlyOutAcnhor'>
-            <div id='NavFlyOut1' style={{display:'none'}} className='absolute h-fit w-fit z-10 -top-1 left-[1150px] border border-gray-300'>
+            <div id='NavFlyOut1' style={{display:'none'}} className='absolute h-fit w-fit z-10 -top-1 left-[1150px] border border-gray-300' onMouseOverCapture={()=> PreserveFlyOut(1)} onMouseOutCapture={()=> DiminishFlyOut(1)}>
                 <div className='absolute h-3 -top-3 left-3 rounded-tl-full rounded-tr-full w-5 bg-white border border-b-0 border-gray-300'/>
                 <div className='w-[240px] p-2 h-fit bg-white'>
                   <div className='w-[97%] m-auto'>
@@ -95,7 +106,7 @@ const NavFlyOuts = forwardRef((props, ref) => {
                   </div>
                 </div>      
             </div>
-            <div id='NavFlyOut2' style={{display:'none'}} className='absolute h-fit w-fit z-10 -top-1 left-[975px] border border-gray-300'>
+            <div id='NavFlyOut2' style={{display:'none'}} className='absolute h-fit w-fit z-10 -top-1 left-[975px] border border-gray-300' onMouseOverCapture={()=> PreserveFlyOut(2)} onMouseOutCapture={()=> DiminishFlyOut(2)}>
             <div className='absolute h-3 w-5 -top-3 right-[118px] rounded-tl-full rounded-tr-full bg-white border border-b-0 border-gray-300'/>
                 <div className='w-[480px] p-2 h-fit bg-white'>
                   <div className='w-[97%] m-auto'>

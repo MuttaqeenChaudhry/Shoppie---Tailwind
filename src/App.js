@@ -17,6 +17,7 @@ function App() {
       document.body.style.overflow = 'hidden';
       RC_KR.classList.add('Shadowed');
     } else {
+  
       setTimeout(() => {
         setNvMDp('none');
       }, 250); 

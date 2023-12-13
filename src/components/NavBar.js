@@ -32,6 +32,8 @@ export default function NavBar(props) {
   ];
 
   const handleFlyOuts = (num) => {
+    const SignInFo = NFOref.current.querySelector('#NavFlyOut3');
+    SignInFo.style.display = 'none';
     const NavFlyOut = NFOref.current.querySelector(`#NavFlyOut${num}`);
     NavFlyOut.style.display = 'block';
   }
