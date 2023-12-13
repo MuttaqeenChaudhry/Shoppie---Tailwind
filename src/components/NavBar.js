@@ -88,29 +88,29 @@ export default function NavBar(props) {
               </form>
             </div>
 
-            <div className="flex w-fit items-center">
-            <a className="ml-3 bg-transparent p-1 pr-2 border-2 border-transparent hover:border-white  text-white cursor-pointer" onMouseOver={()=>handleFlyOuts(1)} onMouseOut={()=>removeFlyOuts(1)}>
+            <div className="flex w-fit">
+            <a className="flex items-center ml-1 bg-transparent p-1 pr-2 border-[1px] border-transparent hover:border-white  text-white cursor-pointer" onMouseOver={()=>handleFlyOuts(1)} onMouseOut={()=>removeFlyOuts(1)}>
                 <span className="flex flex-col flex-nowrap">
                   <span className="pr-2 text-xs"></span>
                   <span className="text-sm font-bold">EN</span>
                 </span>
               </a>
 
-              <a className="ml-3 bg-transparent p-1 pr-2 border-2 border-transparent hover:border-white  text-white cursor-pointer" onMouseOver={()=>handleFlyOuts(2)} onMouseOut={()=>removeFlyOuts(2)}>
+              <a className="flex items-center ml-3 bg-transparent p-1 pr-2 border-[1px] border-transparent hover:border-white  text-white cursor-pointer" onMouseOver={()=>handleFlyOuts(2)} onMouseOut={()=>removeFlyOuts(2)}>
                 <span className="flex flex-col flex-nowrap">
                   <span className="pr-2 text-xs">Hello, sign in</span>
                   <span className="text-sm font-bold">Accounts & Lists <span><FontAwesomeIcon icon={faArrowDown}/></span></span>
                 </span>
               </a>
 
-              <a className="ml-3 bg-transparent p-1 pr-2 border-2 border-transparent hover:border-white  text-white cursor-pointer">
+              <a className="flex items-center ml-3 bg-transparent p-1 pr-2 border-[1px] border-transparent hover:border-white  text-white cursor-pointer">
                 <span className="flex flex-col flex-nowrap">
                   <span className="pr-2 text-xs">Returns</span>
                   <span className="text-sm font-bold">& Orders</span>
                 </span>
               </a>
 
-              <a className="ml-3 mr-2 bg-transparent p-1 pr-2 border-2 border-transparent hover:border-white  text-white cursor-pointer">
+              <a className="flex items-center mr-3 bg-transparent p-1 pr-2 border-[1px] border-transparent hover:border-white  text-white cursor-pointer">
                 <span className="flex flex-col flex-nowrap">
                   <span className="pr-2 font-bold text-sm text-orange-300">&nbsp; {items}</span>
                   <span className="text-sm text-white font-bold"><span><FontAwesomeIcon icon={faCartArrowDown} size="xl"/></span> Cart</span>
