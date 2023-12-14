@@ -28,7 +28,8 @@ function App() {
 
   const BodyShadow = (Stat) => {
     const BodyShadow = document.getElementById('BodyShadow');
-    Stat == 1 ? BodyShadow.classList.add('ShoppieShadow') : BodyShadow.classList.remove('ShoppieShadow');
+      Stat == 1 ? BodyShadow.classList.add('ShoppieShadow') : BodyShadow.classList.remove('ShoppieShadow');
+  
   }
 
  

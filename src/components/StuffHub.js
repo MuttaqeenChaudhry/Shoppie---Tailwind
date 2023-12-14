@@ -1,6 +1,5 @@
 import React from "react";
 import StuffOne from "./StuffOne";
-import exampleimg from "../assets/Images/P1.jpg";
 
 export default function StuffHub() {
   const Items = [
@@ -159,7 +158,7 @@ export default function StuffHub() {
           style={{ width: "97%" }}
           className="h-fit m-auto grid grid-cols-4 grid-rows-2 gap-y-6 gap-x-5"
         >
-          {Items.map((Item) => (
+          {Items.slice(0,8).map((Item) => (
             <StuffOne
               key={Item.id}
               title={Item.title}
@@ -168,7 +167,10 @@ export default function StuffHub() {
               hrTitle={Item.hrTitle}
             />
           ))}
-            </div>
+          </div>
+          <div style={{width:'97%'}} className="m-auto">
+            <h2>Hi</h2>
+          </div>
       </div>
     </>
   );

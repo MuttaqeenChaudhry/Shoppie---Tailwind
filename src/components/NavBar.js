@@ -31,21 +31,18 @@ export default function NavBar(props) {
       url: "https://www.worldometers.info/img/flags/bx-flag.gif",
     },
   ];
+
   const handleFlyOuts = (num) => {
-    setTimeout(() => {
-      props.BodyShadow(1);
-      const SignInFo = NFOref.current.querySelector("#NavFlyOut3");
-      SignInFo.style.display = "none";
-      const NavFlyOut = NFOref.current.querySelector(`#NavFlyOut${num}`);
-      NavFlyOut.style.display = "block";
-    }, 220);
+    const SFO = NFOref.current.querySelector('#NavFlyOut3');
+    SFO.style.display = 'none';
+    props.BodyShadow(1);
+    const NavFlyOut = NFOref.current.querySelector(`#NavFlyOut${num}`);
+    NavFlyOut.style.display = "block";
   };
   const removeFlyOuts = (num) => {
-    setTimeout(() => {
-      props.BodyShadow(0);
-      const NavFlyOut = NFOref.current.querySelector(`#NavFlyOut${num}`);
-      NavFlyOut.style.display = "none";
-    }, 220);
+    props.BodyShadow(0);
+    const NavFlyOut = NFOref.current.querySelector(`#NavFlyOut${num}`);
+    NavFlyOut.style.display = "none";
   };
 
   return (
