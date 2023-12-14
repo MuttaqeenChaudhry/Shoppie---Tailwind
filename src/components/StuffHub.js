@@ -1,5 +1,8 @@
 import React from "react";
 import StuffOne from "./StuffOne";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowLeft, faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import StuffTwo from "./StuffTwo";
 
 export default function StuffHub() {
   const Items = [
@@ -146,7 +149,7 @@ export default function StuffHub() {
       hrLink:
         "https://www.amazon.com/s?k=beauty&rh=p_36%3A-2500&_encoding=UTF8&content-id=amzn1.sym.948ea99a-cbb3-4484-a15c-59648e21b8ad&pd_rd_r=b1093ff4-3280-4b14-a186-4d3ad1bfc3ee&pd_rd_w=JJWxk&pd_rd_wg=UUsHN&pf_rd_p=948ea99a-cbb3-4484-a15c-59648e21b8ad&pf_rd_r=QF2HW90721H6H05QRJNR&ref=pd_gw_unk",
       hrTitle: "Shop Home Products",
-    }
+    },
   ];
   return (
     <>
@@ -158,7 +161,7 @@ export default function StuffHub() {
           style={{ width: "97%" }}
           className="h-fit m-auto grid grid-cols-4 grid-rows-2 gap-y-6 gap-x-5"
         >
-          {Items.slice(0,8).map((Item) => (
+          {Items.slice(0, 8).map((Item) => (
             <StuffOne
               key={Item.id}
               title={Item.title}
@@ -167,10 +170,79 @@ export default function StuffHub() {
               hrTitle={Item.hrTitle}
             />
           ))}
+        </div>
+        <div style={{ width: "97%" }} className="m-auto mt-5">
+          <div className="relative h-fit bg-white p-3">
+            <div className="absolute top-28 left-3 shadow-lg w-11  h-24 bg-white">
+              <a
+                href="#"
+                className="border h-full w-full flex items-center justify-center"
+              >
+                <span>
+                  <FontAwesomeIcon icon={faArrowLeft} />
+                </span>
+              </a>
+            </div>
+            <div className="absolute top-28 right-3 shadow-lg w-11  h-24 bg-white">
+              <a
+                href="#"
+                className="border h-full w-full flex items-center justify-center"
+              >
+                <span>
+                  <FontAwesomeIcon icon={faArrowRight} />
+                </span>
+              </a>
+            </div>
+            <b className="text-lg">Top Sellers in Baby Products for you</b>
+            <div className="h-72 overflow-x-scroll overflow-y-hidden">
+              <div className="grid grid-flow-col gap-x-3  h-full">
+                {Items.map((Item) => (
+                  <StuffTwo
+                    key={Item.id}
+                    Img={Item.imgUrl}
+                    Link={Item.hrLink}
+                  />
+                ))}
+              </div>
+            </div>
           </div>
-          <div style={{width:'97%'}} className="m-auto">
-            <h2>Hi</h2>
+        </div>
+        <div style={{ width: "97%" }} className="m-auto mt-5">
+          <div className="relative h-fit bg-white p-3">
+            <div className="absolute top-28 left-3 shadow-lg w-11  h-24 bg-white">
+              <a
+                href="#"
+                className="border h-full w-full flex items-center justify-center"
+              >
+                <span>
+                  <FontAwesomeIcon icon={faArrowLeft} />
+                </span>
+              </a>
+            </div>
+            <div className="absolute top-28 right-3 shadow-lg w-11  h-24 bg-white">
+              <a
+                href="#"
+                className="border h-full w-full flex items-center justify-center"
+              >
+                <span>
+                  <FontAwesomeIcon icon={faArrowRight} />
+                </span>
+              </a>
+            </div>
+            <b className="text-lg">Most wished for in Movies & TV</b>
+            <div className="h-72 overflow-x-scroll overflow-y-hidden">
+              <div className="grid grid-flow-col gap-x-3  h-full">
+                {Items.map((Item) => (
+                  <StuffTwo
+                    key={Item.id}
+                    Img={Item.imgUrl}
+                    Link={Item.hrLink}
+                  />
+                ))}
+              </div>
+            </div>
           </div>
+        </div>
       </div>
     </>
   );
