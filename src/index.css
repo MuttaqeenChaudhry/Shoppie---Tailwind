@@ -60,5 +60,17 @@ ul {
 }
 
 
+.SC_Bar::-webkit-scrollbar {
+  background-color: transparent;
+  height: 8px;
+}
 
+.SC_Bar::-webkit-scrollbar-thumb{
+  background-color: #D3D3D3;
+  border-radius: 5px;
+}
+
+.SC_Bar::-webkit-scrollbar-thumb:hover {
+  background-color: #888888;
+}
 
