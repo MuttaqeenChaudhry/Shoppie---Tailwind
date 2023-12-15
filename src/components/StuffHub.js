@@ -151,6 +151,138 @@ export default function StuffHub() {
       hrTitle: "Shop Home Products",
     },
   ];
+  const Items2 = [
+    {
+      id: 0,
+      imgUrl:
+        "https://m.media-amazon.com/images/W/MEDIAX_792452-T1/images/I/71SF1ciMhIL._AC_SY200_.jpg",
+      hrLink:
+        "https://www.amazon.com/Fridababy-NoseFrida-Aspirator-Hygiene-Filters/dp/B00RP0GHBO/?_encoding=UTF8&pd_rd_w=GAofJ&content-id=amzn1.sym.0f185419-5eda-46ce-8658-4e251c4fa1c4&pf_rd_p=0f185419-5eda-46ce-8658-4e251c4fa1c4&pf_rd_r=WMQ1CAEMA2TZ979QX93T&pd_rd_wg=Yaaf5&pd_rd_r=24030f50-8677-4b4e-887b-87efe7a8bcef&ref_=pd_gw_exports_top_sellers_unrec",
+    },
+    {
+      id: 1,
+      imgUrl:
+        "https://m.media-amazon.com/images/W/MEDIAX_792452-T1/images/I/716OqzlKqzL._AC_SY200_.jpg",
+      hrLink:
+        "https://www.amazon.com/Fisher-Price-Soothe-Snuggle-Otter/dp/B07N1JP56L/?_encoding=UTF8&pd_rd_w=tYagx&content-id=amzn1.sym.0f185419-5eda-46ce-8658-4e251c4fa1c4&pf_rd_p=0f185419-5eda-46ce-8658-4e251c4fa1c4&pf_rd_r=MG252HZA9K2ETJTCPDGY&pd_rd_wg=OC4Fc&pd_rd_r=ee2a03da-9007-4187-aa0c-993458f0cdd5&ref_=pd_gw_exports_top_sellers_unrec",
+    },
+    {
+      id: 2,
+      imgUrl:
+        "https://m.media-amazon.com/images/W/MEDIAX_792452-T1/images/I/71wN-gcp+JL._AC_SY200_.jpg",
+      hrLink:
+        "https://www.amazon.com/FridaBaby-NoseFrida-Rechargeable-Aspirator-Different/dp/B094Z43BQF/?_encoding=UTF8&pd_rd_w=tYagx&content-id=amzn1.sym.0f185419-5eda-46ce-8658-4e251c4fa1c4&pf_rd_p=0f185419-5eda-46ce-8658-4e251c4fa1c4&pf_rd_r=MG252HZA9K2ETJTCPDGY&pd_rd_wg=OC4Fc&pd_rd_r=ee2a03da-9007-4187-aa0c-993458f0cdd5&ref_=pd_gw_exports_top_sellers_unrec",
+    },
+    {
+      id: 3,
+      imgUrl:
+        "https://m.media-amazon.com/images/W/MEDIAX_792452-T1/images/I/71SF1ciMhIL._AC_SY200_.jpg",
+      hrLink:
+        "https://www.amazon.com/Fridababy-NoseFrida-Aspirator-Hygiene-Filters/dp/B00RP0GHBO/?_encoding=UTF8&pd_rd_w=GAofJ&content-id=amzn1.sym.0f185419-5eda-46ce-8658-4e251c4fa1c4&pf_rd_p=0f185419-5eda-46ce-8658-4e251c4fa1c4&pf_rd_r=WMQ1CAEMA2TZ979QX93T&pd_rd_wg=Yaaf5&pd_rd_r=24030f50-8677-4b4e-887b-87efe7a8bcef&ref_=pd_gw_exports_top_sellers_unrec",
+    },
+    {
+      id: 4,
+      imgUrl:
+        "https://m.media-amazon.com/images/W/MEDIAX_792452-T1/images/I/716OqzlKqzL._AC_SY200_.jpg",
+      hrLink:
+        "https://www.amazon.com/Fisher-Price-Soothe-Snuggle-Otter/dp/B07N1JP56L/?_encoding=UTF8&pd_rd_w=tYagx&content-id=amzn1.sym.0f185419-5eda-46ce-8658-4e251c4fa1c4&pf_rd_p=0f185419-5eda-46ce-8658-4e251c4fa1c4&pf_rd_r=MG252HZA9K2ETJTCPDGY&pd_rd_wg=OC4Fc&pd_rd_r=ee2a03da-9007-4187-aa0c-993458f0cdd5&ref_=pd_gw_exports_top_sellers_unrec",
+    },
+    {
+      id: 5,
+      imgUrl:
+        "https://m.media-amazon.com/images/W/MEDIAX_792452-T1/images/I/71wN-gcp+JL._AC_SY200_.jpg",
+      hrLink:
+        "https://www.amazon.com/FridaBaby-NoseFrida-Rechargeable-Aspirator-Different/dp/B094Z43BQF/?_encoding=UTF8&pd_rd_w=tYagx&content-id=amzn1.sym.0f185419-5eda-46ce-8658-4e251c4fa1c4&pf_rd_p=0f185419-5eda-46ce-8658-4e251c4fa1c4&pf_rd_r=MG252HZA9K2ETJTCPDGY&pd_rd_wg=OC4Fc&pd_rd_r=ee2a03da-9007-4187-aa0c-993458f0cdd5&ref_=pd_gw_exports_top_sellers_unrec",
+    },
+    {
+      id: 6,
+      imgUrl:
+        "https://m.media-amazon.com/images/W/MEDIAX_792452-T1/images/I/71SF1ciMhIL._AC_SY200_.jpg",
+      hrLink:
+        "https://www.amazon.com/Fridababy-NoseFrida-Aspirator-Hygiene-Filters/dp/B00RP0GHBO/?_encoding=UTF8&pd_rd_w=GAofJ&content-id=amzn1.sym.0f185419-5eda-46ce-8658-4e251c4fa1c4&pf_rd_p=0f185419-5eda-46ce-8658-4e251c4fa1c4&pf_rd_r=WMQ1CAEMA2TZ979QX93T&pd_rd_wg=Yaaf5&pd_rd_r=24030f50-8677-4b4e-887b-87efe7a8bcef&ref_=pd_gw_exports_top_sellers_unrec",
+    },
+    {
+      id: 7,
+      imgUrl:
+        "https://m.media-amazon.com/images/W/MEDIAX_792452-T1/images/I/716OqzlKqzL._AC_SY200_.jpg",
+      hrLink:
+        "https://www.amazon.com/Fisher-Price-Soothe-Snuggle-Otter/dp/B07N1JP56L/?_encoding=UTF8&pd_rd_w=tYagx&content-id=amzn1.sym.0f185419-5eda-46ce-8658-4e251c4fa1c4&pf_rd_p=0f185419-5eda-46ce-8658-4e251c4fa1c4&pf_rd_r=MG252HZA9K2ETJTCPDGY&pd_rd_wg=OC4Fc&pd_rd_r=ee2a03da-9007-4187-aa0c-993458f0cdd5&ref_=pd_gw_exports_top_sellers_unrec",
+    },
+    {
+      id: 8,
+      imgUrl:
+        "https://m.media-amazon.com/images/W/MEDIAX_792452-T1/images/I/71wN-gcp+JL._AC_SY200_.jpg",
+      hrLink:
+        "https://www.amazon.com/FridaBaby-NoseFrida-Rechargeable-Aspirator-Different/dp/B094Z43BQF/?_encoding=UTF8&pd_rd_w=tYagx&content-id=amzn1.sym.0f185419-5eda-46ce-8658-4e251c4fa1c4&pf_rd_p=0f185419-5eda-46ce-8658-4e251c4fa1c4&pf_rd_r=MG252HZA9K2ETJTCPDGY&pd_rd_wg=OC4Fc&pd_rd_r=ee2a03da-9007-4187-aa0c-993458f0cdd5&ref_=pd_gw_exports_top_sellers_unrec",
+    },
+    
+  ];
+  const Items3 = [
+    {
+      id: 0,
+      imgUrl:
+        "https://m.media-amazon.com/images/W/MEDIAX_792452-T1/images/I/71e2wPp93EL._AC_SY200_.jpg",
+      hrLink:
+        "https://www.amazon.com/Oppenheimer-Ultra-Blu-ray-Digital-UHD/dp/B0CL7JD41F/?_encoding=UTF8&pd_rd_w=hPJHq&content-id=amzn1.sym.41f1b87d-2e7a-4fe4-bfcc-e038cab8f79e&pf_rd_p=41f1b87d-2e7a-4fe4-bfcc-e038cab8f79e&pf_rd_r=S8ZMKYJXS259ERHTBZJA&pd_rd_wg=1Wn7m&pd_rd_r=066c8c73-d944-4ec1-a4ff-0e06e66514e6&ref_=pd_gw_crs_zg_bs_2625373011",
+    },
+    {
+      id: 1,
+      imgUrl:
+        "https://m.media-amazon.com/images/W/MEDIAX_792452-T1/images/I/71EiFp3q84L._AC_SY200_.jpg",
+      hrLink:
+        "https://www.amazon.com/Oppenheimer-Blu-ray-Digital-Cillian-Murphy/dp/B0CL7R395D/?_encoding=UTF8&pd_rd_w=hPJHq&content-id=amzn1.sym.41f1b87d-2e7a-4fe4-bfcc-e038cab8f79e&pf_rd_p=41f1b87d-2e7a-4fe4-bfcc-e038cab8f79e&pf_rd_r=S8ZMKYJXS259ERHTBZJA&pd_rd_wg=1Wn7m&pd_rd_r=066c8c73-d944-4ec1-a4ff-0e06e66514e6&ref_=pd_gw_crs_zg_bs_2625373011",
+    },
+    {
+      id: 2,
+      imgUrl:
+        "https://m.media-amazon.com/images/W/MEDIAX_792452-T1/images/I/81biiIq1mcL._AC_SY200_.jpg",
+      hrLink:
+        "https://www.amazon.com/Indiana-Jones-Dial-Destiny-UHD/dp/B0CKTMKKCZ/?_encoding=UTF8&pd_rd_w=hPJHq&content-id=amzn1.sym.41f1b87d-2e7a-4fe4-bfcc-e038cab8f79e&pf_rd_p=41f1b87d-2e7a-4fe4-bfcc-e038cab8f79e&pf_rd_r=S8ZMKYJXS259ERHTBZJA&pd_rd_wg=1Wn7m&pd_rd_r=066c8c73-d944-4ec1-a4ff-0e06e66514e6&ref_=pd_gw_crs_zg_bs_2625373011",
+    },
+    {
+      id: 3,
+      imgUrl:
+        "https://m.media-amazon.com/images/W/MEDIAX_792452-T1/images/I/81-xkYB2izL._AC_SY200_.jpg",
+      hrLink:
+        "https://www.amazon.com/Titanic-4K-UHD-Leonardo-DiCaprio/dp/B0CK3ZWT7X/?_encoding=UTF8&pd_rd_w=hPJHq&content-id=amzn1.sym.41f1b87d-2e7a-4fe4-bfcc-e038cab8f79e&pf_rd_p=41f1b87d-2e7a-4fe4-bfcc-e038cab8f79e&pf_rd_r=S8ZMKYJXS259ERHTBZJA&pd_rd_wg=1Wn7m&pd_rd_r=066c8c73-d944-4ec1-a4ff-0e06e66514e6&ref_=pd_gw_crs_zg_bs_2625373011",
+    },
+    {
+      id: 4,
+      imgUrl:
+        "https://m.media-amazon.com/images/W/MEDIAX_792452-T1/images/I/71e2wPp93EL._AC_SY200_.jpg",
+      hrLink:
+        "https://www.amazon.com/Oppenheimer-Ultra-Blu-ray-Digital-UHD/dp/B0CL7JD41F/?_encoding=UTF8&pd_rd_w=hPJHq&content-id=amzn1.sym.41f1b87d-2e7a-4fe4-bfcc-e038cab8f79e&pf_rd_p=41f1b87d-2e7a-4fe4-bfcc-e038cab8f79e&pf_rd_r=S8ZMKYJXS259ERHTBZJA&pd_rd_wg=1Wn7m&pd_rd_r=066c8c73-d944-4ec1-a4ff-0e06e66514e6&ref_=pd_gw_crs_zg_bs_2625373011",
+    },
+    {
+      id: 5,
+      imgUrl:
+        "https://m.media-amazon.com/images/W/MEDIAX_792452-T1/images/I/71EiFp3q84L._AC_SY200_.jpg",
+      hrLink:
+        "https://www.amazon.com/Oppenheimer-Blu-ray-Digital-Cillian-Murphy/dp/B0CL7R395D/?_encoding=UTF8&pd_rd_w=hPJHq&content-id=amzn1.sym.41f1b87d-2e7a-4fe4-bfcc-e038cab8f79e&pf_rd_p=41f1b87d-2e7a-4fe4-bfcc-e038cab8f79e&pf_rd_r=S8ZMKYJXS259ERHTBZJA&pd_rd_wg=1Wn7m&pd_rd_r=066c8c73-d944-4ec1-a4ff-0e06e66514e6&ref_=pd_gw_crs_zg_bs_2625373011",
+    },
+    {
+      id: 6,
+      imgUrl:
+        "https://m.media-amazon.com/images/W/MEDIAX_792452-T1/images/I/81biiIq1mcL._AC_SY200_.jpg",
+      hrLink:
+        "https://www.amazon.com/Indiana-Jones-Dial-Destiny-UHD/dp/B0CKTMKKCZ/?_encoding=UTF8&pd_rd_w=hPJHq&content-id=amzn1.sym.41f1b87d-2e7a-4fe4-bfcc-e038cab8f79e&pf_rd_p=41f1b87d-2e7a-4fe4-bfcc-e038cab8f79e&pf_rd_r=S8ZMKYJXS259ERHTBZJA&pd_rd_wg=1Wn7m&pd_rd_r=066c8c73-d944-4ec1-a4ff-0e06e66514e6&ref_=pd_gw_crs_zg_bs_2625373011",
+    },
+    {
+      id: 7,
+      imgUrl:
+        "https://m.media-amazon.com/images/W/MEDIAX_792452-T1/images/I/81-xkYB2izL._AC_SY200_.jpg",
+      hrLink:
+        "https://www.amazon.com/Titanic-4K-UHD-Leonardo-DiCaprio/dp/B0CK3ZWT7X/?_encoding=UTF8&pd_rd_w=hPJHq&content-id=amzn1.sym.41f1b87d-2e7a-4fe4-bfcc-e038cab8f79e&pf_rd_p=41f1b87d-2e7a-4fe4-bfcc-e038cab8f79e&pf_rd_r=S8ZMKYJXS259ERHTBZJA&pd_rd_wg=1Wn7m&pd_rd_r=066c8c73-d944-4ec1-a4ff-0e06e66514e6&ref_=pd_gw_crs_zg_bs_2625373011",
+    },
+    {
+      id: 8,
+      imgUrl:
+        "https://m.media-amazon.com/images/W/MEDIAX_792452-T1/images/I/81tfKiNfztL._AC_SY200_.jpg",
+      hrLink:
+        "https://www.amazon.com/Titanic-4K-UHD-Leonardo-DiCaprio/dp/B0CK3ZWT7X/?_encoding=UTF8&pd_rd_w=hPJHq&content-id=amzn1.sym.41f1b87d-2e7a-4fe4-bfcc-e038cab8f79e&pf_rd_p=41f1b87d-2e7a-4fe4-bfcc-e038cab8f79e&pf_rd_r=S8ZMKYJXS259ERHTBZJA&pd_rd_wg=1Wn7m&pd_rd_r=066c8c73-d944-4ec1-a4ff-0e06e66514e6&ref_=pd_gw_crs_zg_bs_2625373011",
+    },
+    
+  ];
   return (
     <>
       <div
@@ -172,7 +304,7 @@ export default function StuffHub() {
           ))}
         </div>
         <div style={{ width: "97%" }} className="m-auto mt-5">
-          <div className="relative h-fit bg-white p-3">
+          <div className="relative h-fit bg-white p-5">
             <div className="absolute top-28 left-3 shadow-lg w-11  h-24 bg-white">
               <a
                 href="#"
@@ -193,10 +325,10 @@ export default function StuffHub() {
                 </span>
               </a>
             </div>
-            <b className="text-lg">Top Sellers in Baby Products for you</b>
+            <b className="text-xl">Top Sellers in Baby Products for you</b>
             <div className="h-72 overflow-x-scroll overflow-y-hidden">
               <div className="grid grid-flow-col gap-x-3  h-full">
-                {Items.map((Item) => (
+                {Items2.map((Item) => (
                   <StuffTwo
                     key={Item.id}
                     Img={Item.imgUrl}
@@ -208,7 +340,7 @@ export default function StuffHub() {
           </div>
         </div>
         <div style={{ width: "97%" }} className="m-auto mt-5">
-          <div className="relative h-fit bg-white p-3">
+          <div className="relative h-fit bg-white p-5">
             <div className="absolute top-28 left-3 shadow-lg w-11  h-24 bg-white">
               <a
                 href="#"
@@ -229,10 +361,10 @@ export default function StuffHub() {
                 </span>
               </a>
             </div>
-            <b className="text-lg">Most wished for in Movies & TV</b>
+            <b className="text-xl">Most wished for in Movies & TV</b>
             <div className="h-72 overflow-x-scroll overflow-y-hidden">
               <div className="grid grid-flow-col gap-x-3  h-full">
-                {Items.map((Item) => (
+                {Items3.map((Item) => (
                   <StuffTwo
                     key={Item.id}
                     Img={Item.imgUrl}
